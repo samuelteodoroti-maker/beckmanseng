@@ -1,53 +1,62 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
+import logo from "@/assets/beckmans-logo.png.asset.json";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
   };
 
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">B</span>
-            </div>
-            <span className="font-bold text-xl">Beckmans</span>
-          </div>
+  const links = [
+    { id: "home", label: "Início" },
+    { id: "services", label: "Serviços" },
+    { id: "projects", label: "Portfólio" },
+    { id: "about", label: "Sobre" },
+    { id: "contact", label: "Contato" },
+  ];
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection("home")} className="hover:text-primary transition-colors">
-              Início
-            </button>
-            <button onClick={() => scrollToSection("services")} className="hover:text-primary transition-colors">
-              Serviços
-            </button>
-            <button onClick={() => scrollToSection("projects")} className="hover:text-primary transition-colors">
-              Projetos
-            </button>
-            <button onClick={() => scrollToSection("about")} className="hover:text-primary transition-colors">
-              Sobre
-            </button>
-            <button onClick={() => scrollToSection("contact")} className="hover:text-primary transition-colors">
-              Contato
-            </button>
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? "glass py-2" : "bg-transparent py-4"
+      }`}
+    >
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="flex items-center justify-between">
+          <button onClick={() => scrollToSection("home")} className="flex items-center gap-3 group">
+            <img src={logo.url} alt="Beckmans Engenharia" className="h-10 w-auto transition-transform group-hover:scale-105" />
+          </button>
+
+          <div className="hidden lg:flex items-center gap-1">
+            {links.map((l) => (
+              <button
+                key={l.id}
+                onClick={() => scrollToSection(l.id)}
+                className="px-4 py-2 text-sm font-medium rounded-full hover:bg-accent/10 hover:text-accent transition-all"
+              >
+                {l.label}
+              </button>
+            ))}
+            <div className="mx-2 h-6 w-px bg-border" />
             <ThemeToggle />
-            <Button variant="hero" onClick={() => scrollToSection("contact")}>
+            <Button variant="accent" onClick={() => scrollToSection("contact")} className="ml-2 rounded-full">
               Solicitar Orçamento
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center space-x-2">
+          <div className="flex lg:hidden items-center gap-2">
             <ThemeToggle />
             <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -55,40 +64,18 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 space-y-2 animate-fade-in">
-            <button
-              onClick={() => scrollToSection("home")}
-              className="block w-full text-left px-4 py-2 hover:bg-muted rounded-md transition-colors"
-            >
-              Início
-            </button>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="block w-full text-left px-4 py-2 hover:bg-muted rounded-md transition-colors"
-            >
-              Serviços
-            </button>
-            <button
-              onClick={() => scrollToSection("projects")}
-              className="block w-full text-left px-4 py-2 hover:bg-muted rounded-md transition-colors"
-            >
-              Projetos
-            </button>
-            <button
-              onClick={() => scrollToSection("about")}
-              className="block w-full text-left px-4 py-2 hover:bg-muted rounded-md transition-colors"
-            >
-              Sobre
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="block w-full text-left px-4 py-2 hover:bg-muted rounded-md transition-colors"
-            >
-              Contato
-            </button>
-            <Button variant="hero" className="w-full" onClick={() => scrollToSection("contact")}>
+          <div className="lg:hidden mt-4 glass rounded-2xl p-4 space-y-1 animate-fade-in">
+            {links.map((l) => (
+              <button
+                key={l.id}
+                onClick={() => scrollToSection(l.id)}
+                className="block w-full text-left px-4 py-3 rounded-xl hover:bg-accent/10 hover:text-accent transition-colors"
+              >
+                {l.label}
+              </button>
+            ))}
+            <Button variant="accent" className="w-full mt-2 rounded-full" onClick={() => scrollToSection("contact")}>
               Solicitar Orçamento
             </Button>
           </div>

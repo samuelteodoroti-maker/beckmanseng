@@ -1,77 +1,106 @@
-import { ArrowRight, Award, Users, Building2 } from "lucide-react";
+import { ArrowRight, Sparkles, ShieldCheck, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-engineering.jpg";
+import heroImg from "@/assets/hero-tech.jpg";
 
 export function Hero() {
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
+  const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-16">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Projetos de engenharia Beckmans"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80" />
+    <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+      {/* Layered backgrounds */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-background" />
+        <div className="absolute inset-0 grid-pattern opacity-40" />
+        <div className="absolute inset-0 mesh-bg" />
+        <div className="absolute top-1/2 right-0 w-[600px] h-[600px] rounded-full bg-accent/20 blur-[120px] -translate-y-1/2" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px]" />
       </div>
 
-      {/* Content */}
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="max-w-3xl animate-fade-in">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
-            <Award className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium text-primary">Excelência em Engenharia</span>
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="grid lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-8 animate-fade-in">
+            <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2">
+              <Sparkles className="h-4 w-4 text-accent" />
+              <span className="text-sm font-medium">Engenharia Civil & Segurança do Trabalho</span>
+            </div>
+
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
+              Inovação é o caminho.{" "}
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-accent via-accent to-primary bg-clip-text text-transparent">
+                  Qualidade é a certeza.
+                </span>
+              </span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+              Transformamos ideias em projetos com excelência. Vistorias, inspeções, construções e consultoria
+              — tudo com o rigor técnico que sua obra merece.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                variant="accent"
+                size="lg"
+                onClick={() => scrollTo("contact")}
+                className="group rounded-full text-base px-8 h-14 shadow-glow"
+              >
+                Solicitar Orçamento
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => scrollTo("services")}
+                className="rounded-full text-base px-8 h-14 glass border-primary/20"
+              >
+                Nossos Serviços
+              </Button>
+            </div>
+
+            {/* Trust badges */}
+            <div className="flex flex-wrap gap-6 pt-6">
+              {[
+                { icon: ShieldCheck, label: "Desde 2009", sub: "Experiência comprovada" },
+                { icon: Zap, label: "Projetos 2D e 3D", sub: "Tecnologia BIM" },
+                { icon: Sparkles, label: "CREA Ativo", sub: "Responsabilidade técnica" },
+              ].map((b, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl glass flex items-center justify-center">
+                    <b.icon className="h-5 w-5 text-accent" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold">{b.label}</div>
+                    <div className="text-xs text-muted-foreground">{b.sub}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-            Transformamos sua{" "}
-            <span className="bg-gradient-hero bg-clip-text text-transparent">visão</span> em{" "}
-            <span className="bg-gradient-accent bg-clip-text text-transparent">realidade</span>
-          </h1>
-
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            Soluções completas em engenharia civil com mais de uma década de experiência. 
-            Da concepção à conclusão, entregamos projetos que superam expectativas.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <Button variant="hero" size="lg" onClick={scrollToContact} className="group">
-              Iniciar Projeto
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="outline" size="lg" onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}>
-              Conheça Nossos Serviços
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border/50">
-            <div className="text-center sm:text-left">
-              <div className="flex items-center justify-center sm:justify-start space-x-2 mb-2">
-                <Building2 className="h-5 w-5 text-primary" />
-                <span className="text-3xl font-bold text-primary">500+</span>
+          {/* Visual card */}
+          <div className="lg:col-span-5 relative animate-scale-in">
+            <div className="relative rounded-3xl overflow-hidden glass p-2 shadow-elegant">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
+                <img
+                  src={heroImg}
+                  alt="Modelagem 3D de projeto estrutural"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+                {/* Floating stats */}
+                <div className="absolute top-4 left-4 glass rounded-2xl px-4 py-3 animate-float">
+                  <div className="text-xs text-muted-foreground">Projetos ativos</div>
+                  <div className="text-2xl font-bold text-accent">+120</div>
+                </div>
+                <div className="absolute bottom-4 right-4 glass rounded-2xl px-4 py-3 animate-float" style={{ animationDelay: "1s" }}>
+                  <div className="text-xs text-muted-foreground">Satisfação</div>
+                  <div className="text-2xl font-bold text-accent">98%</div>
+                </div>
               </div>
-              <p className="text-sm text-muted-foreground">Projetos Entregues</p>
             </div>
-            <div className="text-center sm:text-left">
-              <div className="flex items-center justify-center sm:justify-start space-x-2 mb-2">
-                <Users className="h-5 w-5 text-primary" />
-                <span className="text-3xl font-bold text-primary">300+</span>
-              </div>
-              <p className="text-sm text-muted-foreground">Clientes Satisfeitos</p>
-            </div>
-            <div className="text-center sm:text-left">
-              <div className="flex items-center justify-center sm:justify-start space-x-2 mb-2">
-                <Award className="h-5 w-5 text-primary" />
-                <span className="text-3xl font-bold text-primary">15+</span>
-              </div>
-              <p className="text-sm text-muted-foreground">Anos de Experiência</p>
-            </div>
+            {/* Decorative chevrons echoing logo */}
+            <div className="absolute -top-6 -right-6 w-24 h-24 rounded-2xl bg-accent/20 blur-2xl" />
           </div>
         </div>
       </div>
