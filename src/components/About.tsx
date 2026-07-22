@@ -1,84 +1,61 @@
-import { CheckCircle2, Target, Eye, Heart } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { CheckCircle2, Target, Eye, Shield } from "lucide-react";
 
-const values = [
-  {
-    icon: Target,
-    title: "Precisão Técnica",
-    description: "Utilizamos as mais modernas ferramentas e metodologias para garantir projetos impecáveis.",
-  },
-  {
-    icon: Eye,
-    title: "Transparência",
-    description: "Comunicação clara e acompanhamento em tempo real de todas as etapas do projeto.",
-  },
-  {
-    icon: Heart,
-    title: "Compromisso",
-    description: "Dedicação total para entregar resultados que superam as expectativas dos nossos clientes.",
-  },
+const pillars = [
+  { icon: Target, title: "Missão", text: "Transformar ideias em projetos de engenharia com excelência técnica." },
+  { icon: Eye, title: "Visão", text: "Ser referência em inovação e qualidade em engenharia civil e segurança." },
+  { icon: Shield, title: "Valores", text: "Ética, segurança, inovação e compromisso com prazo e resultado." },
 ];
 
-const differentials = [
-  "Equipe multidisciplinar altamente qualificada",
-  "Tecnologia BIM em todos os projetos",
-  "Gestão ágil e eficiente de processos",
-  "Atendimento personalizado e consultivo",
-  "Conformidade com todas as normas técnicas",
-  "Prazos rigorosamente cumpridos",
+const checks = [
+  "Atuação desde 2009 no mercado industrial",
+  "Equipe multidisciplinar com engenheiros habilitados",
+  "Foco em ambientes industriais mais seguros",
+  "Metodologia própria com tecnologia BIM",
+  "ART e responsabilidade técnica em todos os projetos",
+  "Atendimento consultivo e personalizado",
 ];
 
 export function About() {
   return (
-    <section id="about" className="py-24 bg-gradient-subtle">
+    <section id="about" className="py-24 md:py-32 relative">
+      <div className="absolute inset-0 -z-10 grid-pattern opacity-30" />
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="animate-fade-in">
-            <div className="inline-flex items-center space-x-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-2 mb-6">
-              <span className="text-sm font-medium text-accent">Sobre Nós</span>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2">
+              <span className="text-sm font-medium">Sobre a Beckmans</span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Excelência que Transforma Projetos em Realidade
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]">
+              Empreendedorismo, engenharia e{" "}
+              <span className="text-accent">segurança</span> em um só lugar.
             </h2>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              A <span className="font-semibold text-foreground">Beckmans Engenharia</span> nasceu da paixão por 
-              criar soluções que fazem a diferença. Com mais de 15 anos de experiência no mercado, nos consolidamos 
-              como referência em projetos de engenharia civil.
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Somos liderados por engenheiro civil e de segurança do trabalho, com atuação no setor industrial
+              desde 2009. Cada projeto é conduzido com rigor técnico e uma obsessão por ambientes mais seguros.
             </p>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Nossa missão é transformar ideias em estruturas sólidas, sempre com foco em inovação, 
-              qualidade e sustentabilidade. Cada projeto é tratado com a atenção e o cuidado que merece.
-            </p>
-
-            <div className="space-y-3">
-              {differentials.map((item, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground">{item}</span>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {checks.map((c, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                  <span className="text-sm">{c}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="space-y-6">
-            {values.map((value, index) => (
-              <Card
-                key={index}
-                className="hover-lift hover-glow animate-slide-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-hero rounded-lg flex items-center justify-center flex-shrink-0">
-                      <value.icon className="h-6 w-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold mb-2">{value.title}</h3>
-                      <p className="text-muted-foreground">{value.description}</p>
-                    </div>
+          <div className="grid gap-4">
+            {pillars.map((p, i) => (
+              <div key={i} className="glass rounded-3xl p-6 md:p-8 hover-lift">
+                <div className="flex items-start gap-5">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-accent flex items-center justify-center shrink-0">
+                    <p.icon className="h-7 w-7 text-accent-foreground" />
                   </div>
-                </CardContent>
-              </Card>
+                  <div>
+                    <h3 className="text-xl font-bold mb-1">{p.title}</h3>
+                    <p className="text-muted-foreground">{p.text}</p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>

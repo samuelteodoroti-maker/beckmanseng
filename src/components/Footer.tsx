@@ -1,111 +1,49 @@
-import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
+import { Instagram, Mail, Phone } from "lucide-react";
+import logo from "@/assets/beckmans-logo.png.asset.json";
 
 export function Footer() {
   return (
-    <footer className="bg-card border-t border-border py-12">
+    <footer className="relative border-t border-border/50 pt-16 pb-8">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">B</span>
-              </div>
-              <span className="font-bold text-xl">Beckmans</span>
-            </div>
-            <p className="text-sm text-muted-foreground">
-              Excelência em projetos de engenharia civil desde 2008.
+        <div className="grid md:grid-cols-4 gap-10 mb-12">
+          <div className="md:col-span-2 space-y-4">
+            <img src={logo.url} alt="Beckmans Engenharia" className="h-14 w-auto" />
+            <p className="text-muted-foreground max-w-md">
+              Nossa inovação é o caminho, nossa qualidade é a certeza. Transformamos ideias em projetos com excelência.
             </p>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Serviços</h3>
+            <h4 className="font-semibold mb-4">Serviços</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <a href="#services" className="hover:text-primary transition-colors">
-                  Projetos Estruturais
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-primary transition-colors">
-                  Gerenciamento de Obras
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-primary transition-colors">
-                  Consultoria Técnica
-                </a>
-              </li>
+              <li><a href="#services" className="hover:text-accent transition">Vistorias</a></li>
+              <li><a href="#services" className="hover:text-accent transition">Inspeções</a></li>
+              <li><a href="#services" className="hover:text-accent transition">Construções</a></li>
+              <li><a href="#services" className="hover:text-accent transition">Consultoria</a></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Empresa</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h4 className="font-semibold mb-4">Contato</h4>
+            <ul className="space-y-3 text-sm text-muted-foreground">
+              <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent" /> (21) 98223-4712</li>
+              <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-accent" /> andrew@beckmanseng.com</li>
               <li>
-                <a href="#about" className="hover:text-primary transition-colors">
-                  Sobre Nós
-                </a>
-              </li>
-              <li>
-                <a href="#projects" className="hover:text-primary transition-colors">
-                  Projetos
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-primary transition-colors">
-                  Contato
+                <a
+                  href="https://www.instagram.com/beckmans.engenharia/"
+                  target="_blank" rel="noreferrer"
+                  className="flex items-center gap-2 hover:text-accent transition"
+                >
+                  <Instagram className="h-4 w-4 text-accent" /> @beckmans.engenharia
                 </a>
               </li>
             </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-4">Redes Sociais</h3>
-            <div className="flex space-x-4">
-              <a
-                href="https://www.instagram.com/beckmans.engenharia/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="mailto:contato@beckmans.eng.br"
-                className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <Mail className="h-5 w-5" />
-              </a>
-            </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Beckmans Engenharia. Todos os direitos reservados.
-            </p>
-            <div className="flex space-x-6 text-sm text-muted-foreground">
-              <a href="#" className="hover:text-primary transition-colors">
-                Política de Privacidade
-              </a>
-              <a href="#" className="hover:text-primary transition-colors">
-                Termos de Uso
-              </a>
-            </div>
-          </div>
+        <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+          <p>© {new Date().getFullYear()} Beckmans Engenharia. Todos os direitos reservados.</p>
+          <p>CREA · Responsabilidade Técnica</p>
         </div>
       </div>
     </footer>

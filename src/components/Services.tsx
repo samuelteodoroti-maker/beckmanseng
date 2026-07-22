@@ -1,92 +1,89 @@
-import { Building2, ClipboardCheck, FileText, Lightbulb } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import serviceEstrutural from "@/assets/service-estrutural.jpg";
-import serviceGerenciamento from "@/assets/service-gerenciamento.jpg";
-import serviceConsultoria from "@/assets/service-consultoria.jpg";
+import { Search, ClipboardCheck, Building2, Lightbulb, ArrowUpRight, HardHat, FileCheck2, Ruler } from "lucide-react";
 
-const services = [
+const items = [
   {
-    icon: Building2,
-    title: "Projetos Estruturais",
-    description: "Desenvolvimento completo de projetos estruturais com tecnologia BIM e análise avançada.",
-    image: serviceEstrutural,
-    features: ["Cálculo Estrutural", "Projetos em BIM", "Laudos Técnicos"],
+    icon: Search,
+    title: "Vistorias",
+    desc: "Análise técnica completa de imóveis, obras e estruturas com laudos detalhados.",
+    tag: "Precisão técnica",
+    span: "md:col-span-2 md:row-span-2",
+    accent: true,
   },
   {
     icon: ClipboardCheck,
-    title: "Gerenciamento de Obras",
-    description: "Acompanhamento técnico e gestão completa para garantir qualidade e prazo.",
-    image: serviceGerenciamento,
-    features: ["Cronograma Físico-Financeiro", "Controle de Qualidade", "Gestão de Equipes"],
+    title: "Inspeções",
+    desc: "Inspeções periódicas de segurança, prediais e industriais conforme NBR.",
+    tag: "NBR 16.747",
+  },
+  {
+    icon: Building2,
+    title: "Construções & Reformas",
+    desc: "Execução completa de obras residenciais, comerciais e industriais.",
+    tag: "Obra pronta",
   },
   {
     icon: Lightbulb,
-    title: "Consultoria Técnica",
-    description: "Análise especializada e soluções personalizadas para seus desafios em engenharia.",
-    image: serviceConsultoria,
-    features: ["Análise de Viabilidade", "Perícias Técnicas", "Otimização de Projetos"],
+    title: "Consultoria em Engenharia",
+    desc: "Consultoria estratégica em Engenharia Civil e Segurança do Trabalho.",
+    tag: "Eng. Civil + SST",
+    span: "md:col-span-2",
+  },
+  {
+    icon: Ruler,
+    title: "Projetos 2D e 3D",
+    desc: "Modelagem, plantas e visualização com padrão BIM.",
+    tag: "BIM",
+  },
+  {
+    icon: FileCheck2,
+    title: "Laudos Técnicos",
+    desc: "Documentação técnica assinada por responsável habilitado.",
+    tag: "ART inclusa",
   },
 ];
 
 export function Services() {
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <section id="services" className="py-24 bg-gradient-subtle">
+    <section id="services" className="relative py-24 md:py-32">
+      <div className="absolute inset-0 -z-10 mesh-bg opacity-60" />
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-4">
-            <FileText className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium text-primary">Nossos Serviços</span>
+        <div className="max-w-3xl mb-14">
+          <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-6">
+            <HardHat className="h-4 w-4 text-accent" />
+            <span className="text-sm font-medium">Áreas de atuação</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-            Soluções Completas em Engenharia
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+            Quatro pilares. <span className="text-accent">Uma engenharia inteira.</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Do planejamento à execução, oferecemos serviços especializados para cada etapa do seu projeto
+          <p className="text-lg text-muted-foreground">
+            Da primeira vistoria à entrega da obra, cobrimos cada etapa com metodologia própria e tecnologia de ponta.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card
-              key={index}
-              className="overflow-hidden hover-lift hover-glow group animate-scale-in"
-              style={{ animationDelay: `${index * 100}ms` }}
+        <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[220px] gap-4 md:gap-6">
+          {items.map((it, idx) => (
+            <article
+              key={idx}
+              className={`group relative overflow-hidden rounded-3xl glass p-6 md:p-8 hover-lift transition-all hover:border-accent/40 ${
+                it.span ?? ""
+              } ${it.accent ? "bg-gradient-to-br from-primary to-primary/70 text-primary-foreground border-transparent" : ""}`}
             >
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent" />
-                <div className="absolute bottom-4 left-4">
-                  <div className="w-12 h-12 bg-gradient-hero rounded-lg flex items-center justify-center shadow-elegant">
-                    <service.icon className="h-6 w-6 text-primary-foreground" />
+              <div className="flex flex-col h-full justify-between">
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${it.accent ? "bg-accent text-accent-foreground" : "bg-accent/15 text-accent"}`}>
+                  <it.icon className="h-7 w-7" />
+                </div>
+                <div>
+                  <div className={`text-xs uppercase tracking-widest mb-2 ${it.accent ? "text-accent-foreground/70" : "text-muted-foreground"}`}>
+                    {it.tag}
                   </div>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-2">{it.title}</h3>
+                  <p className={`text-sm md:text-base ${it.accent ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                    {it.desc}
+                  </p>
                 </div>
               </div>
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground mb-4">{service.description}</p>
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Button variant="outline" className="w-full" onClick={scrollToContact}>
-                  Solicitar Orçamento
-                </Button>
-              </CardContent>
-            </Card>
+              <ArrowUpRight className={`absolute top-6 right-6 h-5 w-5 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all ${it.accent ? "text-accent" : "text-accent"}`} />
+            </article>
           ))}
         </div>
       </div>
