@@ -8,15 +8,13 @@ export function Contact() {
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-accent/20 blur-[120px] -z-10" />
 
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-3xl mx-auto space-y-10 text-center">
+        <div className="max-w-3xl mx-auto space-y-10 text-center reveal">
           <div>
-              <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-6">
-                <span className="text-sm font-medium">Entre em contato</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] mb-4">
+            <div className="section-chip mb-6">Entre em contato</div>
+            <h2 className="text-h2 font-bold mb-4">
                 Vamos tirar seu projeto <span className="text-accent">do papel.</span>
               </h2>
-              <p className="text-muted-foreground text-lg">
+            <p className="text-lead text-muted-foreground">
               Fale conosco pelo canal que preferir e receba um orçamento personalizado em até 24h.
             </p>
           </div>
