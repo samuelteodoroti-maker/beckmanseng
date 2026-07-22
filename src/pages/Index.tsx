@@ -6,8 +6,11 @@ import { Projects } from "@/components/Projects";
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { FloatingCTA } from "@/components/FloatingCTA";
+import { useReveal } from "@/hooks/use-reveal";
 
 const Index = () => {
+  useReveal();
   return (
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <div className="min-h-screen">
@@ -18,6 +21,7 @@ const Index = () => {
         <About />
         <Contact />
         <Footer />
+        <FloatingCTA />
       </div>
     </ThemeProvider>
   );

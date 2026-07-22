@@ -19,21 +19,21 @@ export function Hero() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-8 animate-fade-in">
-            <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2">
-              <Sparkles className="h-4 w-4 text-accent" />
-              <span className="text-sm font-medium">Engenharia Civil & Segurança do Trabalho</span>
+            <div className="section-chip">
+              <Sparkles className="h-4 w-4" />
+              Engenharia Civil & Segurança do Trabalho
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
+            <h1 className="text-display font-bold">
               Inovação é o caminho.{" "}
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-accent via-accent to-primary bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
                   Qualidade é a certeza.
                 </span>
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+            <p className="text-lead text-muted-foreground max-w-2xl">
               Transformamos ideias em projetos com excelência. Vistorias, inspeções, construções e consultoria
               — tudo com o rigor técnico que sua obra merece.
             </p>

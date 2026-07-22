@@ -8,89 +8,92 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 217 60% 15%;
+    --background: 210 40% 99%;
+    --foreground: 217 60% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 217 60% 15%;
+    --card-foreground: 217 60% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 217 60% 15%;
+    --popover-foreground: 217 60% 12%;
 
     --primary: 217 71% 21%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 30% 92%;
-    --secondary-foreground: 217 60% 15%;
+    --secondary-foreground: 217 60% 12%;
 
     --muted: 210 30% 94%;
-    --muted-foreground: 217 15% 45%;
+    --muted-foreground: 217 18% 38%;
 
-    --accent: 158 48% 55%;
-    --accent-foreground: 217 71% 15%;
+    --accent: 158 52% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 217 30% 88%;
-    --input: 217 30% 88%;
-    --ring: 158 48% 55%;
+    --border: 217 25% 88%;
+    --input: 217 25% 88%;
+    --ring: 158 52% 45%;
 
-    --radius: 0.75rem;
+    --radius: 0.875rem;
 
     --gradient-hero: linear-gradient(135deg, hsl(217 71% 21%) 0%, hsl(217 71% 32%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(158 48% 55%) 0%, hsl(170 55% 50%) 100%);
-    --gradient-mesh: radial-gradient(at 20% 20%, hsl(158 48% 55% / 0.15) 0px, transparent 50%), radial-gradient(at 80% 30%, hsl(217 71% 40% / 0.2) 0px, transparent 50%), radial-gradient(at 60% 80%, hsl(170 55% 50% / 0.12) 0px, transparent 50%);
-    --gradient-subtle: linear-gradient(180deg, hsl(210 40% 98%) 0%, hsl(210 30% 94%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(158 52% 45%) 0%, hsl(170 60% 42%) 100%);
+    --gradient-mesh: radial-gradient(at 20% 20%, hsl(158 52% 55% / 0.14) 0px, transparent 55%), radial-gradient(at 80% 30%, hsl(217 71% 40% / 0.18) 0px, transparent 55%), radial-gradient(at 60% 85%, hsl(170 60% 55% / 0.10) 0px, transparent 55%);
+    --gradient-subtle: linear-gradient(180deg, hsl(210 40% 99%) 0%, hsl(210 30% 95%) 100%);
 
-    --glass-bg: hsla(0, 0%, 100%, 0.6);
-    --glass-border: hsla(217, 71%, 21%, 0.08);
+    --glass-bg: hsla(0, 0%, 100%, 0.72);
+    --glass-border: hsla(217, 71%, 21%, 0.09);
 
-    --shadow-elegant: 0 10px 40px -10px hsl(217 71% 21% / 0.2);
-    --shadow-glow: 0 0 60px hsl(158 48% 55% / 0.35);
-    
+    --shadow-elegant: 0 10px 40px -12px hsl(217 71% 21% / 0.18), 0 2px 8px -2px hsl(217 71% 21% / 0.06);
+    --shadow-glow: 0 0 48px hsl(158 52% 45% / 0.35);
+    --shadow-soft: 0 1px 2px hsl(217 30% 20% / 0.04), 0 4px 16px -4px hsl(217 30% 20% / 0.06);
+
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .dark {
-    --background: 217 45% 7%;
-    --foreground: 158 30% 92%;
+    --background: 217 45% 6%;
+    --foreground: 158 20% 95%;
 
-    --card: 217 40% 11%;
-    --card-foreground: 158 30% 92%;
+    --card: 217 40% 10%;
+    --card-foreground: 158 20% 95%;
 
-    --popover: 217 40% 11%;
-    --popover-foreground: 158 30% 92%;
+    --popover: 217 40% 10%;
+    --popover-foreground: 158 20% 95%;
 
-    --primary: 158 48% 55%;
-    --primary-foreground: 217 71% 12%;
+    --primary: 158 55% 55%;
+    --primary-foreground: 217 71% 10%;
 
-    --secondary: 217 30% 18%;
-    --secondary-foreground: 158 30% 92%;
+    --secondary: 217 30% 16%;
+    --secondary-foreground: 158 20% 95%;
 
-    --muted: 217 30% 15%;
-    --muted-foreground: 217 15% 65%;
+    --muted: 217 30% 13%;
+    --muted-foreground: 217 15% 72%;
 
-    --accent: 158 48% 55%;
-    --accent-foreground: 217 71% 12%;
+    --accent: 158 55% 55%;
+    --accent-foreground: 217 71% 10%;
 
     --destructive: 0 63% 45%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 30% 20%;
-    --input: 217 30% 20%;
-    --ring: 158 48% 55%;
+    --border: 217 30% 18%;
+    --input: 217 30% 18%;
+    --ring: 158 55% 55%;
 
     --gradient-hero: linear-gradient(135deg, hsl(217 71% 15%) 0%, hsl(217 60% 25%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(158 48% 55%) 0%, hsl(170 55% 50%) 100%);
-    --gradient-mesh: radial-gradient(at 20% 20%, hsl(158 48% 55% / 0.18) 0px, transparent 50%), radial-gradient(at 80% 30%, hsl(217 71% 40% / 0.28) 0px, transparent 50%), radial-gradient(at 60% 80%, hsl(170 55% 50% / 0.15) 0px, transparent 50%);
-    --gradient-subtle: linear-gradient(180deg, hsl(217 45% 7%) 0%, hsl(217 40% 11%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(158 55% 55%) 0%, hsl(170 60% 50%) 100%);
+    --gradient-mesh: radial-gradient(at 20% 20%, hsl(158 55% 45% / 0.20) 0px, transparent 55%), radial-gradient(at 80% 30%, hsl(217 71% 40% / 0.28) 0px, transparent 55%), radial-gradient(at 60% 85%, hsl(170 60% 45% / 0.14) 0px, transparent 55%);
+    --gradient-subtle: linear-gradient(180deg, hsl(217 45% 6%) 0%, hsl(217 40% 10%) 100%);
 
-    --glass-bg: hsla(217, 40%, 14%, 0.55);
-    --glass-border: hsla(158, 48%, 55%, 0.15);
+    --glass-bg: hsla(217, 40%, 12%, 0.65);
+    --glass-border: hsla(158, 55%, 55%, 0.14);
 
-    --shadow-elegant: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
-    --shadow-glow: 0 0 60px hsl(158 48% 55% / 0.4);
+    --shadow-elegant: 0 12px 40px -12px hsl(0 0% 0% / 0.55), 0 2px 8px hsl(0 0% 0% / 0.25);
+    --shadow-glow: 0 0 48px hsl(158 55% 55% / 0.4);
+    --shadow-soft: 0 1px 2px hsl(0 0% 0% / 0.3), 0 4px 16px -4px hsl(0 0% 0% / 0.4);
   }
 }
 
@@ -99,26 +102,66 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
   body {
-    @apply bg-background text-foreground font-['Inter'];
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "ss01", "cv11";
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-['Poppins'];
+    @apply font-display tracking-tight;
+    letter-spacing: -0.02em;
   }
-  
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background rounded-md;
+  }
+
+  ::selection {
+    background: hsl(var(--accent) / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  /* Fluid typography */
+  .text-display {
+    font-size: clamp(2.5rem, 5.5vw + 1rem, 5rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+  .text-h2 {
+    font-size: clamp(2rem, 3.5vw + 0.75rem, 3.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+  .text-lead {
+    font-size: clamp(1.05rem, 0.6vw + 0.9rem, 1.25rem);
+    line-height: 1.6;
+  }
+
   .hover-lift {
-    @apply transition-transform duration-300 hover:-translate-y-1;
+    transition: transform 0.35s var(--ease-out-quart), box-shadow 0.35s var(--ease-out-quart);
   }
-  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elegant);
+  }
+
   .hover-glow {
     @apply transition-shadow duration-300 hover:shadow-glow;
   }
 
   .glass {
     background: var(--glass-bg);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
     border: 1px solid var(--glass-border);
   }
 
@@ -131,6 +174,25 @@ All colors MUST be HSL.
       linear-gradient(hsl(var(--foreground) / 0.06) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--foreground) / 0.06) 1px, transparent 1px);
     background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  }
+
+  /* Reveal on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s var(--ease-out-quart), transform 0.7s var(--ease-out-quart);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .section-chip {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium;
+    background: hsl(var(--accent) / 0.10);
+    color: hsl(var(--accent));
+    border: 1px solid hsl(var(--accent) / 0.25);
   }
 
   @keyframes float {
@@ -142,5 +204,10 @@ All colors MUST be HSL.
   @keyframes shimmer {
     0% { background-position: -200% 0; }
     100% { background-position: 200% 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .animate-float { animation: none !important; }
   }
 }
