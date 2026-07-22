@@ -7,11 +7,11 @@ import { useToast } from "@/hooks/use-toast";
 
 export function Contact() {
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", email: "", phone: "", service: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Olá! Meu nome é ${form.name}.%0A%0AServiço: ${form.service || "—"}%0AE-mail: ${form.email}%0ATelefone: ${form.phone}%0A%0A${form.message}`;
+    const text = `Olá! Meu nome é ${form.name}.%0A%0AE-mail: ${form.email}%0ATelefone: ${form.phone}%0A%0A${form.message}`;
     window.open(`https://wa.me/5521982234712?text=${text}`, "_blank");
     toast({ title: "Redirecionando…", description: "Continue a conversa no WhatsApp." });
   };
@@ -99,23 +99,6 @@ export function Contact() {
               <div>
                 <label className="block text-sm font-medium mb-2">E-mail *</label>
                 <Input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="h-12 bg-background/60" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Serviço de interesse</label>
-                <select
-                  value={form.service}
-                  onChange={(e) => setForm({ ...form, service: e.target.value })}
-                  className="w-full h-12 rounded-md border border-input bg-background/60 px-3 text-sm"
-                >
-                  <option value="">Selecione…</option>
-                  <option>Vistoria</option>
-                  <option>Inspeção</option>
-                  <option>Construção / Reforma</option>
-                  <option>Consultoria em Engenharia</option>
-                  <option>Consultoria em Seg. do Trabalho</option>
-                  <option>Projetos 2D e 3D</option>
-                  <option>Laudos Técnicos</option>
-                </select>
               </div>
               <div>
                 <label className="block text-sm font-medium mb-2">Sobre seu projeto *</label>
