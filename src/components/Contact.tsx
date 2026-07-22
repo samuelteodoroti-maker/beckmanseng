@@ -1,31 +1,15 @@
-import { useState } from "react";
-import { Mail, Phone, Instagram, Send, MessageCircle } from "lucide-react";
+import { Mail, Phone, Instagram, MessageCircle, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 
 export function Contact() {
-  const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
-
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const text = `Olá! Meu nome é ${form.name}.%0A%0AE-mail: ${form.email}%0ATelefone: ${form.phone}%0A%0A${form.message}`;
-    window.open(`https://wa.me/5521982234712?text=${text}`, "_blank");
-    toast({ title: "Redirecionando…", description: "Continue a conversa no WhatsApp." });
-  };
-
   return (
     <section id="contact" className="py-24 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 mesh-bg" />
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-accent/20 blur-[120px] -z-10" />
 
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
-          {/* Info */}
-          <div className="lg:col-span-2 space-y-8">
-            <div>
+        <div className="max-w-3xl mx-auto space-y-10 text-center">
+          <div>
               <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-6">
                 <span className="text-sm font-medium">Entre em contato</span>
               </div>
@@ -33,16 +17,16 @@ export function Contact() {
                 Vamos tirar seu projeto <span className="text-accent">do papel.</span>
               </h2>
               <p className="text-muted-foreground text-lg">
-                Fale conosco e receba um orçamento personalizado em até 24h.
-              </p>
-            </div>
+              Fale conosco pelo canal que preferir e receba um orçamento personalizado em até 24h.
+            </p>
+          </div>
 
-            <div className="space-y-4">
+          <div className="grid sm:grid-cols-3 gap-4 text-left">
               <a
                 href="https://wa.me/5521982234712"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-4 glass rounded-2xl p-5 hover-lift group"
+              className="flex flex-col items-start gap-3 glass rounded-2xl p-5 hover-lift group"
               >
                 <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition">
                   <Phone className="h-6 w-6" />
@@ -55,14 +39,14 @@ export function Contact() {
 
               <a
                 href="mailto:andrew@beckmanseng.com"
-                className="flex items-center gap-4 glass rounded-2xl p-5 hover-lift group"
+              className="flex flex-col items-start gap-3 glass rounded-2xl p-5 hover-lift group"
               >
                 <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition">
                   <Mail className="h-6 w-6" />
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-widest text-muted-foreground">E-mail</div>
-                  <div className="font-semibold">andrew@beckmanseng.com</div>
+                <div className="font-semibold break-all">andrew@beckmanseng.com</div>
                 </div>
               </a>
 
@@ -70,7 +54,7 @@ export function Contact() {
                 href="https://www.instagram.com/beckmans.engenharia/"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-4 glass rounded-2xl p-5 hover-lift group"
+              className="flex flex-col items-start gap-3 glass rounded-2xl p-5 hover-lift group"
               >
                 <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition">
                   <Instagram className="h-6 w-6" />
@@ -80,40 +64,24 @@ export function Contact() {
                   <div className="font-semibold">@beckmans.engenharia</div>
                 </div>
               </a>
-            </div>
           </div>
 
-          {/* Form */}
-          <div className="lg:col-span-3">
-            <form onSubmit={submit} className="glass rounded-3xl p-6 md:p-10 space-y-5 shadow-elegant">
-              <div className="grid md:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-sm font-medium mb-2">Nome completo *</label>
-                  <Input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="h-12 bg-background/60" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Telefone *</label>
-                  <Input required placeholder="(00) 00000-0000" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="h-12 bg-background/60" />
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">E-mail *</label>
-                <Input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="h-12 bg-background/60" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Sobre seu projeto *</label>
-                <Textarea required rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="bg-background/60" />
-              </div>
-              <Button type="submit" variant="accent" size="lg" className="w-full rounded-full h-14 text-base group shadow-glow">
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Enviar via WhatsApp
-                <Send className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <p className="text-xs text-muted-foreground text-center">
-                Ao enviar, você concorda em ser contatado pela equipe Beckmans.
-              </p>
-            </form>
-          </div>
+          <Button
+            asChild
+            variant="accent"
+            size="lg"
+            className="rounded-full h-14 px-10 text-base group shadow-glow"
+          >
+            <a
+              href="https://wa.me/5521982234712?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento."
+              target="_blank"
+              rel="noreferrer"
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Falar no WhatsApp
+              <Send className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </a>
+          </Button>
         </div>
       </div>
     </section>
