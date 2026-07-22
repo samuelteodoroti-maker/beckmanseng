@@ -15,17 +15,17 @@ export function Projects() {
   return (
     <section id="projects" className="py-24 md:py-32 relative">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 reveal">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-6">
+            <div className="section-chip mb-6">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-sm font-medium">Portfólio</span>
+              Portfólio
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+            <h2 className="text-h2 font-bold">
               Projetos que <span className="text-accent">falam por si.</span>
             </h2>
           </div>
-          <p className="text-muted-foreground max-w-md">
+          <p className="text-muted-foreground max-w-md text-base leading-relaxed">
             Uma seleção de obras, inspeções e projetos entregues com o padrão Beckmans de excelência.
           </p>
         </div>
@@ -34,9 +34,10 @@ export function Projects() {
           {projects.map((p, i) => (
             <article
               key={i}
-              className={`group relative overflow-hidden rounded-3xl aspect-[4/3] md:aspect-auto ${
+              className={`group relative overflow-hidden rounded-3xl aspect-[4/3] md:aspect-auto reveal ${
                 i === 0 ? "md:col-span-4 md:row-span-2 md:aspect-[16/10]" : "md:col-span-2 md:aspect-[4/3]"
               }`}
+              style={{ transitionDelay: `${i * 80}ms` }}
             >
               <img
                 src={p.img}
