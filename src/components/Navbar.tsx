@@ -85,7 +85,11 @@ export function Navbar() {
             <div className="mx-2 h-6 w-px bg-border" />
             <ThemeToggle />
             <Button variant="accent" asChild className="ml-2 rounded-full">
-              <a href="https://wa.me/5521982234712" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Solicitar Orçamento
               </a>
             </Button>
@@ -111,7 +115,11 @@ export function Navbar() {
               </button>
             ))}
             <Button variant="accent" className="w-full mt-2 rounded-full" asChild>
-              <a href="https://wa.me/5521982234712" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Vim%20pelo%20site%20(menu%20mobile)%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Solicitar Orçamento
               </a>
             </Button>
