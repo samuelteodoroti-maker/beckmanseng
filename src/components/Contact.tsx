@@ -1,4 +1,4 @@
-import { Mail, Phone, Instagram, Linkedin, MessageCircle, Send } from "lucide-react";
+import { Mail, Phone, Instagram, Linkedin, MessageCircle, Send, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Contact() {
@@ -10,13 +10,23 @@ export function Contact() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto space-y-8 sm:space-y-10 text-center reveal">
           <div>
-            <div className="section-chip mb-6">Entre em contato</div>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <span className="section-index">05 —</span>
+              <div className="section-chip">Entre em contato</div>
+            </div>
             <h2 className="text-h2 font-bold mb-4">
                 Vamos tirar seu projeto <span className="text-accent">do papel.</span>
               </h2>
             <p className="text-lead text-muted-foreground">
               Fale conosco pelo canal que preferir e receba um orçamento personalizado em até 24h.
             </p>
+            <div className="mt-4 inline-flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
+              </span>
+              Disponível agora · Resposta em até 24h
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left reveal">
@@ -79,23 +89,36 @@ export function Contact() {
               </a>
           </div>
 
-          <Button
-            asChild
-            variant="accent"
-            size="lg"
-            className="rounded-full h-14 px-6 sm:px-10 text-base group shadow-glow w-full sm:w-auto"
-          >
-            <a
-              href="https://wa.me/5521982234712?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento."
-              target="_blank"
-              rel="noreferrer"
-              className="justify-center"
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:justify-center">
+            <Button
+              asChild
+              variant="accent"
+              size="lg"
+              className="rounded-full h-14 px-6 sm:px-10 text-base group shadow-glow w-full sm:w-auto"
             >
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Falar no WhatsApp
-              <Send className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </a>
-          </Button>
+              <a
+                href="https://wa.me/5521982234712?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento."
+                target="_blank"
+                rel="noreferrer"
+                className="justify-center"
+              >
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Falar no WhatsApp
+                <Send className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="rounded-full h-14 px-6 sm:px-10 text-base glass border-primary/20 w-full sm:w-auto"
+            >
+              <a href="mailto:andrew@beckmanseng.com" className="justify-center">
+                <Mail className="mr-2 h-5 w-5" />
+                Enviar e-mail
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
