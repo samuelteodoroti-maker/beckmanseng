@@ -75,7 +75,7 @@ export function Hero() {
             {/* Trust badges */}
             <div className="flex flex-wrap gap-6 pt-6">
               {[
-                { icon: ShieldCheck, label: "Desde 2009", sub: "Experiência comprovada" },
+                { icon: ShieldCheck, label: "Fundada em 2024", sub: "Rio de Janeiro, RJ" },
                 { icon: Zap, label: "Projetos 2D e 3D", sub: "Tecnologia BIM" },
                 { icon: Sparkles, label: "CREA Ativo", sub: "Responsabilidade técnica" },
               ].map((b, i) => (
