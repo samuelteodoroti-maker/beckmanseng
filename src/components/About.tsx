@@ -1,5 +1,10 @@
 import { CheckCircle2, Target, Eye, Shield } from "lucide-react";
 
+// 🔁 PLACEHOLDER — Substitua pela foto oficial do engenheiro / canteiro de obras.
+// Fonte atual: Unsplash (tema: engineer on site)
+const ABOUT_IMAGE =
+  "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1400&q=80";
+
 const pillars = [
   { icon: Target, title: "Missão", text: "Transformar ideias em projetos de engenharia com excelência técnica." },
   { icon: Eye, title: "Visão", text: "Ser referência em inovação e qualidade em engenharia civil e segurança." },
@@ -24,6 +29,19 @@ export function About() {
           <div className="space-y-8 reveal">
             <div className="section-chip">
               Sobre a Beckmans
+            </div>
+            {/* 🔁 PLACEHOLDER — Imagem de autoridade (troque ABOUT_IMAGE acima) */}
+            <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[16/10]">
+              <img
+                src={ABOUT_IMAGE}
+                alt="Engenheiro Beckmans em canteiro de obras"
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
+              <div className="absolute bottom-4 left-4 glass rounded-2xl px-4 py-2 text-sm font-medium">
+                Engenharia com assinatura técnica
+              </div>
             </div>
             <h2 className="text-h2 font-bold">
               Empreendedorismo, engenharia e{" "}
