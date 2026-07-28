@@ -12,7 +12,7 @@ export function Hero() {
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+    <section id="home" className="relative min-h-dvh flex items-center pt-28 pb-20 overflow-hidden">
       {/* 🔁 PLACEHOLDER — Imagem de fundo full-width (troque HERO_BG_IMAGE acima) */}
       <div className="absolute inset-0 -z-10">
         <img
