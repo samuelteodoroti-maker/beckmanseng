@@ -77,8 +77,10 @@ export function Navbar() {
             ))}
             <div className="mx-2 h-6 w-px bg-border" />
             <ThemeToggle />
-            <Button variant="accent" onClick={() => scrollToSection("contact")} className="ml-2 rounded-full">
-              Solicitar Orçamento
+            <Button variant="accent" asChild className="ml-2 rounded-full">
+              <a href="https://wa.me/5521982234712" target="_blank" rel="noopener noreferrer">
+                Solicitar Orçamento
+              </a>
             </Button>
           </div>
 
@@ -101,8 +103,10 @@ export function Navbar() {
                 {l.label}
               </button>
             ))}
-            <Button variant="accent" className="w-full mt-2 rounded-full" onClick={() => scrollToSection("contact")}>
-              Solicitar Orçamento
+            <Button variant="accent" className="w-full mt-2 rounded-full" asChild>
+              <a href="https://wa.me/5521982234712" target="_blank" rel="noopener noreferrer">
+                Solicitar Orçamento
+              </a>
             </Button>
           </div>
         )}
