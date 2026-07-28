@@ -1,38 +1,38 @@
-import { Search, ClipboardCheck, Building2, Lightbulb, ArrowUpRight, HardHat, FileCheck2, Ruler } from "lucide-react";
+import { Search, ShieldCheck, Building2, Lightbulb, ArrowUpRight, HardHat, FileCheck2, Ruler } from "lucide-react";
 
 const items = [
   {
-    icon: Search,
-    title: "Vistorias",
-    desc: "Análise técnica completa de imóveis, obras e estruturas com laudos detalhados.",
-    tag: "Precisão técnica",
+    icon: Lightbulb,
+    title: "Consultoria em Engenharia",
+    desc: "Consultoria estratégica em engenharia civil para viabilizar e otimizar seu projeto.",
+    tag: "Estratégia técnica",
     span: "md:col-span-2 md:row-span-2",
     accent: true,
   },
   {
-    icon: ClipboardCheck,
-    title: "Inspeções",
-    desc: "Inspeções periódicas de segurança, prediais e industriais conforme NBR.",
-    tag: "NBR 16.747",
+    icon: ShieldCheck,
+    title: "Consultoria em Segurança do Trabalho",
+    desc: "Programas, laudos e assessoria em SST conforme as Normas Regulamentadoras.",
+    tag: "NRs & SST",
   },
   {
     icon: Building2,
-    title: "Construções & Reformas",
+    title: "Reforma e Construções",
     desc: "Execução completa de obras residenciais, comerciais e industriais.",
     tag: "Obra pronta",
-  },
-  {
-    icon: Lightbulb,
-    title: "Consultoria em Engenharia",
-    desc: "Consultoria estratégica em Engenharia Civil e Segurança do Trabalho.",
-    tag: "Eng. Civil + SST",
-    span: "md:col-span-2",
   },
   {
     icon: Ruler,
     title: "Projetos 2D e 3D",
     desc: "Modelagem, plantas e visualização com padrão BIM.",
     tag: "BIM",
+    span: "md:col-span-2",
+  },
+  {
+    icon: Search,
+    title: "Vistorias",
+    desc: "Análise técnica completa de imóveis, obras e estruturas.",
+    tag: "Precisão técnica",
   },
   {
     icon: FileCheck2,
@@ -53,7 +53,7 @@ export function Services() {
             Áreas de atuação
           </div>
           <h2 className="text-h2 font-bold mb-4">
-            Quatro pilares. <span className="text-accent">Uma engenharia inteira.</span>
+            Seis frentes. <span className="text-accent">Uma engenharia inteira.</span>
           </h2>
           <p className="text-lead text-muted-foreground">
             Da primeira vistoria à entrega da obra, cobrimos cada etapa com metodologia própria e tecnologia de ponta.
