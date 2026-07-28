@@ -12,10 +12,10 @@ const pillars = [
 ];
 
 const checks = [
-  "Atuação desde 2009 no mercado industrial",
-  "Equipe multidisciplinar com engenheiros habilitados",
-  "Foco em ambientes industriais mais seguros",
-  "Metodologia própria com tecnologia BIM",
+  "Fundada em 2024 no Rio de Janeiro, RJ",
+  "Gestão de Andrew Matheus da Silva Beckman",
+  "Engenheiro civil e gestor de projetos/obras",
+  "Atuação no Grande Rio de Janeiro",
   "ART e responsabilidade técnica em todos os projetos",
   "Atendimento consultivo e personalizado",
 ];
@@ -48,8 +48,9 @@ export function About() {
               <span className="text-accent">segurança</span> em um só lugar.
             </h2>
             <p className="text-lead text-muted-foreground">
-              Somos liderados por engenheiro civil e de segurança do trabalho, com atuação no setor industrial
-              desde 2009. Cada projeto é conduzido com rigor técnico e uma obsessão por ambientes mais seguros.
+              A Beckmans Engenharia foi fundada em 4 de junho de 2024 no Rio de Janeiro, RJ, sob a gestão de
+              Andrew Matheus da Silva Beckman, engenheiro civil e gestor de projetos/obras. Atuamos no Grande Rio
+              com rigor técnico e compromisso por ambientes mais seguros.
             </p>
             <div className="grid sm:grid-cols-2 gap-3">
               {checks.map((c, i) => (

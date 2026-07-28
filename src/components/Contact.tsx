@@ -1,4 +1,4 @@
-import { Mail, Phone, Instagram, MessageCircle, Send } from "lucide-react";
+import { Mail, Phone, Instagram, Linkedin, MessageCircle, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Contact() {
@@ -19,7 +19,7 @@ export function Contact() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-4 text-left reveal">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left reveal">
               <a
                 href="https://wa.me/5521982234712"
                 target="_blank"
@@ -60,6 +60,21 @@ export function Contact() {
                 <div>
                   <div className="text-xs uppercase tracking-widest text-muted-foreground">Instagram</div>
                   <div className="font-semibold">@beckmans.engenharia</div>
+                </div>
+              </a>
+
+              <a
+                href="https://br.linkedin.com/company/beckmans-engenharia"
+                target="_blank"
+                rel="noreferrer"
+              className="flex flex-col items-start gap-3 glass rounded-2xl p-5 hover-lift group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition">
+                  <Linkedin className="h-6 w-6" />
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-widest text-muted-foreground">LinkedIn</div>
+                  <div className="font-semibold">Beckmans Engenharia</div>
                 </div>
               </a>
           </div>

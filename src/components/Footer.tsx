@@ -1,4 +1,4 @@
-import { Instagram, Mail, Phone } from "lucide-react";
+import { Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import logo from "@/assets/beckmans-logo.png.asset.json";
 
 export function Footer() {
@@ -38,12 +38,21 @@ export function Footer() {
                   <Instagram className="h-4 w-4 text-accent" /> @beckmans.engenharia
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://br.linkedin.com/company/beckmans-engenharia"
+                  target="_blank" rel="noreferrer"
+                  className="flex items-center gap-2 hover:text-accent transition"
+                >
+                  <Linkedin className="h-4 w-4 text-accent" /> Beckmans Engenharia
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Beckmans Engenharia. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Beckmans Engenharia · CNPJ 55.391.051/0001-83 · Todos os direitos reservados.</p>
           <p>CREA · Responsabilidade Técnica</p>
         </div>
       </div>
