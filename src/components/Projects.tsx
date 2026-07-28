@@ -61,7 +61,7 @@ export function Projects() {
         </div>
 
         {/* Bento Grid — 6 placeholders (troque cada `img` acima pela foto oficial) */}
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-6 auto-rows-[220px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 md:gap-6 auto-rows-[240px] sm:auto-rows-[220px]">
           {projects.map((p, i) => (
             <article
               key={i}
@@ -81,14 +81,14 @@ export function Projects() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent" />
-              <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end text-primary-foreground">
+              <div className="absolute inset-0 p-5 sm:p-6 md:p-8 flex flex-col justify-end text-primary-foreground">
                 <div className="glass inline-flex self-start rounded-full px-3 py-1 mb-3 text-xs font-medium text-foreground">
                   {p.tag}
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold mb-1">{p.title}</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 leading-tight">{p.title}</h3>
                 <p className="text-sm text-primary-foreground/80">{p.meta}</p>
               </div>
-              <div className="absolute top-6 right-6 w-11 h-11 rounded-full glass flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 sm:w-11 sm:h-11 rounded-full glass flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <ArrowUpRight className="h-5 w-5 text-accent" />
               </div>
             </article>
