@@ -31,7 +31,7 @@ export function Contact() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left reveal">
               <a
-                href="https://wa.me/5521982234712"
+                href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Encontrei%20o%20contato%20de%20voc%C3%AAs%20pelo%20site%20e%20gostaria%20de%20conversar."
                 target="_blank"
                 rel="noreferrer"
               className="flex flex-col items-start gap-3 glass rounded-2xl p-5 hover-lift group"
@@ -97,7 +97,7 @@ export function Contact() {
               className="rounded-full h-14 px-6 sm:px-10 text-base group shadow-glow w-full sm:w-auto"
             >
               <a
-                href="https://wa.me/5521982234712?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento."
+                href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Quero%20conversar%20sobre%20um%20projeto%20de%20engenharia%20e%20receber%20um%20or%C3%A7amento%20personalizado."
                 target="_blank"
                 rel="noreferrer"
                 className="justify-center"
