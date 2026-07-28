@@ -30,19 +30,6 @@ export function About() {
             <div className="section-chip">
               Sobre a Beckmans
             </div>
-            {/* 🔁 PLACEHOLDER — Imagem de autoridade (troque ABOUT_IMAGE acima) */}
-            <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[16/10]">
-              <img
-                src={ABOUT_IMAGE}
-                alt="Engenheiro Beckmans em canteiro de obras"
-                loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
-              <div className="absolute bottom-4 left-4 glass rounded-2xl px-4 py-2 text-sm font-medium">
-                Engenharia com assinatura técnica
-              </div>
-            </div>
             <h2 className="text-h2 font-bold">
               Empreendedorismo, engenharia e{" "}
               <span className="text-accent">segurança</span> em um só lugar.
@@ -52,6 +39,19 @@ export function About() {
               Andrew Matheus da Silva Beckman, engenheiro civil e gestor de projetos/obras. Atuamos no Grande Rio
               com rigor técnico e compromisso por ambientes mais seguros.
             </p>
+            {/* 🔁 PLACEHOLDER — Imagem de autoridade (troque ABOUT_IMAGE acima) */}
+            <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[16/10]">
+              <img
+                src={ABOUT_IMAGE}
+                alt="Engenheiro Beckmans em canteiro de obras"
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
+              <div className="absolute bottom-4 left-4 glass rounded-2xl px-4 py-2 text-sm font-medium">
+                Engenharia com assinatura técnica
+              </div>
+            </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {checks.map((c, i) => (
                 <div key={i} className="flex items-start gap-3 text-foreground/90">
@@ -62,7 +62,7 @@ export function About() {
             </div>
           </div>
 
-          <div className="grid gap-4">
+          <div className="grid gap-4 lg:sticky lg:top-28">
             {pillars.map((p, i) => (
               <div
                 key={i}
