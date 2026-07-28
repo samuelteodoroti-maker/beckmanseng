@@ -48,9 +48,12 @@ export function Services() {
       <div className="absolute inset-0 -z-10 mesh-bg opacity-60" />
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mb-14 reveal">
-          <div className="section-chip mb-6">
-            <HardHat className="h-4 w-4" />
-            Áreas de atuação
+          <div className="flex items-center gap-3 mb-6">
+            <span className="section-index">02 —</span>
+            <div className="section-chip">
+              <HardHat className="h-4 w-4" />
+              Áreas de atuação
+            </div>
           </div>
           <h2 className="text-h2 font-bold mb-4">
             Seis frentes. <span className="text-accent">Uma engenharia inteira.</span>
@@ -64,14 +67,19 @@ export function Services() {
           {items.map((it, idx) => (
             <article
               key={idx}
-              className={`group relative overflow-hidden rounded-3xl glass p-5 sm:p-6 md:p-8 hover-lift reveal transition-colors hover:border-accent/40 ${
+              className={`group relative overflow-hidden rounded-3xl glass card-ring p-5 sm:p-6 md:p-8 hover-lift reveal transition-colors hover:border-accent/40 ${
                 it.span ?? ""
               } ${it.accent ? "bg-gradient-to-br from-primary to-primary/70 text-primary-foreground border-transparent" : ""}`}
               style={{ transitionDelay: `${idx * 60}ms` }}
             >
               <div className="flex flex-col h-full justify-between gap-6">
-                <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center ${it.accent ? "bg-accent text-accent-foreground" : "bg-accent/15 text-accent"}`}>
-                  <it.icon className="h-6 w-6 sm:h-7 sm:w-7" />
+                <div className="flex items-center justify-between">
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 ${it.accent ? "bg-accent text-accent-foreground" : "bg-accent/15 text-accent"}`}>
+                    <it.icon className="h-6 w-6 sm:h-7 sm:w-7" />
+                  </div>
+                  <span className={`font-mono text-xs tracking-widest tabular-nums ${it.accent ? "text-accent-foreground/60" : "text-muted-foreground/60"}`}>
+                    0{idx + 1}
+                  </span>
                 </div>
                 <div>
                   <div className={`text-xs uppercase tracking-widest mb-2 ${it.accent ? "text-accent-foreground/70" : "text-muted-foreground"}`}>
