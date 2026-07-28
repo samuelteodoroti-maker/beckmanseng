@@ -27,8 +27,9 @@ export function About() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-20 items-start">
           <div className="space-y-6 sm:space-y-8 reveal">
-            <div className="section-chip">
-              Sobre a Beckmans
+            <div className="flex items-center gap-3">
+              <span className="section-index">04 —</span>
+              <div className="section-chip">Sobre a Beckmans</div>
             </div>
             <h2 className="text-h2 font-bold">
               Empreendedorismo, engenharia e{" "}
@@ -39,6 +40,19 @@ export function About() {
               Andrew Matheus da Silva Beckman, engenheiro civil e gestor de projetos/obras. Atuamos no Grande Rio
               com rigor técnico e compromisso por ambientes mais seguros.
             </p>
+            {/* Quick stats */}
+            <div className="grid grid-cols-3 gap-3 sm:gap-4">
+              {[
+                { n: "2024", l: "Fundação" },
+                { n: "+120", l: "Projetos" },
+                { n: "98%", l: "Satisfação" },
+              ].map((s, i) => (
+                <div key={i} className="glass rounded-2xl px-3 py-4 sm:p-5 text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-accent tabular-nums">{s.n}</div>
+                  <div className="text-[11px] sm:text-xs uppercase tracking-widest text-muted-foreground mt-1">{s.l}</div>
+                </div>
+              ))}
+            </div>
             {/* 🔁 PLACEHOLDER — Imagem de autoridade (troque ABOUT_IMAGE acima) */}
             <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[4/3] sm:aspect-[16/10]">
               <img

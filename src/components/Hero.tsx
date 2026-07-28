@@ -35,6 +35,7 @@ export function Hero() {
               <Sparkles className="h-4 w-4" />
               Engenharia Civil & Segurança do Trabalho
             </div>
+            <div className="section-index text-white/60 -mt-4">01 — Beckmans Engenharia</div>
 
             <h1 className="text-display font-bold text-white drop-shadow-lg">
               Inovação é o caminho.{" "}

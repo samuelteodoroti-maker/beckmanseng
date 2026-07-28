@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Instagram, Linkedin, Mail, Phone, ArrowUp } from "lucide-react";
 import logo from "@/assets/beckmans-logo.png.asset.json";
 
 export function Footer() {
@@ -53,7 +53,21 @@ export function Footer() {
 
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-muted-foreground text-center md:text-left">
           <p>© {new Date().getFullYear()} Beckmans Engenharia · CNPJ 55.391.051/0001-83 · Todos os direitos reservados.</p>
-          <p>CREA · Responsabilidade Técnica</p>
+          <div className="flex items-center gap-5">
+            <p>CREA · Responsabilidade Técnica</p>
+            <a
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="inline-flex items-center gap-1.5 text-accent hover:opacity-80 transition-opacity"
+              aria-label="Voltar ao topo"
+            >
+              <ArrowUp className="h-4 w-4" />
+              Voltar ao topo
+            </a>
+          </div>
         </div>
       </div>
     </footer>
