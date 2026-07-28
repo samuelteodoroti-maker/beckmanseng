@@ -7,8 +7,8 @@ export function Contact() {
       <div className="absolute inset-0 -z-10 mesh-bg" />
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-accent/20 blur-[120px] -z-10" />
 
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-3xl mx-auto space-y-10 text-center reveal">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto space-y-8 sm:space-y-10 text-center reveal">
           <div>
             <div className="section-chip mb-6">Entre em contato</div>
             <h2 className="text-h2 font-bold mb-4">
@@ -19,7 +19,7 @@ export function Contact() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left reveal">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left reveal">
               <a
                 href="https://wa.me/5521982234712"
                 target="_blank"
@@ -83,12 +83,13 @@ export function Contact() {
             asChild
             variant="accent"
             size="lg"
-            className="rounded-full h-14 px-10 text-base group shadow-glow"
+            className="rounded-full h-14 px-6 sm:px-10 text-base group shadow-glow w-full sm:w-auto"
           >
             <a
               href="https://wa.me/5521982234712?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento."
               target="_blank"
               rel="noreferrer"
+              className="justify-center"
             >
               <MessageCircle className="mr-2 h-5 w-5" />
               Falar no WhatsApp
