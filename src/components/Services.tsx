@@ -60,30 +60,30 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 auto-rows-[minmax(220px,auto)] gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 auto-rows-[minmax(200px,auto)] gap-4 md:gap-6">
           {items.map((it, idx) => (
             <article
               key={idx}
-              className={`group relative overflow-hidden rounded-3xl glass p-6 md:p-8 hover-lift reveal transition-colors hover:border-accent/40 ${
+              className={`group relative overflow-hidden rounded-3xl glass p-5 sm:p-6 md:p-8 hover-lift reveal transition-colors hover:border-accent/40 ${
                 it.span ?? ""
               } ${it.accent ? "bg-gradient-to-br from-primary to-primary/70 text-primary-foreground border-transparent" : ""}`}
               style={{ transitionDelay: `${idx * 60}ms` }}
             >
-              <div className="flex flex-col h-full justify-between">
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${it.accent ? "bg-accent text-accent-foreground" : "bg-accent/15 text-accent"}`}>
-                  <it.icon className="h-7 w-7" />
+              <div className="flex flex-col h-full justify-between gap-6">
+                <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center ${it.accent ? "bg-accent text-accent-foreground" : "bg-accent/15 text-accent"}`}>
+                  <it.icon className="h-6 w-6 sm:h-7 sm:w-7" />
                 </div>
                 <div>
                   <div className={`text-xs uppercase tracking-widest mb-2 ${it.accent ? "text-accent-foreground/70" : "text-muted-foreground"}`}>
                     {it.tag}
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-2">{it.title}</h3>
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 leading-tight">{it.title}</h3>
                   <p className={`text-sm md:text-base ${it.accent ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
                     {it.desc}
                   </p>
                 </div>
               </div>
-              <ArrowUpRight className={`absolute top-6 right-6 h-5 w-5 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all ${it.accent ? "text-accent" : "text-accent"}`} />
+              <ArrowUpRight className="absolute top-5 right-5 sm:top-6 sm:right-6 h-5 w-5 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all text-accent" />
             </article>
           ))}
         </div>

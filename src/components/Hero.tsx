@@ -12,7 +12,7 @@ export function Hero() {
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section id="home" className="relative min-h-dvh flex items-center pt-28 pb-20 overflow-hidden">
+    <section id="home" className="relative min-h-dvh flex items-center pt-24 sm:pt-28 pb-16 sm:pb-20 overflow-hidden">
       {/* 🔁 PLACEHOLDER — Imagem de fundo full-width (troque HERO_BG_IMAGE acima) */}
       <div className="absolute inset-0 -z-10">
         <img
@@ -28,9 +28,9 @@ export function Hero() {
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px]" />
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7 space-y-8 animate-fade-in">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8 animate-fade-in">
             <div className="section-chip bg-background/20 backdrop-blur">
               <Sparkles className="h-4 w-4" />
               Engenharia Civil & Segurança do Trabalho
@@ -50,12 +50,12 @@ export function Hero() {
               — tudo com o rigor técnico que sua obra merece.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button
                 variant="accent"
                 size="lg"
                 asChild
-                className="group rounded-full text-base px-8 h-14 shadow-glow"
+                className="group rounded-full text-base px-6 sm:px-8 h-14 shadow-glow w-full sm:w-auto justify-center"
               >
                 <a href="https://wa.me/5521982234712" target="_blank" rel="noopener noreferrer">
                   Solicitar Orçamento
@@ -66,14 +66,14 @@ export function Hero() {
                 variant="outline"
                 size="lg"
                 onClick={() => scrollTo("services")}
-                className="rounded-full text-base px-8 h-14 glass border-primary/20"
+                className="rounded-full text-base px-6 sm:px-8 h-14 glass border-primary/20 w-full sm:w-auto justify-center"
               >
                 Nossos Serviços
               </Button>
             </div>
 
             {/* Trust badges */}
-            <div className="flex flex-wrap gap-6 pt-6">
+            <div className="flex flex-wrap gap-4 sm:gap-6 pt-4 sm:pt-6">
               {[
                 { icon: ShieldCheck, label: "Fundada em 2024", sub: "Rio de Janeiro, RJ" },
                 { icon: Zap, label: "Projetos 2D e 3D", sub: "Tecnologia BIM" },
@@ -93,7 +93,7 @@ export function Hero() {
           </div>
 
           {/* Visual card */}
-          <div className="lg:col-span-5 relative animate-scale-in">
+          <div className="lg:col-span-5 relative animate-scale-in max-w-md mx-auto lg:max-w-none w-full">
             <div className="relative rounded-3xl overflow-hidden glass p-2 shadow-elegant">
               <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
                 {/* 🔁 PLACEHOLDER — Imagem lateral do Hero (troque HERO_SIDE_IMAGE acima) */}
@@ -104,13 +104,13 @@ export function Hero() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
                 {/* Floating stats */}
-                <div className="absolute top-4 left-4 glass rounded-2xl px-4 py-3 animate-float">
-                  <div className="text-xs text-muted-foreground">Projetos ativos</div>
-                  <div className="text-2xl font-bold text-accent">+120</div>
+                <div className="absolute top-3 left-3 sm:top-4 sm:left-4 glass rounded-2xl px-3 py-2 sm:px-4 sm:py-3 animate-float">
+                  <div className="text-[10px] sm:text-xs text-muted-foreground">Projetos ativos</div>
+                  <div className="text-xl sm:text-2xl font-bold text-accent">+120</div>
                 </div>
-                <div className="absolute bottom-4 right-4 glass rounded-2xl px-4 py-3 animate-float" style={{ animationDelay: "1s" }}>
-                  <div className="text-xs text-muted-foreground">Satisfação</div>
-                  <div className="text-2xl font-bold text-accent">98%</div>
+                <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 glass rounded-2xl px-3 py-2 sm:px-4 sm:py-3 animate-float" style={{ animationDelay: "1s" }}>
+                  <div className="text-[10px] sm:text-xs text-muted-foreground">Satisfação</div>
+                  <div className="text-xl sm:text-2xl font-bold text-accent">98%</div>
                 </div>
               </div>
             </div>

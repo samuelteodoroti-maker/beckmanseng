@@ -24,9 +24,9 @@ export function About() {
   return (
     <section id="about" className="py-24 md:py-32 relative">
       <div className="absolute inset-0 -z-10 grid-pattern opacity-30" />
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          <div className="space-y-8 reveal">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-20 items-start">
+          <div className="space-y-6 sm:space-y-8 reveal">
             <div className="section-chip">
               Sobre a Beckmans
             </div>
@@ -40,7 +40,7 @@ export function About() {
               com rigor técnico e compromisso por ambientes mais seguros.
             </p>
             {/* 🔁 PLACEHOLDER — Imagem de autoridade (troque ABOUT_IMAGE acima) */}
-            <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[16/10]">
+            <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[4/3] sm:aspect-[16/10]">
               <img
                 src={ABOUT_IMAGE}
                 alt="Engenheiro Beckmans em canteiro de obras"
@@ -48,7 +48,7 @@ export function About() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
-              <div className="absolute bottom-4 left-4 glass rounded-2xl px-4 py-2 text-sm font-medium">
+              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 glass rounded-2xl px-3 py-2 sm:px-4 text-xs sm:text-sm font-medium">
                 Engenharia com assinatura técnica
               </div>
             </div>
@@ -66,16 +66,16 @@ export function About() {
             {pillars.map((p, i) => (
               <div
                 key={i}
-                className="glass rounded-3xl p-6 md:p-8 hover-lift reveal"
+                className="glass rounded-3xl p-5 sm:p-6 md:p-8 hover-lift reveal"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-accent flex items-center justify-center shrink-0">
-                    <p.icon className="h-7 w-7 text-accent-foreground" />
+                <div className="flex items-start gap-4 sm:gap-5">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-accent flex items-center justify-center shrink-0">
+                    <p.icon className="h-6 w-6 sm:h-7 sm:w-7 text-accent-foreground" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-1">{p.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{p.text}</p>
+                  <div className="min-w-0">
+                    <h3 className="text-lg sm:text-xl font-bold mb-1">{p.title}</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{p.text}</p>
                   </div>
                 </div>
               </div>
