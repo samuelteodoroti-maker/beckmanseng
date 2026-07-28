@@ -220,3 +220,7 @@ All colors MUST be HSL.
     .animate-float { animation: none !important; }
   }
 }
+
+#lovable-badge {
+  display: none !important;
+}
