@@ -214,6 +214,33 @@ All colors MUST be HSL.
     border: 1px solid hsl(var(--accent) / 0.25);
   }
 
+  .section-index {
+    @apply font-mono text-[11px] tracking-widest text-accent/80;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Subtle gradient border for premium cards */
+  .card-ring {
+    position: relative;
+    isolation: isolate;
+  }
+  .card-ring::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(var(--accent) / 0.35), hsl(var(--accent) / 0) 45%, hsl(var(--primary) / 0.25));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s var(--ease-out-quart);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .card-ring:hover::before { opacity: 1; }
+
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-12px); }
@@ -224,6 +251,12 @@ All colors MUST be HSL.
     0% { background-position: -200% 0; }
     100% { background-position: 200% 0; }
   }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .animate-marquee { animation: marquee 40s linear infinite; }
 
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1 !important; transform: none !important; }
