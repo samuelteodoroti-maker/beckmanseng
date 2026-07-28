@@ -19,7 +19,7 @@ export function Contact() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-4 text-left">
+          <div className="grid sm:grid-cols-3 gap-4 text-left reveal">
               <a
                 href="https://wa.me/5521982234712"
                 target="_blank"

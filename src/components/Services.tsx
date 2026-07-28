@@ -60,7 +60,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[220px] gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 auto-rows-[minmax(220px,auto)] gap-4 md:gap-6">
           {items.map((it, idx) => (
             <article
               key={idx}
