@@ -8,10 +8,17 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState<string>("home");
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      setProgress(max > 0 ? (window.scrollY / max) * 100 : 0);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -111,6 +118,12 @@ export function Navbar() {
           </div>
         )}
       </div>
+      {/* Scroll progress indicator */}
+      <div
+        className="absolute left-0 bottom-0 h-0.5 bg-accent transition-[width] duration-150 ease-out"
+        style={{ width: `${progress}%` }}
+        aria-hidden="true"
+      />
     </nav>
   );
 }
