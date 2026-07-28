@@ -114,6 +114,15 @@ All colors MUST be HSL.
     font-feature-settings: "ss01", "cv11";
   }
 
+  /* Prevent anchored sections from hiding under the fixed navbar */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  /* Better default paragraph rhythm */
+  p { text-wrap: pretty; }
+  h1, h2, h3, h4 { text-wrap: balance; }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight;
     letter-spacing: -0.02em;
