@@ -16,10 +16,11 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Serviços</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#services" className="hover:text-accent transition">Vistorias</a></li>
-              <li><a href="#services" className="hover:text-accent transition">Inspeções</a></li>
-              <li><a href="#services" className="hover:text-accent transition">Construções</a></li>
-              <li><a href="#services" className="hover:text-accent transition">Consultoria</a></li>
+              <li><a href="#services" className="hover:text-accent transition">Consultoria em Engenharia</a></li>
+              <li><a href="#services" className="hover:text-accent transition">Segurança do Trabalho</a></li>
+              <li><a href="#services" className="hover:text-accent transition">Reforma e Construções</a></li>
+              <li><a href="#services" className="hover:text-accent transition">Projetos 2D e 3D</a></li>
+              <li><a href="#services" className="hover:text-accent transition">Vistorias e Laudos</a></li>
             </ul>
           </div>
 
