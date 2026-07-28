@@ -1,14 +1,44 @@
 import { ArrowUpRight } from "lucide-react";
-import p1 from "@/assets/project-1.jpg";
-import p2 from "@/assets/project-2.jpg";
-import p3 from "@/assets/project-3.jpg";
-import p4 from "@/assets/project-4.jpg";
 
+// 🔁 PLACEHOLDERS — Substitua as URLs `img` abaixo pelas fotos oficiais dos projetos.
+// Fonte atual: Unsplash (temas: architecture / building / concrete)
 const projects = [
-  { img: p1, title: "Edifício Corporativo", tag: "Construção", meta: "Estrutura metálica · 18 pav." },
-  { img: p2, title: "Inspeção Industrial", tag: "Inspeção", meta: "Galpão industrial · 8.000m²" },
-  { img: p3, title: "Modelagem BIM", tag: "Projeto 3D", meta: "Uso misto · 12 pav." },
-  { img: p4, title: "Fachada Comercial", tag: "Retrofit", meta: "Revitalização estrutural" },
+  {
+    img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
+    title: "Edifício Corporativo",
+    tag: "Construção",
+    meta: "Estrutura metálica · 18 pav.",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+    title: "Inspeção Industrial",
+    tag: "Inspeção",
+    meta: "Galpão industrial · 8.000m²",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=80",
+    title: "Modelagem BIM",
+    tag: "Projeto 3D",
+    meta: "Uso misto · 12 pav.",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1503387837-b154d5074bd2?auto=format&fit=crop&w=1200&q=80",
+    title: "Fachada Comercial",
+    tag: "Retrofit",
+    meta: "Revitalização estrutural",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&w=1200&q=80",
+    title: "Concreto Estrutural",
+    tag: "Obra",
+    meta: "Laje protendida · 2.400m²",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=1200&q=80",
+    title: "Vistoria de Cobertura",
+    tag: "Vistoria",
+    meta: "Inspeção técnica · laudo ART",
+  },
 ];
 
 export function Projects() {
@@ -30,12 +60,17 @@ export function Projects() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-6">
+        {/* Bento Grid — 6 placeholders (troque cada `img` acima pela foto oficial) */}
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-6 auto-rows-[220px]">
           {projects.map((p, i) => (
             <article
               key={i}
-              className={`group relative overflow-hidden rounded-3xl aspect-[4/3] md:aspect-auto reveal ${
-                i === 0 ? "md:col-span-4 md:row-span-2 md:aspect-[16/10]" : "md:col-span-2 md:aspect-[4/3]"
+              className={`group relative overflow-hidden rounded-3xl reveal ${
+                i === 0
+                  ? "md:col-span-4 md:row-span-2"
+                  : i === 3
+                  ? "md:col-span-4"
+                  : "md:col-span-2"
               }`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
