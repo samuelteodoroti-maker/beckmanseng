@@ -59,10 +59,10 @@ export function Navbar() {
         scrolled ? "glass py-2 shadow-soft" : "bg-background/40 backdrop-blur-md py-4 border-b border-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <button onClick={() => scrollToSection("home")} className="flex items-center gap-3 group">
-            <img src={logo.url} alt="Beckmans Engenharia" className="h-10 w-auto transition-transform group-hover:scale-105" />
+            <img src={logo.url} alt="Beckmans Engenharia" className="h-8 sm:h-10 w-auto transition-transform group-hover:scale-105" />
           </button>
 
           <div className="hidden lg:flex items-center gap-1">
