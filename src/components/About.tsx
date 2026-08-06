@@ -43,7 +43,7 @@ export function About() {
             <div className="grid grid-cols-3 gap-3 sm:gap-4">
               {[
                 { n: "2024", l: "Fundação" },
-                { n: "+120", l: "Projetos" },
+                { n: "+50", l: "Projetos Ativos" },
                 { n: "98%", l: "Satisfação" },
               ].map((s, i) => (
                 <div key={i} className="glass rounded-2xl px-3 py-5 sm:p-6 text-center border-accent/10 hover:border-accent/30 transition-colors group">
