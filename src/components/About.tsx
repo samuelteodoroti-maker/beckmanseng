@@ -30,7 +30,7 @@ export function About() {
               <span className="section-index">05 —</span>
               <div className="section-chip">Sobre a Beckmans</div>
             </div>
-            <h2 className="text-h2 font-bold">
+            <h2 className="text-h2 font-bold tracking-tight">
               Empreendedorismo, engenharia e{" "}
               <span className="text-accent">segurança</span> em um só lugar.
             </h2>
@@ -79,7 +79,7 @@ export function About() {
             {pillars.map((p, i) => (
               <div
                 key={i}
-                className="glass rounded-[2rem] p-6 sm:p-8 md:p-10 hover-lift reveal border-transparent hover:border-accent/20"
+                className="glass rounded-[2.5rem] p-6 sm:p-8 md:p-10 hover-lift reveal border-transparent hover:border-accent/20 transition-all duration-500"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className="flex items-start gap-4 sm:gap-5">

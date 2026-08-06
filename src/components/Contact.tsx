@@ -14,7 +14,7 @@ export function Contact() {
               <span className="section-index">06 —</span>
               <div className="section-chip">Entre em contato</div>
             </div>
-            <h2 className="text-h2 font-bold mb-4">
+            <h2 className="text-h2 font-bold mb-4 tracking-tight">
                 Vamos tirar seu projeto <span className="text-accent">do papel.</span>
               </h2>
             <p className="text-lead text-muted-foreground">

@@ -38,7 +38,7 @@ export function Hero() {
             </div>
             <div className="section-index text-white/60 -mt-4">01 — Beckmans Engenharia</div>
 
-            <h1 className="text-display font-bold text-white drop-shadow-[0_2px_15px_rgba(0,0,0,0.5)] leading-[1.1]">
+            <h1 className="text-display font-bold text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.6)] leading-[1.05]">
               Inovação é o caminho.{" "}
               <span className="relative inline-block mt-2">
                 <span className="bg-gradient-to-r from-accent to-emerald-400 bg-clip-text text-transparent drop-shadow-none">
