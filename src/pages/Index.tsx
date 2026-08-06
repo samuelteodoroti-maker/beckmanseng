@@ -6,6 +6,7 @@ import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { useReveal } from "@/hooks/use-reveal";
+import { StructuredData } from "@/components/StructuredData";
 import SectionLoading from "@/components/SectionLoading";
 
 // Lazy load non-critical sections
@@ -69,6 +70,7 @@ const Index = () => {
             `}
           </script>
         </Helmet>
+        <StructuredData />
         <Navbar />
         <main className="flex-grow">
           <Hero />
