@@ -83,4 +83,4 @@ export const Contact = memo(function Contact() {
       </div>
     </section>
   );
-}
+});

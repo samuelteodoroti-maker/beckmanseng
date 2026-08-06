@@ -69,5 +69,5 @@ export const Partners = memo(() => {
       </div>
     </section>
   );
-};
+});
 

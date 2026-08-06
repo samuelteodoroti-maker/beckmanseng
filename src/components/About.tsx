@@ -104,4 +104,4 @@ export const About = memo(function About() {
       </div>
     </section>
   );
-}
+});

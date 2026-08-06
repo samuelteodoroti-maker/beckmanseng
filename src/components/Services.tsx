@@ -108,4 +108,4 @@ export const Services = memo(function Services() {
       </div>
     </section>
   );
-}
+});

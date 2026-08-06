@@ -116,4 +116,4 @@ export const Projects = memo(function Projects() {
       </div>
     </section>
   );
-}
+});

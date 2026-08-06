@@ -135,4 +135,4 @@ export const Hero = memo(function Hero() {
       </div>
     </section>
   );
-}
+});
