@@ -111,7 +111,7 @@ export function Hero() {
                 {/* Floating stats */}
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4 glass rounded-2xl px-3 py-2 sm:px-4 sm:py-3 animate-float">
                   <div className="text-[10px] sm:text-xs text-muted-foreground">Projetos ativos</div>
-                  <div className="text-xl sm:text-2xl font-bold text-accent">+120</div>
+                  <div className="text-xl sm:text-2xl font-bold text-accent">+50</div>
                 </div>
                 <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 glass rounded-2xl px-3 py-2 sm:px-4 sm:py-3 animate-float" style={{ animationDelay: "1s" }}>
                   <div className="text-[10px] sm:text-xs text-muted-foreground">Satisfação</div>
