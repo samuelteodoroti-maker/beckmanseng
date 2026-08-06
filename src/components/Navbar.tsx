@@ -55,8 +55,8 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass py-2 shadow-soft" : "bg-background/40 backdrop-blur-md py-4 border-b border-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
+        scrolled ? "glass py-2 shadow-elegant border-b-0" : "bg-transparent py-4 border-b border-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

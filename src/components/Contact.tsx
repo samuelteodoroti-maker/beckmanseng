@@ -23,13 +23,13 @@ export function Contact() {
             <div className="mt-4 inline-flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent shadow-[0_0_8px_hsl(var(--accent))]" />
               </span>
               Disponível agora · Resposta em até 24h
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left reveal">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-left reveal">
               <a
                 href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Encontrei%20o%20contato%20de%20voc%C3%AAs%20pelo%20site%20e%20gostaria%20de%20conversar."
                 target="_blank"
