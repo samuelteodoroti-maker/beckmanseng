@@ -1,7 +1,7 @@
 import { useReveal } from "@/hooks/use-reveal";
 import gerdauLogo from "@/assets/logo-gerdau-2048.png.asset.json";
 import leCantonLogo from "@/assets/logo-le-canton-v2.png.asset.json";
-import grupoRBLogo from "@/assets/logo-grupo-rb-v2.svg.asset.json";
+import grupoRBLogo from "@/assets/logo-grupo-rb-real.svg.asset.json";
 import naturaLogo from "@/assets/logo-natura.png.asset.json";
 import fm2cLogo from "@/assets/logo-fm2c.png.asset.json";
 import hortifrutiLogo from "@/assets/logo-hortifruti-v2.png.asset.json";
