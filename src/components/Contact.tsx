@@ -11,7 +11,7 @@ export function Contact() {
         <div className="max-w-3xl mx-auto space-y-8 sm:space-y-10 text-center reveal">
           <div>
             <div className="flex items-center justify-center gap-3 mb-6">
-              <span className="section-index text-base font-bold">06 —</span>
+              <span className="section-index text-lg font-bold">06 —</span>
               <div className="section-chip text-lg px-6 py-2.5">Entre em contato</div>
             </div>
             <h2 className="text-h2 font-bold mb-4 tracking-tight">
