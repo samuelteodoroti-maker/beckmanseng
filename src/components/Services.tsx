@@ -53,9 +53,9 @@ export function Services() {
       <div className="absolute inset-0 -z-10 mesh-bg opacity-60" />
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mb-14 reveal">
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-8">
             <span className="section-index">03 —</span>
-            <div className="section-chip">
+            <div className="section-chip !px-6">
               <HardHat className="h-5 w-5" />
               Áreas de atuação
             </div>

@@ -12,7 +12,7 @@ export function Contact() {
           <div>
             <div className="flex items-center justify-center gap-3 mb-8">
               <span className="section-index text-accent">06 —</span>
-              <div className="section-chip border-accent/30 text-accent uppercase tracking-widest">Entre em contato</div>
+              <div className="section-chip border-accent/30 text-accent uppercase tracking-widest !px-8">Entre em contato</div>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white">
               Vamos tirar seu projeto <span className="text-accent drop-shadow-[0_0_15px_rgba(77,201,160,0.4)]">do papel.</span>
