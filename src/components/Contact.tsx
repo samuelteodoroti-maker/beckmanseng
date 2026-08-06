@@ -36,7 +36,7 @@ export function Contact() {
                 rel="noreferrer"
               className="flex flex-col items-start gap-4 glass rounded-[2rem] p-6 sm:p-8 hover-lift group border-transparent hover:border-accent/20 transition-all duration-500"
               >
-                <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition">
+                <div className="w-14 h-14 rounded-[1.25rem] bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm">
                   <Phone className="h-6 w-6" />
                 </div>
                 <div>
@@ -49,7 +49,7 @@ export function Contact() {
                 href="mailto:andrew@beckmanseng.com"
               className="flex flex-col items-start gap-4 glass rounded-[2rem] p-6 sm:p-8 hover-lift group border-transparent hover:border-accent/20 transition-all duration-500"
               >
-                <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition">
+                <div className="w-14 h-14 rounded-[1.25rem] bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm">
                   <Mail className="h-6 w-6" />
                 </div>
                 <div>
@@ -64,7 +64,7 @@ export function Contact() {
                 rel="noreferrer"
               className="flex flex-col items-start gap-4 glass rounded-[2rem] p-6 sm:p-8 hover-lift group border-transparent hover:border-accent/20 transition-all duration-500"
               >
-                <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition">
+                <div className="w-14 h-14 rounded-[1.25rem] bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm">
                   <Instagram className="h-6 w-6" />
                 </div>
                 <div>
@@ -79,7 +79,7 @@ export function Contact() {
                 rel="noreferrer"
               className="flex flex-col items-start gap-4 glass rounded-[2rem] p-6 sm:p-8 hover-lift group border-transparent hover:border-accent/20 transition-all duration-500"
               >
-                <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition">
+                <div className="w-14 h-14 rounded-[1.25rem] bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm">
                   <Linkedin className="h-6 w-6" />
                 </div>
                 <div>

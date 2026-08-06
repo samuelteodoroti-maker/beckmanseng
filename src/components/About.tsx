@@ -83,7 +83,7 @@ export function About() {
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className="flex items-start gap-4 sm:gap-5">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-accent flex items-center justify-center shrink-0">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-[1.25rem] bg-gradient-accent flex items-center justify-center shrink-0 shadow-glow/20">
                     <p.icon className="h-6 w-6 sm:h-7 sm:w-7 text-accent-foreground" />
                   </div>
                   <div className="min-w-0">
