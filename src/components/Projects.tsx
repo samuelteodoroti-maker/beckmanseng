@@ -73,7 +73,7 @@ export function Projects() {
         </div>
 
         {/* Bento Grid — 6 placeholders (troque cada `img` acima pela foto oficial) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 sm:gap-6 auto-rows-[280px] sm:auto-rows-[240px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 sm:gap-6 auto-rows-[250px] sm:auto-rows-[240px]">
           {projects.map((p, i) => (
             <article
               key={p.title}
