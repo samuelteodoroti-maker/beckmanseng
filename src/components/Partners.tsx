@@ -20,10 +20,10 @@ export const Partners = memo(() => {
     <section className="py-24 md:py-32 bg-muted/20 dark:bg-muted/5 relative border-y border-border/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mb-20 reveal">
-          <div className="flex flex-row items-center gap-4 mb-8">
+          <div className="flex flex-row items-center gap-3 sm:gap-4 mb-8">
             <span className="section-index">02</span>
             <span className="text-accent/40 font-bold">—</span>
-            <div className="section-chip !px-10 py-4 bg-accent/10 backdrop-blur-sm rounded-full border shadow-lg shadow-accent/5 tracking-[0.3em]">
+            <div className="section-chip bg-accent/10 backdrop-blur-sm rounded-full border shadow-lg shadow-accent/5">
               Nossos Parceiros
             </div>
           </div>
