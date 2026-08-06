@@ -3,33 +3,33 @@ import { Button } from "@/components/ui/button";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 md:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 mesh-bg" />
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-accent/20 blur-[120px] -z-10" />
+    <section id="contact" className="py-24 md:py-32 relative overflow-hidden bg-gradient-to-b from-slate-950 via-[#0a1a35] to-slate-950">
+      <div className="absolute inset-0 -z-10 grid-pattern opacity-10" />
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-accent/10 blur-[120px] -z-10" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto space-y-8 sm:space-y-10 text-center reveal">
+        <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16 text-center reveal">
           <div>
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <span className="section-index">06 —</span>
-              <div className="section-chip">Entre em contato</div>
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <span className="section-index text-accent">06 —</span>
+              <div className="section-chip border-accent/30 text-accent uppercase tracking-widest">Entre em contato</div>
             </div>
-            <h2 className="text-h2 font-bold mb-4 tracking-tight">
-                Vamos tirar seu projeto <span className="text-accent">do papel.</span>
-              </h2>
-            <p className="text-lead text-muted-foreground">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white">
+              Vamos tirar seu projeto <span className="text-accent drop-shadow-[0_0_15px_rgba(77,201,160,0.4)]">do papel.</span>
+            </h2>
+            <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
               Fale conosco pelo canal que preferir e receba um orçamento personalizado em até 24h.
             </p>
-            <div className="mt-4 inline-flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-accent/80 font-medium">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent shadow-[0_0_8px_hsl(var(--accent))]" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
               </span>
               Disponível agora · Resposta em até 24h
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center reveal items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {[
               {
                 icon: Phone,
@@ -61,50 +61,22 @@ export function Contact() {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="flex flex-col items-center justify-center gap-6 glass border-white/40 dark:border-white/10 rounded-3xl p-6 sm:p-8 hover-lift group transition-all duration-500 shadow-sm h-full aspect-square"
+                className="flex flex-col items-center justify-center gap-6 bg-slate-900/40 backdrop-blur-md border border-accent/20 hover:border-accent rounded-[2.5rem] p-8 hover-lift group transition-all duration-500 shadow-2xl h-full aspect-square relative overflow-hidden"
               >
-                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm shrink-0">
+                <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="w-16 h-16 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-accent group-hover:scale-110 group-hover:bg-accent group-hover:text-primary transition-all duration-500 relative z-10 shadow-[0_0_20px_rgba(77,201,160,0.1)] group-hover:shadow-[0_0_30px_rgba(77,201,160,0.4)]">
                   <item.icon className="h-7 w-7" />
                 </div>
-                <div className="flex flex-col items-center gap-2 w-full">
-                  <div className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-muted-foreground font-bold">{item.label}</div>
-                  <div className="font-bold text-sm sm:text-base lg:text-lg leading-tight text-balance break-words overflow-hidden w-full">
+                
+                <div className="flex flex-col items-center gap-3 w-full relative z-10">
+                  <div className="text-xs uppercase tracking-[0.25em] text-accent font-bold opacity-80 group-hover:opacity-100">{item.label}</div>
+                  <div className="font-bold text-base md:text-lg text-white group-hover:text-accent transition-colors duration-300 break-words w-full px-2">
                     {item.value}
                   </div>
                 </div>
               </a>
             ))}
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:justify-center">
-            <Button
-              asChild
-              variant="accent"
-              size="lg"
-              className="rounded-full h-14 px-6 sm:px-10 text-base group shadow-glow w-full sm:w-auto"
-            >
-              <a
-                href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Quero%20conversar%20sobre%20um%20projeto%20de%20engenharia%20e%20receber%20um%20or%C3%A7amento%20personalizado."
-                target="_blank"
-                rel="noreferrer"
-                className="justify-center"
-              >
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Falar no WhatsApp
-                <Send className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="rounded-full h-14 px-6 sm:px-10 text-base glass border-primary/20 w-full sm:w-auto"
-            >
-              <a href="mailto:andrew@beckmanseng.com" className="justify-center">
-                <Mail className="mr-2 h-5 w-5" />
-                Enviar e-mail
-              </a>
-            </Button>
           </div>
         </div>
       </div>
