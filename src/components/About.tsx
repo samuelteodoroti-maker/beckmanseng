@@ -36,11 +36,18 @@ export const About = memo(function About() {
                 Empreendedorismo, engenharia e{" "}
                 <span className="text-accent">segurança</span> em um só lugar.
               </h2>
-              <p className="text-lead text-muted-foreground">
-                A Beckmans Engenharia foi fundada em 4 de junho de 2024 no Rio de Janeiro, RJ, sob a gestão de
-                Andrew Matheus da Silva Beckman, engenheiro civil e gestor de projetos/obras. Atuamos no Grande Rio
-                com rigor técnico e compromisso por ambientes mais seguros.
-              </p>
+              <div className="space-y-4">
+                <p className="text-lead text-muted-foreground">
+                  A Beckmans Engenharia foi fundada em 4 de junho de 2024 no Rio de Janeiro, RJ, sob a gestão de
+                  Andrew Matheus da Silva Beckman, engenheiro civil e gestor de projetos/obras. Atuamos no Grande Rio
+                  com rigor técnico e compromisso por ambientes mais seguros.
+                </p>
+                <p className="text-muted-foreground">
+                  Especializados em transformar desafios complexos em soluções eficientes, nossa empresa combina 
+                  conhecimento técnico avançado com o uso de tecnologias modernas, como inspeções por drones e 
+                  modelagem BIM, para garantir que cada projeto seja executado com a máxima precisão e segurança.
+                </p>
+              </div>
             </div>
 
             {/* Quick stats */}
