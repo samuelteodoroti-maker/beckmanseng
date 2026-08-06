@@ -15,61 +15,37 @@ export const Partners = () => {
   useReveal();
 
   return (
-    <section className="py-24 bg-muted/20 overflow-hidden relative border-y border-border/30">
-      <div className="container px-4 mb-14 relative z-10">
-        <div className="flex items-center gap-4 mb-3 reveal">
-          <span className="section-index">02 —</span>
-          <div className="section-chip uppercase tracking-wider">
-            Nossos Parceiros
+    <section className="py-24 bg-muted/20 relative border-y border-border/30">
+      <div className="container px-4 relative z-10">
+        <div className="max-w-3xl mb-14 reveal">
+          <div className="flex items-center gap-4 mb-3">
+            <span className="section-index">02 —</span>
+            <div className="section-chip uppercase tracking-wider">
+              Nossos Parceiros
+            </div>
           </div>
+          <h2 className="text-3xl md:text-5xl font-bold font-heading tracking-tight">
+            Empresas que confiam em <span className="text-accent">nosso trabalho.</span>
+          </h2>
         </div>
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold font-heading reveal tracking-tight" style={{ transitionDelay: "100ms" }}>
-          Empresas que confiam em <span className="text-accent">nosso trabalho.</span>
-        </h2>
-      </div>
 
-      <div className="relative flex overflow-x-hidden py-10">
-        <div className="animate-marquee whitespace-nowrap flex items-center min-w-full">
-          {[...PARTNERS, ...PARTNERS, ...PARTNERS].map((partner, idx) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12 items-center">
+          {PARTNERS.map((partner, idx) => (
             <div
-              key={`${partner.name}-${idx}`}
-              className="mx-12 md:mx-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-40 hover:opacity-100"
+              key={partner.name}
+              className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100 reveal"
+              style={{ transitionDelay: `${idx * 50}ms` }}
             >
-              <div className="h-12 md:h-16 flex items-center justify-center">
+              <div className="h-12 md:h-16 w-full flex items-center justify-center">
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="max-h-full max-w-[160px] md:max-w-[200px] object-contain"
+                  className="max-h-full max-w-full object-contain"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                     if (target.parentElement) {
-                      target.parentElement.innerHTML = `<span class="text-2xl font-bold font-heading opacity-50 text-foreground">${partner.name}</span>`;
-                    }
-                  }}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        {/* Repeating for seamless loop */}
-        <div className="absolute top-10 left-0 animate-marquee2 whitespace-nowrap flex items-center min-w-full">
-          {[...PARTNERS, ...PARTNERS, ...PARTNERS].map((partner, idx) => (
-            <div
-              key={`${partner.name}-copy-${idx}`}
-              className="mx-12 md:mx-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-40 hover:opacity-100"
-            >
-              <div className="h-12 md:h-16 flex items-center justify-center">
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="max-h-full max-w-[160px] md:max-w-[200px] object-contain"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    if (target.parentElement) {
-                      target.parentElement.innerHTML = `<span class="text-2xl font-bold font-heading opacity-50 text-foreground">${partner.name}</span>`;
+                      target.parentElement.innerHTML = `<span class="text-xl font-bold font-heading opacity-50 text-foreground">${partner.name}</span>`;
                     }
                   }}
                 />
@@ -78,10 +54,6 @@ export const Partners = () => {
           ))}
         </div>
       </div>
-      
-      {/* Gradient masks for smooth edges */}
-      <div className="absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-muted/30 to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-muted/30 to-transparent z-10 pointer-events-none" />
     </section>
   );
 };
