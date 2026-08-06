@@ -72,7 +72,7 @@ export function Services() {
           {items.map((it, idx) => (
             <article
               key={idx}
-              className={`group relative overflow-hidden rounded-[2.5rem] glass card-ring p-8 sm:p-10 hover-lift reveal transition-all duration-500 hover:border-accent/40 hover:shadow-glow/10 flex flex-col justify-between min-h-[340px] sm:min-h-[400px] ${
+              className={`group relative overflow-hidden rounded-[2rem] glass card-ring p-8 sm:p-10 hover-lift reveal transition-all duration-500 hover:border-accent/40 hover:shadow-glow/10 flex flex-col justify-between min-h-[340px] sm:min-h-[380px] ${
                 it.span ?? ""
               }`}
               style={{ transitionDelay: `${idx * 60}ms` }}
