@@ -24,7 +24,7 @@ export function About() {
     <section id="about" className="py-24 md:py-32 relative">
       <div className="absolute inset-0 -z-10 grid-pattern opacity-30" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-20 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-start">
           <div className="space-y-6 sm:space-y-8 reveal">
             <div className="flex items-center gap-3">
               <span className="section-index">05 —</span>

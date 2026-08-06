@@ -12,7 +12,7 @@ export function Hero() {
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section id="home" className="relative min-h-dvh flex items-center pt-24 sm:pt-28 pb-16 sm:pb-20 overflow-hidden">
+    <section id="home" className="relative min-h-[90dvh] lg:min-h-dvh flex items-center pt-24 sm:pt-28 pb-16 sm:pb-20 overflow-hidden">
       {/* 🔁 PLACEHOLDER — Imagem de fundo full-width (troque HERO_BG_IMAGE acima) */}
       <div className="absolute inset-0 -z-10">
         <img
@@ -37,10 +37,10 @@ export function Hero() {
             </div>
             <div className="section-index text-white/60 -mt-4">01 — Beckmans Engenharia</div>
 
-            <h1 className="text-display font-bold text-white drop-shadow-lg">
+            <h1 className="text-display font-bold text-white drop-shadow-[0_2px_15px_rgba(0,0,0,0.5)] leading-[1.1]">
               Inovação é o caminho.{" "}
-              <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-accent to-accent/70 bg-clip-text text-transparent">
+              <span className="relative inline-block mt-2">
+                <span className="bg-gradient-to-r from-accent to-emerald-400 bg-clip-text text-transparent drop-shadow-none">
                   Qualidade é a certeza.
                 </span>
               </span>

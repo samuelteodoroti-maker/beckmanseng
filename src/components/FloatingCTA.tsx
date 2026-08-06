@@ -40,11 +40,11 @@ export function FloatingCTA() {
         show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6 pointer-events-none"
       }`}
     >
-      <span className="relative flex items-center justify-center w-9 h-9 rounded-full bg-accent-foreground/15">
-        <span className="absolute inset-0 rounded-full bg-accent-foreground/20 animate-ping" />
-        <MessageCircle className="h-5 w-5 relative" />
+      <span className="relative flex items-center justify-center w-10 h-10 rounded-full bg-accent-foreground/15">
+        <span className="absolute inset-0 rounded-full bg-accent-foreground/20 animate-ping group-hover:animate-none" />
+        <MessageCircle className="h-5 w-5 relative transition-transform group-hover:scale-110" />
       </span>
-      <span className="hidden sm:inline text-sm font-semibold">Fale conosco</span>
+      <span className="hidden sm:inline text-sm font-bold tracking-tight">Fale conosco</span>
     </a>
   );
 }

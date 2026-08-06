@@ -13,15 +13,15 @@ export const Partners = () => {
   useReveal();
 
   return (
-    <section className="py-20 bg-muted/30 overflow-hidden relative">
-      <div className="container px-4 mb-10 relative z-10">
-        <div className="flex items-center gap-4 mb-2 reveal">
+    <section className="py-24 bg-muted/20 overflow-hidden relative border-y border-border/30">
+      <div className="container px-4 mb-14 relative z-10">
+        <div className="flex items-center gap-4 mb-3 reveal">
           <span className="section-index">02 —</span>
           <div className="section-chip uppercase tracking-wider">
             Nossos Parceiros
           </div>
         </div>
-        <h2 className="text-3xl md:text-5xl font-bold font-heading reveal" style={{ transitionDelay: "100ms" }}>
+        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold font-heading reveal tracking-tight" style={{ transitionDelay: "100ms" }}>
           Empresas que confiam em <span className="text-accent">nosso trabalho.</span>
         </h2>
       </div>
