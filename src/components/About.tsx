@@ -24,9 +24,9 @@ export function About() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-stretch">
           <div className="flex flex-col space-y-8 sm:space-y-12 reveal">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 mb-4">
               <span className="section-index">05 —</span>
-              <div className="section-chip">Sobre a Beckmans</div>
+              <div className="section-chip !px-6">Sobre a Beckmans</div>
             </div>
             
             <div className="space-y-6">
