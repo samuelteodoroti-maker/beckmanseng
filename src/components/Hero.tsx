@@ -31,7 +31,7 @@ export function Hero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-7 space-y-6 sm:space-y-8 animate-fade-in">
-            <div className="section-chip bg-background/20 backdrop-blur">
+            <div className="section-chip bg-white/10 backdrop-blur-md border-white/20 text-white">
               <Sparkles className="h-4 w-4" />
               Engenharia Civil & Segurança do Trabalho
             </div>
