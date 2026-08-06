@@ -1,10 +1,11 @@
 import { useReveal } from "@/hooks/use-reveal";
 import gerdauLogo from "@/assets/logo-gerdau-2048.png.asset.json";
+import leCantonLogo from "@/assets/logo-le-canton.png.asset.json";
 
 const PARTNERS = [
   { name: "GERDAU", logo: gerdauLogo.url },
   { name: "GRUPO RB", logo: "https://gruporb.com.br/wp-content/uploads/2021/05/logo-rb.png" },
-  { name: "LE CANTON", logo: "https://lecanton.com.br/wp-content/uploads/2021/11/logo-le-canton.png" },
+  { name: "LE CANTON", logo: leCantonLogo.url },
   { name: "NATURA", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Natura_Logo.svg/1280px-Natura_Logo.svg.png" },
   { name: "FM2C", logo: "https://fm2c.com.br/wp-content/uploads/2021/03/logo-fm2c.png" },
   { name: "HORTIFRUTI", logo: "https://hortifruti.com.br/static/media/logo.8d277d33.svg" },
