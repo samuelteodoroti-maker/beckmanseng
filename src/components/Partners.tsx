@@ -40,20 +40,21 @@ export const Partners = () => {
               className="flex items-center justify-center transition-all duration-500 reveal"
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
-              <div className="group relative flex items-center justify-center w-full aspect-video p-6 transition-all duration-300 bg-white dark:bg-[#0f172a] rounded-2xl border border-[#0f2b5c]/10 shadow-sm overflow-hidden hover:shadow-md hover:border-[#0f2b5c]/20">
+              <div className="group relative flex items-center justify-center w-full aspect-video p-4 transition-all duration-300 bg-white dark:bg-[#0f172a] rounded-2xl border border-[#0f2b5c]/10 shadow-sm overflow-hidden hover:shadow-md hover:border-[#0f2b5c]/20">
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className={`max-h-[65%] max-w-[80%] object-contain transition-all duration-500
-                    ${partner.name === "GERDAU" ? "scale-[1.6]" : ""}
-                    ${partner.name === "GRUPO RB" ? "scale-[2.2]" : ""}
-                    ${partner.name === "FM2C" ? "scale-[1.2]" : ""}
+                  className={`max-h-[85%] max-w-[90%] object-contain transition-all duration-500
+                    ${partner.name === "GERDAU" ? "scale-[1.35]" : ""}
+                    ${partner.name === "GRUPO RB" ? "scale-[1.8]" : ""}
+                    ${partner.name === "FM2C" ? "scale-[1.1]" : ""}
+                    ${partner.name === "LE CANTON" ? "scale-[1.15]" : ""}
                   `}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                     if (target.parentElement) {
-                      target.parentElement.innerHTML = `<span class="text-lg font-bold font-heading opacity-50 text-foreground">${partner.name}</span>`;
+                      target.parentElement.innerHTML = `<span class="text-sm font-bold font-heading opacity-50 text-foreground text-center px-2">${partner.name}</span>`;
                     }
                   }}
                 />
