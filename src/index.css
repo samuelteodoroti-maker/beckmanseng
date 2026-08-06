@@ -190,8 +190,8 @@ All colors MUST be HSL.
   }
 
   .glass {
-    @apply bg-background/60 backdrop-blur-xl border-white/20 dark:border-white/10 shadow-soft;
-    -webkit-backdrop-filter: blur(16px);
+    @apply bg-background/70 backdrop-blur-xl border-white/40 dark:border-white/10 shadow-soft;
+    -webkit-backdrop-filter: blur(20px);
   }
 
   .glass-dark {
@@ -231,15 +231,15 @@ All colors MUST be HSL.
   }
 
   .section-chip {
-    @apply inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-base sm:text-lg font-bold uppercase tracking-wider font-display;
-    background: hsl(var(--accent) / 0.12);
+    @apply inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm sm:text-base font-bold uppercase tracking-widest font-display;
+    background: hsl(var(--accent) / 0.1);
     color: hsl(var(--accent));
-    border: 1px solid hsl(var(--accent) / 0.3);
-    box-shadow: 0 4px 12px -2px hsl(var(--accent) / 0.15);
+    border: 1px solid hsl(var(--accent) / 0.2);
+    box-shadow: 0 4px 12px -2px hsl(var(--accent) / 0.08);
   }
 
   .section-index {
-    @apply font-display text-xl sm:text-2xl font-black tracking-tight text-accent/90;
+    @apply font-display text-lg sm:text-xl font-black tracking-tight text-accent/80;
     font-variant-numeric: tabular-nums;
   }
 

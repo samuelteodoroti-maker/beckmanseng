@@ -61,7 +61,7 @@ export function Contact() {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="flex flex-col items-center justify-between gap-6 glass rounded-[2.5rem] p-8 sm:p-10 lg:p-12 hover-lift group border-transparent hover:border-accent/30 transition-all duration-500 shadow-sm min-h-[320px]"
+                className="flex flex-col items-center justify-between gap-6 glass border-white/40 dark:border-white/10 rounded-[2rem] p-8 sm:p-10 lg:p-12 hover-lift group transition-all duration-500 shadow-sm min-h-[300px]"
               >
                 <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm">
                   <item.icon className="h-7 w-7" />

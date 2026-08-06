@@ -40,7 +40,7 @@ export function Hero() {
               </div>
             </div>
 
-            <h1 className="text-display font-bold text-white drop-shadow-[0_8px_32px_rgba(0,0,0,0.5)] leading-[1.05]">
+            <h1 className="text-display font-bold text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.3)] leading-[1.1]">
               Inovação é o caminho.{" "}
               <span className="relative inline-block mt-2">
                 <span className="bg-gradient-to-r from-accent to-emerald-400 bg-clip-text text-transparent drop-shadow-none">
@@ -112,13 +112,13 @@ export function Hero() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
                 {/* Floating stats */}
-                <div className="absolute top-3 left-3 sm:top-4 sm:left-4 glass rounded-2xl px-3 py-2 sm:px-4 sm:py-3 animate-float">
-                  <div className="text-[10px] sm:text-xs text-muted-foreground">Projetos ativos</div>
-                  <div className="text-xl sm:text-2xl font-bold text-accent">+50</div>
+                <div className="absolute top-3 left-3 sm:top-4 sm:left-4 glass border-white/40 rounded-2xl px-4 py-3 animate-float">
+                  <div className="text-[10px] sm:text-xs font-bold text-muted-foreground uppercase tracking-wider">Projetos ativos</div>
+                  <div className="text-xl sm:text-2xl font-black text-accent">+50</div>
                 </div>
-                <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 glass rounded-2xl px-3 py-2 sm:px-4 sm:py-3 animate-float" style={{ animationDelay: "1s" }}>
-                  <div className="text-[10px] sm:text-xs text-muted-foreground">Satisfação</div>
-                  <div className="text-xl sm:text-2xl font-bold text-accent">98%</div>
+                <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 glass border-white/40 rounded-2xl px-4 py-3 animate-float" style={{ animationDelay: "1s" }}>
+                  <div className="text-[10px] sm:text-xs font-bold text-muted-foreground uppercase tracking-wider">Satisfação</div>
+                  <div className="text-xl sm:text-2xl font-black text-accent">98%</div>
                 </div>
               </div>
             </div>
