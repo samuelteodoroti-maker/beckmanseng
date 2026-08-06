@@ -42,11 +42,19 @@ export const Partners = () => {
               }`}
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
-              <div className="h-28 md:h-40 w-full flex items-center justify-center p-1">
+              <div className={`h-28 md:h-40 w-full flex items-center justify-center p-4 rounded-xl transition-colors duration-300 ${
+                (partner.name === "GRUPO RB" || partner.name === "FM2C") 
+                  ? "bg-foreground/5 dark:bg-transparent" 
+                  : ""
+              }`}>
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="max-h-full max-w-full object-contain transform hover:scale-110 transition-transform duration-300"
+                  className={`max-h-full max-w-full object-contain transform hover:scale-110 transition-transform duration-300 ${
+                    (partner.name === "GRUPO RB" || partner.name === "FM2C") 
+                      ? "dark:invert-0" 
+                      : ""
+                  }`}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
