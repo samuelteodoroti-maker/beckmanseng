@@ -68,16 +68,16 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 min-h-[500px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {items.map((it, idx) => (
             <article
               key={idx}
-              className={`group relative overflow-hidden rounded-3xl glass card-ring p-6 sm:p-8 md:p-10 hover-lift reveal transition-all duration-500 hover:border-accent/40 aspect-[3/2] flex flex-col ${
+              className={`group relative overflow-hidden rounded-3xl glass card-ring p-8 sm:p-10 hover-lift reveal transition-all duration-500 hover:border-accent/40 flex flex-col justify-between min-h-[320px] sm:min-h-[380px] ${
                 it.span ?? ""
               }`}
               style={{ transitionDelay: `${idx * 60}ms` }}
             >
-              <div className="flex flex-col h-full justify-between gap-6">
+              <div className="flex flex-col h-full gap-8">
                 <div className="flex items-center justify-between">
                   <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-[1.25rem] flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white shadow-sm">
                     <it.icon className="h-6 w-6 sm:h-7 sm:w-7" />
@@ -86,16 +86,20 @@ export function Services() {
                     0{idx + 1}
                   </span>
                 </div>
-                <div>
-                  <div className="text-[10px] sm:text-xs uppercase tracking-[0.2em] mb-2 font-bold text-accent/80">
+                
+                <div className="flex flex-col flex-grow">
+                  <div className="text-[10px] sm:text-xs uppercase tracking-[0.2em] mb-3 font-bold text-accent/80">
                     {it.tag}
                   </div>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 leading-tight tracking-tight text-foreground">{it.title}</h3>
-                  <p className="text-sm md:text-base text-muted-foreground/90">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 leading-tight tracking-tight text-foreground">
+                    {it.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-muted-foreground/90 leading-relaxed">
                     {it.desc}
                   </p>
                 </div>
               </div>
+              
               <ArrowUpRight className="absolute top-5 right-5 sm:top-6 sm:right-6 h-5 w-5 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all text-accent" />
             </article>
           ))}
