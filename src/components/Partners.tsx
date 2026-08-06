@@ -4,7 +4,7 @@ import leCantonLogo from "@/assets/logo-le-canton.png.asset.json";
 import grupoRBLogo from "@/assets/logo-grupo-rb.png.asset.json";
 import naturaLogo from "@/assets/logo-natura.png.asset.json";
 import fm2cLogo from "@/assets/logo-fm2c.png.asset.json";
-import hortifrutiLogo from "@/assets/logo-hortifruti.png.asset.json";
+import hortifrutiLogo from "@/assets/logo-hortifruti-v2.png.asset.json";
 
 const PARTNERS = [
   { name: "GERDAU", logo: gerdauLogo.url },
