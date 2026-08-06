@@ -10,9 +10,9 @@ export function Contact() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16 text-center reveal">
           <div>
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <span className="section-index text-accent">06 —</span>
-              <div className="section-chip border-accent/30 text-accent uppercase tracking-widest !px-8">Entre em contato</div>
+            <div className="flex flex-col items-center justify-center gap-4 mb-8">
+              <span className="section-index text-accent">06</span>
+              <div className="section-chip border-accent/30 text-accent uppercase tracking-[0.3em] !px-10 py-4 bg-accent/10 backdrop-blur-sm rounded-full border shadow-lg shadow-accent/5">Entre em contato</div>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white">
               Vamos tirar seu projeto <span className="text-accent drop-shadow-[0_0_15px_rgba(77,201,160,0.4)]">do papel.</span>
