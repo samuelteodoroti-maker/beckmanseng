@@ -1,27 +1,49 @@
+import { Suspense, lazy } from "react";
 import { ThemeProvider } from "next-themes";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { Services } from "@/components/Services";
-import { Projects } from "@/components/Projects";
-import { About } from "@/components/About";
-import { Partners } from "@/components/Partners";
-import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { useReveal } from "@/hooks/use-reveal";
+import SectionLoading from "@/components/SectionLoading";
+
+// Lazy load non-critical sections
+const Partners = lazy(() => import("@/components/Partners").then(m => ({ default: m.Partners })));
+const Services = lazy(() => import("@/components/Services").then(m => ({ default: m.Services })));
+const Projects = lazy(() => import("@/components/Projects").then(m => ({ default: m.Projects })));
+const About = lazy(() => import("@/components/About").then(m => ({ default: m.About })));
+const Contact = lazy(() => import("@/components/Contact").then(m => ({ default: m.Contact })));
 
 const Index = () => {
   useReveal();
+  
   return (
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-      <div className="min-h-screen">
+      <div className="min-h-screen flex flex-col">
         <Navbar />
-        <Hero />
-        <Partners />
-        <Services />
-        <Projects />
-        <About />
-        <Contact />
+        <main className="flex-grow">
+          <Hero />
+          
+          <Suspense fallback={<SectionLoading />}>
+            <Partners />
+          </Suspense>
+          
+          <Suspense fallback={<SectionLoading />}>
+            <Services />
+          </Suspense>
+          
+          <Suspense fallback={<SectionLoading />}>
+            <Projects />
+          </Suspense>
+          
+          <Suspense fallback={<SectionLoading />}>
+            <About />
+          </Suspense>
+          
+          <Suspense fallback={<SectionLoading />}>
+            <Contact />
+          </Suspense>
+        </main>
         <Footer />
         <FloatingCTA />
       </div>

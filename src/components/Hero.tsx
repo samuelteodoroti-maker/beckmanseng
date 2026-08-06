@@ -19,6 +19,9 @@ export function Hero() {
           src={HERO_BG_IMAGE}
           alt="Construção civil moderna"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
         />
         {/* Overlay progressivo para garantir legibilidade absoluta em qualquer tema */}
         <div className="absolute inset-0 bg-primary/75 dark:bg-background/90" />
@@ -109,6 +112,8 @@ export function Hero() {
                   src={HERO_SIDE_IMAGE}
                   alt="Projeto de engenharia civil"
                   className="w-full h-full object-cover"
+                  loading="eager"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
                 {/* Floating stats */}

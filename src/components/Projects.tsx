@@ -90,6 +90,7 @@ export function Projects() {
                 src={p.img}
                 alt={p.title}
                 loading="lazy"
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent transition-all duration-700 group-hover:from-primary/90 group-hover:via-primary/20" />

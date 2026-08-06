@@ -44,6 +44,8 @@ export const Partners = () => {
                 <img
                   src={partner.logo}
                   alt={partner.name}
+                  loading="lazy"
+                  decoding="async"
                   className={`max-h-[85%] max-w-[90%] object-contain transition-all duration-500
                     ${partner.name === "GERDAU" ? "scale-[1.35]" : ""}
                     ${partner.name === "GRUPO RB" ? "scale-[1.8]" : ""}
