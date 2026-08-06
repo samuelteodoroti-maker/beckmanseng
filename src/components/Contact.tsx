@@ -30,63 +30,50 @@ export function Contact() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center reveal">
+            {[
+              {
+                icon: Phone,
+                label: "WhatsApp",
+                value: "(21) 98223-4712",
+                href: "https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Encontrei%20o%20contato%20de%20voc%C3%AAs%20pelo%20site%20e%20gostaria%20de%20conversar."
+              },
+              {
+                icon: Mail,
+                label: "E-mail",
+                value: "andrew@beckmanseng.com",
+                href: "mailto:andrew@beckmanseng.com"
+              },
+              {
+                icon: Instagram,
+                label: "Instagram",
+                value: "@beckmans.engenharia",
+                href: "https://www.instagram.com/beckmans.engenharia/"
+              },
+              {
+                icon: Linkedin,
+                label: "LinkedIn",
+                value: "Beckmans Engenharia",
+                href: "https://br.linkedin.com/company/beckmans-engenharia"
+              }
+            ].map((item, idx) => (
               <a
-                href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Encontrei%20o%20contato%20de%20voc%C3%AAs%20pelo%20site%20e%20gostaria%20de%20conversar."
+                key={idx}
+                href={item.href}
                 target="_blank"
                 rel="noreferrer"
-              className="flex flex-col items-center gap-4 glass rounded-[2rem] p-6 sm:p-8 lg:p-10 hover-lift group border-transparent hover:border-accent/30 transition-all duration-500 shadow-sm"
+                className="flex flex-col items-center justify-between gap-6 glass rounded-[2.5rem] p-8 sm:p-10 lg:p-12 hover-lift group border-transparent hover:border-accent/30 transition-all duration-500 shadow-sm min-h-[320px]"
               >
-                <div className="w-14 h-14 rounded-[1.25rem] bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm">
-                  <Phone className="h-6 w-6" />
+                <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm">
+                  <item.icon className="h-7 w-7" />
                 </div>
-                <div className="flex flex-col items-center">
-                  <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">WhatsApp</div>
-                  <div className="font-semibold text-sm sm:text-base lg:text-lg">(21) 98223-4712</div>
+                <div className="flex flex-col items-center gap-3 w-full mt-auto">
+                  <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">{item.label}</div>
+                  <div className="font-bold text-base sm:text-lg lg:text-xl leading-tight text-balance">
+                    {item.value}
+                  </div>
                 </div>
               </a>
-
-              <a
-                href="mailto:andrew@beckmanseng.com"
-              className="flex flex-col items-center gap-4 glass rounded-[2rem] p-6 sm:p-8 lg:p-10 hover-lift group border-transparent hover:border-accent/30 transition-all duration-500 shadow-sm"
-              >
-                <div className="w-14 h-14 rounded-[1.25rem] bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm">
-                  <Mail className="h-6 w-6" />
-                </div>
-                <div className="flex flex-col items-center w-full overflow-hidden">
-                  <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">E-mail</div>
-                <div className="font-semibold text-xs sm:text-sm lg:text-base break-all">andrew@beckmanseng.com</div>
-                </div>
-              </a>
-
-              <a
-                href="https://www.instagram.com/beckmans.engenharia/"
-                target="_blank"
-                rel="noreferrer"
-              className="flex flex-col items-center gap-4 glass rounded-[2rem] p-6 sm:p-8 lg:p-10 hover-lift group border-transparent hover:border-accent/30 transition-all duration-500 shadow-sm"
-              >
-                <div className="w-14 h-14 rounded-[1.25rem] bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm">
-                  <Instagram className="h-6 w-6" />
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Instagram</div>
-                  <div className="font-semibold text-sm sm:text-base lg:text-lg">@beckmans.engenharia</div>
-                </div>
-              </a>
-
-              <a
-                href="https://br.linkedin.com/company/beckmans-engenharia"
-                target="_blank"
-                rel="noreferrer"
-              className="flex flex-col items-center gap-4 glass rounded-[2rem] p-6 sm:p-8 lg:p-10 hover-lift group border-transparent hover:border-accent/30 transition-all duration-500 shadow-sm"
-              >
-                <div className="w-14 h-14 rounded-[1.25rem] bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm">
-                  <Linkedin className="h-6 w-6" />
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">LinkedIn</div>
-                  <div className="font-semibold text-sm sm:text-base lg:text-lg">Beckmans Engenharia</div>
-                </div>
-              </a>
+            ))}
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:justify-center">
