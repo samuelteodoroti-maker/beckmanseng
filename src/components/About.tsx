@@ -25,7 +25,7 @@ export const About = memo(function About() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-stretch">
           <div className="flex flex-col space-y-8 sm:space-y-12 reveal">
-            <div className="flex flex-col items-start gap-4 mb-8">
+            <div className="flex flex-row items-center gap-6 mb-8">
               <span className="section-index">05</span>
               <div className="section-chip !px-10 py-4 bg-accent/10 backdrop-blur-sm rounded-full border shadow-lg shadow-accent/5 tracking-[0.3em]">Sobre a Beckmans</div>
             </div>
