@@ -40,21 +40,20 @@ export const Partners = () => {
               className="flex items-center justify-center transition-all duration-500 reveal"
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
-              <div className="group relative flex items-center justify-center w-full aspect-video p-6 transition-all duration-300 bg-[#0f2b5c] dark:bg-[#0f172a] rounded-2xl border border-white/10 shadow-lg overflow-hidden">
+              <div className="group relative flex items-center justify-center w-full aspect-video p-6 transition-all duration-300 bg-white dark:bg-[#0f172a] rounded-2xl border border-[#0f2b5c]/10 shadow-sm overflow-hidden hover:shadow-md hover:border-[#0f2b5c]/20">
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className={`max-h-[70%] max-w-[85%] object-contain transition-all duration-500 drop-shadow-md 
-                    ${partner.name === "GERDAU" ? "scale-[1.5]" : ""}
-                    ${partner.name === "GRUPO RB" ? "scale-[2.4]" : ""}
-                    ${partner.name === "FM2C" ? "scale-[1.3]" : ""}
-                    ${(partner.name === "GRUPO RB" || partner.name === "FM2C" || partner.name === "NATURA" || partner.name === "HORTIFRUTI" || partner.name === "LE CANTON") ? "brightness-0 invert" : ""}
+                  className={`max-h-[65%] max-w-[80%] object-contain transition-all duration-500
+                    ${partner.name === "GERDAU" ? "scale-[1.6]" : ""}
+                    ${partner.name === "GRUPO RB" ? "scale-[2.2]" : ""}
+                    ${partner.name === "FM2C" ? "scale-[1.2]" : ""}
                   `}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                     if (target.parentElement) {
-                      target.parentElement.innerHTML = `<span class="text-lg font-bold font-heading opacity-50 text-white">${partner.name}</span>`;
+                      target.parentElement.innerHTML = `<span class="text-lg font-bold font-heading opacity-50 text-foreground">${partner.name}</span>`;
                     }
                   }}
                 />
