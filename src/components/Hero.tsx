@@ -36,11 +36,11 @@ export const Hero = memo(function Hero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-7 space-y-8 sm:space-y-10 animate-fade-in">
-            <div className="flex flex-row items-center gap-4 mb-8">
+            <div className="flex flex-row items-center gap-3 sm:gap-4 mb-8">
               <span className="section-index !text-white/80">01</span>
               <span className="text-white/40 font-bold">—</span>
-              <div className="section-chip !bg-white/10 !backdrop-blur-md !border-white/20 !text-white !px-10 py-4 shadow-xl tracking-[0.3em]">
-                <Sparkles className="h-4 w-4 mr-2" />
+              <div className="section-chip !bg-white/10 !backdrop-blur-md !border-white/20 !text-white shadow-xl">
+                <Sparkles className="h-4 w-4 mr-1 sm:mr-2" />
                 Beckmans Engenharia
               </div>
             </div>
@@ -86,14 +86,14 @@ export const Hero = memo(function Hero() {
             </div>
 
             {/* Trust badges */}
-            <div className="flex flex-wrap gap-6 sm:gap-10 pt-6 sm:pt-10">
+            <div className="flex flex-wrap gap-4 sm:gap-10 pt-6 sm:pt-10">
               {[
                 { icon: ShieldCheck, label: "Fundada em 2024", sub: "Rio de Janeiro, RJ" },
                 { icon: Zap, label: "Projetos 2D e 3D", sub: "Tecnologia BIM" },
                 { icon: Sparkles, label: "CREA Ativo", sub: "Responsabilidade técnica" },
               ].map((b, i) => (
                 <div key={i} className="flex items-center gap-4 group transition-all duration-300">
-                  <div className="w-14 h-14 rounded-2xl glass flex items-center justify-center bg-white/10 border-white/30 shadow-lg group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl glass flex items-center justify-center bg-white/10 border-white/30 shadow-lg group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
                     <b.icon className="h-7 w-7 text-accent drop-shadow-[0_0_8px_rgba(77,201,160,0.5)]" />
                   </div>
                   <div className="flex flex-col gap-0.5">

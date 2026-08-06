@@ -239,7 +239,7 @@ All colors MUST be HSL.
   }
 
   .section-chip {
-    @apply inline-flex items-center justify-center rounded-full px-10 py-4 text-xs font-black uppercase tracking-[0.3em] font-display transition-all duration-300;
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 sm:px-10 sm:py-4 text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.3em] font-display transition-all duration-300;
     background: hsl(var(--accent) / 0.12);
     color: hsl(var(--accent));
     border: 1px solid hsl(var(--accent) / 0.25);
@@ -253,7 +253,7 @@ All colors MUST be HSL.
   }
 
   .section-index {
-    @apply font-display text-xl sm:text-2xl font-black tracking-tighter text-accent/90;
+    @apply font-display text-lg sm:text-2xl font-black tracking-tighter text-accent/90 shrink-0;
     font-variant-numeric: tabular-nums;
   }
 
