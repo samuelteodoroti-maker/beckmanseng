@@ -20,9 +20,10 @@ export function Hero() {
           alt="Construção civil moderna"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        {/* Overlay escuro para legibilidade do texto branco */}
-        <div className="absolute inset-0 bg-primary/80 dark:bg-background/85" />
-        <div className="absolute inset-0 grid-pattern opacity-20" />
+        {/* Overlay progressivo para garantir legibilidade absoluta em qualquer tema */}
+        <div className="absolute inset-0 bg-primary/75 dark:bg-background/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-transparent to-primary/40 dark:from-background/20 dark:to-background/30" />
+        <div className="absolute inset-0 grid-pattern opacity-[0.15]" />
         <div className="absolute inset-0 mesh-bg" />
         <div className="absolute top-1/2 right-0 w-[600px] h-[600px] rounded-full bg-accent/20 blur-[120px] -translate-y-1/2" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px]" />

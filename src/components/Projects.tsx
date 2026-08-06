@@ -76,7 +76,7 @@ export function Projects() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 sm:gap-6 auto-rows-[280px] sm:auto-rows-[240px]">
           {projects.map((p, i) => (
             <article
-              key={i}
+              key={p.title}
               className={`group relative overflow-hidden rounded-3xl reveal ${
                 i === 0
                   ? "md:col-span-4 md:row-span-2"
