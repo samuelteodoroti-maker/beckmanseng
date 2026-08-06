@@ -61,14 +61,14 @@ export function Contact() {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="flex flex-col items-center justify-between gap-6 glass border-white/40 dark:border-white/10 rounded-3xl p-8 sm:p-10 hover-lift group transition-all duration-500 shadow-sm h-full aspect-square"
+                className="flex flex-col items-center justify-center gap-6 glass border-white/40 dark:border-white/10 rounded-3xl p-6 sm:p-8 hover-lift group transition-all duration-500 shadow-sm h-full aspect-square"
               >
-                <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm">
+                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm shrink-0">
                   <item.icon className="h-7 w-7" />
                 </div>
-                <div className="flex flex-col items-center gap-3 w-full mt-auto">
-                  <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">{item.label}</div>
-                  <div className="font-bold text-base sm:text-lg lg:text-xl leading-tight text-balance">
+                <div className="flex flex-col items-center gap-2 w-full">
+                  <div className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-muted-foreground font-bold">{item.label}</div>
+                  <div className="font-bold text-sm sm:text-base lg:text-lg leading-tight text-balance break-words overflow-hidden w-full">
                     {item.value}
                   </div>
                 </div>
