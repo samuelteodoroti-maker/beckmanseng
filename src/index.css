@@ -226,14 +226,14 @@ All colors MUST be HSL.
     opacity: 1;
     transform: none;
   }
-230: 
-231:   .reveal-fade {
-232:     opacity: 0;
-233:     transition: opacity 1s var(--ease-out-quart);
-234:   }
-235:   .reveal-fade.in {
-236:     opacity: 1;
-237:   }
+
+  .reveal-fade {
+    opacity: 0;
+    transition: opacity 1s var(--ease-out-quart);
+  }
+  .reveal-fade.in {
+    opacity: 1;
+  }
 
   .section-chip {
     @apply inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium;
