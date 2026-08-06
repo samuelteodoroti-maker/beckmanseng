@@ -32,7 +32,6 @@ const items: ServiceItem[] = [
     title: "Projetos 2D e 3D",
     desc: "Modelagem, plantas e visualização com padrão BIM.",
     tag: "BIM",
-    span: "md:col-span-1",
   },
   {
     icon: Search,
