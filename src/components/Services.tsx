@@ -1,13 +1,20 @@
 import { Search, ShieldCheck, Building2, Lightbulb, ArrowUpRight, HardHat, FileCheck2, Ruler } from "lucide-react";
 
-const items = [
+interface ServiceItem {
+  icon: any;
+  title: string;
+  desc: string;
+  tag: string;
+  span?: string;
+}
+
+const items: ServiceItem[] = [
   {
     icon: Lightbulb,
     title: "Consultoria em Engenharia",
     desc: "Consultoria estratégica em engenharia civil para viabilizar e otimizar seu projeto.",
     tag: "Estratégia técnica",
     span: "md:col-span-2 md:row-span-2",
-    
   },
   {
     icon: ShieldCheck,
