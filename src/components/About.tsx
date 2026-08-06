@@ -1,9 +1,8 @@
 import { CheckCircle2, Target, Eye, Shield } from "lucide-react";
+import aboutAuthorityAsset from "@/assets/about_authority.jpg.asset.json";
 
 // 🔁 PLACEHOLDER — Substitua pela foto oficial do engenheiro / canteiro de obras.
-// Fonte atual: Unsplash (tema: engineer on site)
-const ABOUT_IMAGE =
-  "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1400&q=80";
+const ABOUT_IMAGE = aboutAuthorityAsset.url;
 
 const pillars = [
   { icon: Target, title: "Missão", text: "Transformar ideias em projetos de engenharia com excelência técnica." },

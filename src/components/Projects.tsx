@@ -1,43 +1,47 @@
 import { ArrowUpRight } from "lucide-react";
+import droneHighAsset from "@/assets/project_drone_high.jpg.asset.json";
+import drillAsset from "@/assets/project_drill.jpg.asset.json";
+import torqueAsset from "@/assets/project_torque.jpg.asset.json";
+import cleaningAsset from "@/assets/project_cleaning.jpg.asset.json";
+import structureAsset from "@/assets/project_structure.jpg.asset.json";
+import aboutAuthorityAsset from "@/assets/about_authority.jpg.asset.json";
 
-// 🔁 PLACEHOLDERS — Substitua as URLs `img` abaixo pelas fotos oficiais dos projetos.
-// Fonte atual: Unsplash (temas: architecture / building / concrete)
 const projects = [
   {
-    img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
-    title: "Edifício Corporativo",
-    tag: "Construção",
-    meta: "Estrutura metálica · 18 pav.",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
-    title: "Inspeção Industrial",
-    tag: "Inspeção",
-    meta: "Galpão industrial · 8.000m²",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=80",
-    title: "Modelagem BIM",
-    tag: "Projeto 3D",
-    meta: "Uso misto · 12 pav.",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1503387837-b154d5074bd2?auto=format&fit=crop&w=1200&q=80",
-    title: "Fachada Comercial",
-    tag: "Retrofit",
-    meta: "Revitalização estrutural",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&w=1200&q=80",
-    title: "Concreto Estrutural",
-    tag: "Obra",
-    meta: "Laje protendida · 2.400m²",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=1200&q=80",
-    title: "Vistoria de Cobertura",
+    img: droneHighAsset.url,
+    title: "Vistoria com Drone",
     tag: "Vistoria",
-    meta: "Inspeção técnica · laudo ART",
+    meta: "Inspeção técnica de alta precisão",
+  },
+  {
+    img: drillAsset.url,
+    title: "Manutenção Industrial",
+    tag: "Obra",
+    meta: "Execução com ferramentas de ponta",
+  },
+  {
+    img: torqueAsset.url,
+    title: "Segurança em Altura",
+    tag: "Segurança",
+    meta: "Consultoria em SST e NR-35",
+  },
+  {
+    img: cleaningAsset.url,
+    title: "Limpeza Técnica",
+    tag: "Manutenção",
+    meta: "Serviços especializados em altura",
+  },
+  {
+    img: structureAsset.url,
+    title: "Inspeção de Estrutura",
+    tag: "Inspeção",
+    meta: "Análise de integridade estrutural",
+  },
+  {
+    img: aboutAuthorityAsset.url,
+    title: "Controle de Voo",
+    tag: "Tecnologia",
+    meta: "Mapeamento e monitoramento aéreo",
   },
 ];
 
