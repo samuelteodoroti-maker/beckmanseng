@@ -19,7 +19,7 @@ export const Partners = () => {
   useReveal();
 
   return (
-    <section className="py-24 bg-background relative border-y border-border/10">
+    <section className="py-24 bg-muted/30 dark:bg-muted/10 relative border-y border-border/10">
       <div className="container px-4 relative z-10">
         <div className="max-w-3xl mb-14 reveal">
           <div className="flex items-center gap-4 mb-3">
@@ -45,10 +45,8 @@ export const Partners = () => {
                   src={partner.logo}
                   alt={partner.name}
                   className={`max-h-full max-w-full object-contain transition-all duration-500 hover:scale-110 
-                    ${partner.name === "GRUPO RB" ? "scale-[2.8] dark:brightness-[10] dark:contrast-[10]" : ""}
-                    ${partner.name === "FM2C" ? "scale-[1.8] dark:brightness-[10] dark:contrast-[10]" : ""}
-                    ${partner.name === "GERDAU" ? "dark:brightness-[10] dark:contrast-[10]" : ""}
-                    ${partner.name === "LE CANTON" ? "dark:brightness-[10] dark:contrast-[10]" : ""}
+                    ${partner.name === "GRUPO RB" ? "scale-[2.8]" : ""}
+                    ${partner.name === "FM2C" ? "scale-[1.8]" : ""}
                   `}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
