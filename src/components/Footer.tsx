@@ -7,9 +7,9 @@ export const Footer = memo(function Footer() {
     <footer className="relative border-t border-border/50 pt-24 pb-12 bg-muted/5 overflow-hidden">
       <div className="absolute bottom-0 left-0 w-full h-[300px] bg-accent/5 blur-[120px] -z-10" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-12">
-          <div className="sm:col-span-2 md:col-span-2 space-y-4">
-            <img src={logo.url} alt="Beckmans Engenharia" className="h-12 sm:h-14 w-auto" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-12">
+          <div className="sm:col-span-2 md:col-span-2 space-y-6">
+            <img src={logo.url} alt="Beckmans Engenharia" className="h-10 sm:h-14 w-auto" />
             <p className="text-muted-foreground max-w-md">
               Nossa inovação é o caminho, nossa qualidade é a certeza. Transformamos ideias em projetos com excelência.
             </p>
