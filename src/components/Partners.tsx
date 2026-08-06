@@ -19,17 +19,17 @@ export const Partners = () => {
   useReveal();
 
   return (
-    <section className="py-24 bg-accent relative border-y border-border/10 reveal-fade">
+    <section className="py-24 bg-muted/30 dark:bg-muted/10 relative border-y border-border/10">
       <div className="container px-4 relative z-10">
         <div className="max-w-3xl mb-14 reveal">
           <div className="flex items-center gap-4 mb-3">
-            <span className="section-index text-white/80">02 —</span>
-            <div className="section-chip uppercase tracking-wider bg-white/10 text-white border-white/20">
+            <span className="section-index">02 —</span>
+            <div className="section-chip uppercase tracking-wider">
               Nossos Parceiros
             </div>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold font-heading tracking-tight text-white">
-            Empresas que confiam em <span className="text-navy font-bold">nosso trabalho.</span>
+          <h2 className="text-3xl md:text-5xl font-bold font-heading tracking-tight">
+            Empresas que confiam em <span className="text-accent">nosso trabalho.</span>
           </h2>
         </div>
 
@@ -44,7 +44,7 @@ export const Partners = () => {
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className={`max-h-full max-w-full object-contain transition-all duration-500 brightness-0 invert
+                  className={`max-h-full max-w-full object-contain transition-all duration-500 
                     ${partner.name === "GERDAU" ? "scale-[1.5]" : ""}
                     ${partner.name === "GRUPO RB" ? "scale-[2.8]" : ""}
                     ${partner.name === "FM2C" ? "scale-[1.1]" : ""}
