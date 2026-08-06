@@ -83,10 +83,7 @@ export const Services = memo(function Services() {
               {it.title === "Vistoria com Drone" && (
                 <div className="absolute inset-0 -z-10 overflow-hidden">
                   <img 
-                    src={items.find(i => i.title === "Vistoria com Drone") === it ? (async () => {
-                      const { url } = await import("@/assets/drone_vistoria.jpeg.asset.json");
-                      return url;
-                    }) : undefined}
+                    src={droneVistoriaAsset.url}
                     alt="Vistoria com Drone"
                     className="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-700"
                   />
