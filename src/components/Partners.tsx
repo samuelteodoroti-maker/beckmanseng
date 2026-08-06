@@ -46,7 +46,7 @@ export const Partners = () => {
                   alt={partner.name}
                   className={`max-h-full max-w-full object-contain transition-all duration-500 hover:scale-110 
                     ${partner.name === "GRUPO RB" ? "scale-[2.8]" : ""}
-                    ${partner.name === "FM2C" ? "scale-[1.4]" : ""}
+                    ${partner.name === "FM2C" ? "scale-[1.1]" : ""}
                   `}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
