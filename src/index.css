@@ -126,6 +126,14 @@ All colors MUST be HSL.
     @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/40 transition-colors;
   }
 
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
   html {
     overflow-x: hidden;
     scroll-padding-top: 80px;

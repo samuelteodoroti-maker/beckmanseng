@@ -1,4 +1,4 @@
-import { useReveal } from "@/hooks/use-reveal";
+import { memo } from "react";
 import gerdauLogo from "@/assets/logo-gerdau-2048.png.asset.json";
 import leCantonLogo from "@/assets/logo-le-canton-v2.png.asset.json";
 import grupoRBLogo from "@/assets/logo-grupo-rb-real.svg.asset.json";
@@ -15,9 +15,7 @@ const PARTNERS = [
   { name: "HORTIFRUTI", logo: hortifrutiLogo.url },
 ];
 
-export const Partners = () => {
-  useReveal();
-
+export const Partners = memo(() => {
   return (
     <section className="py-24 md:py-32 bg-muted/20 dark:bg-muted/5 relative border-y border-border/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -44,6 +42,8 @@ export const Partners = () => {
                 <img
                   src={partner.logo}
                   alt={partner.name}
+                  loading="lazy"
+                  decoding="async"
                   className={`max-h-[85%] max-w-[90%] object-contain transition-all duration-500
                     ${partner.name === "GERDAU" ? "scale-[1.35]" : ""}
                     ${partner.name === "GRUPO RB" ? "scale-[1.8]" : ""}
@@ -65,5 +65,4 @@ export const Partners = () => {
       </div>
     </section>
   );
-};
-
+});
