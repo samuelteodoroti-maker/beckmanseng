@@ -23,8 +23,8 @@ export const Partners = () => {
       <div className="container px-4 relative z-10">
         <div className="max-w-3xl mb-14 reveal">
           <div className="flex items-center gap-4 mb-3">
-            <span className="section-index text-lg font-bold">02 —</span>
-            <div className="section-chip uppercase tracking-wider text-lg px-6 py-2.5">
+            <span className="section-index">02 —</span>
+            <div className="section-chip">
               Nossos Parceiros
             </div>
           </div>

@@ -168,7 +168,7 @@ All colors MUST be HSL.
     letter-spacing: -0.035em;
   }
   .text-h2 {
-    font-size: clamp(1.85rem, 3.5vw + 0.75rem, 3.5rem);
+    font-size: clamp(2.25rem, 4vw + 1rem, 4rem);
     line-height: 1.1;
     letter-spacing: -0.025em;
   }
@@ -231,14 +231,15 @@ All colors MUST be HSL.
   }
 
   .section-chip {
-    @apply inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium;
-    background: hsl(var(--accent) / 0.10);
+    @apply inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-base sm:text-lg font-bold uppercase tracking-wider font-display;
+    background: hsl(var(--accent) / 0.12);
     color: hsl(var(--accent));
-    border: 1px solid hsl(var(--accent) / 0.25);
+    border: 1px solid hsl(var(--accent) / 0.3);
+    box-shadow: 0 4px 12px -2px hsl(var(--accent) / 0.15);
   }
 
   .section-index {
-    @apply font-mono text-[11px] tracking-widest text-accent/80;
+    @apply font-display text-xl sm:text-2xl font-black tracking-tight text-accent/90;
     font-variant-numeric: tabular-nums;
   }
 
