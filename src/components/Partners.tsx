@@ -40,19 +40,21 @@ export const Partners = () => {
               className="flex items-center justify-center transition-all duration-500 reveal"
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
-              <div className={`h-24 md:h-32 w-full flex items-center justify-center p-6 rounded-2xl transition-all duration-300 bg-white shadow-sm border border-slate-100 hover:shadow-md hover:-translate-y-1`}>
+              <div className="group relative flex items-center justify-center w-full aspect-video p-4 transition-all duration-300">
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className={`max-h-full max-w-full object-contain transform hover:scale-105 transition-transform duration-300 ${
-                    partner.name === "GRUPO RB" ? "scale-[2.8]" : 
-                    partner.name === "FM2C" ? "scale-[1.8]" : ""
-                  }`}
+                  className={`max-h-full max-w-full object-contain transition-all duration-500 hover:scale-110 
+                    ${partner.name === "GRUPO RB" ? "scale-[2.8] dark:brightness-[10] dark:contrast-[10]" : ""}
+                    ${partner.name === "FM2C" ? "scale-[1.8] dark:brightness-[10] dark:contrast-[10]" : ""}
+                    ${partner.name === "GERDAU" ? "dark:brightness-[10] dark:contrast-[10]" : ""}
+                    ${partner.name === "LE CANTON" ? "dark:brightness-[10] dark:contrast-[10]" : ""}
+                  `}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                     if (target.parentElement) {
-                      target.parentElement.innerHTML = `<span class="text-lg font-bold font-heading opacity-50 text-slate-400">${partner.name}</span>`;
+                      target.parentElement.innerHTML = `<span class="text-lg font-bold font-heading opacity-50 text-foreground">${partner.name}</span>`;
                     }
                   }}
                 />
