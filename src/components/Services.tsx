@@ -87,7 +87,7 @@ export function Services() {
                   </span>
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-widest mb-2 text-muted-foreground">
+                  <div className="text-[10px] sm:text-xs uppercase tracking-[0.2em] mb-2 font-bold text-accent/80">
                     {it.tag}
                   </div>
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 leading-tight tracking-tight text-foreground">{it.title}</h3>
