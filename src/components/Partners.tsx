@@ -40,7 +40,7 @@ export const Partners = () => {
               className="flex items-center justify-center transition-all duration-500 reveal"
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
-              <div className="group relative flex items-center justify-center w-full aspect-video p-4 transition-all duration-300 bg-white dark:bg-[#0f172a] rounded-2xl border border-[#0f2b5c]/10 shadow-sm overflow-hidden hover:shadow-md hover:border-[#0f2b5c]/20">
+              <div className="group relative flex items-center justify-center w-full aspect-video p-4 transition-all duration-300 bg-[#0f2b5c]/10 hover:bg-[#0f2b5c]/15 dark:bg-white/5 dark:hover:bg-white/10 rounded-2xl border border-[#0f2b5c]/10 shadow-sm overflow-hidden">
                 <img
                   src={partner.logo}
                   alt={partner.name}
