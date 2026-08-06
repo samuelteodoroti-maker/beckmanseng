@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
 import logo from "@/assets/beckmans-logo.png.asset.json";
@@ -9,6 +10,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState<string>("home");
   const [progress, setProgress] = useState(0);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => {
@@ -27,7 +29,10 @@ export function Navbar() {
     const sections = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => !!el);
-    if (sections.length === 0) return;
+    if (sections.length === 0) {
+      if (location.pathname === "/inspecoes") setActive("inspecoes");
+      return;
+    }
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -41,6 +46,10 @@ export function Navbar() {
   }, []);
 
   const scrollToSection = (id: string) => {
+    if (location.pathname !== "/") {
+      window.location.href = `/#${id}`;
+      return;
+    }
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
   };
@@ -48,6 +57,7 @@ export function Navbar() {
   const links = [
     { id: "home", label: "Início" },
     { id: "services", label: "Serviços" },
+    { id: "inspecoes", label: "Vistorias", isExternal: true },
     { id: "projects", label: "Portfólio" },
     { id: "about", label: "Sobre" },
     { id: "contact", label: "Contato" },
@@ -61,26 +71,43 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          <button onClick={() => scrollToSection("home")} className="flex items-center gap-3 group">
+          <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3 group">
             <img src={logo.url} alt="Beckmans Engenharia" className="h-8 sm:h-10 w-auto transition-transform group-hover:scale-105" />
-          </button>
+          </Link>
 
           <div className="hidden lg:flex items-center gap-1">
             {links.map((l) => (
-              <button
-                key={l.id}
-                onClick={() => scrollToSection(l.id)}
-                className={`relative px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 ${
-                  active === l.id
-                    ? "text-accent bg-accent/10"
-                    : "text-foreground/70 hover:bg-accent/5 hover:text-accent"
-                }`}
-              >
-                {l.label}
-                {active === l.id && (
-                  <span className="absolute left-1/2 -bottom-0.5 -translate-x-1/2 h-1 w-1 rounded-full bg-accent" />
-                )}
-              </button>
+              l.isExternal ? (
+                <Link
+                  key={l.id}
+                  to="/inspecoes"
+                  className={`relative px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 ${
+                    active === l.id
+                      ? "text-accent bg-accent/10"
+                      : "text-foreground/70 hover:bg-accent/5 hover:text-accent"
+                  }`}
+                >
+                  {l.label}
+                  {active === l.id && (
+                    <span className="absolute left-1/2 -bottom-0.5 -translate-x-1/2 h-1 w-1 rounded-full bg-accent" />
+                  )}
+                </Link>
+              ) : (
+                <button
+                  key={l.id}
+                  onClick={() => scrollToSection(l.id)}
+                  className={`relative px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 ${
+                    active === l.id
+                      ? "text-accent bg-accent/10"
+                      : "text-foreground/70 hover:bg-accent/5 hover:text-accent"
+                  }`}
+                >
+                  {l.label}
+                  {active === l.id && (
+                    <span className="absolute left-1/2 -bottom-0.5 -translate-x-1/2 h-1 w-1 rounded-full bg-accent" />
+                  )}
+                </button>
+              )
             ))}
             <div className="mx-2 h-6 w-px bg-border" />
             <ThemeToggle />
@@ -112,13 +139,24 @@ export function Navbar() {
         {isOpen && (
           <div className="lg:hidden mt-4 glass rounded-3xl p-6 space-y-2 animate-in fade-in slide-in-from-top-4 duration-300">
             {links.map((l) => (
-              <button
-                key={l.id}
-                onClick={() => scrollToSection(l.id)}
-                className="block w-full text-left px-4 py-4 rounded-2xl hover:bg-accent/10 hover:text-accent transition-colors font-bold text-base"
-              >
-                {l.label}
-              </button>
+              l.isExternal ? (
+                <Link
+                  key={l.id}
+                  to="/inspecoes"
+                  onClick={() => setIsOpen(false)}
+                  className="block w-full text-left px-4 py-4 rounded-2xl hover:bg-accent/10 hover:text-accent transition-colors font-bold text-base"
+                >
+                  {l.label}
+                </Link>
+              ) : (
+                <button
+                  key={l.id}
+                  onClick={() => scrollToSection(l.id)}
+                  className="block w-full text-left px-4 py-4 rounded-2xl hover:bg-accent/10 hover:text-accent transition-colors font-bold text-base"
+                >
+                  {l.label}
+                </button>
+              )
             ))}
             <Button variant="accent" className="w-full mt-4 h-14 rounded-full" asChild>
               <a
