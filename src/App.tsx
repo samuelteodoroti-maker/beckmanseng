@@ -8,6 +8,7 @@ import SectionLoading from "./components/SectionLoading";
 
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const Inspections = lazy(() => import("./pages/Inspections"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,6 +30,7 @@ const App = () => (
         <Suspense fallback={<SectionLoading />}>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/inspecoes" element={<Inspections />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

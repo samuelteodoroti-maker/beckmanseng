@@ -73,7 +73,7 @@ export const Services = memo(function Services() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {items.map((it, idx) => (
-            <article
+            <div
               key={idx}
               className={`group relative overflow-hidden rounded-3xl glass card-ring p-8 sm:p-10 hover-lift reveal transition-all duration-500 hover:border-accent/40 hover:shadow-glow/10 flex flex-col justify-between min-h-[360px] will-change-transform ${
                 it.span ?? ""
@@ -113,8 +113,14 @@ export const Services = memo(function Services() {
                 </div>
               </div>
               
-              <ArrowUpRight className="absolute top-5 right-5 sm:top-6 sm:right-6 h-5 w-5 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all text-accent" />
-            </article>
+              {it.title === "Vistoria com Drone" ? (
+                <a href="/inspecoes" className="absolute inset-0 z-20" aria-label={`Saber mais sobre ${it.title}`} />
+              ) : (
+                <a href={`https://wa.me/5521982234712?text=Olá Beckmans! Gostaria de saber mais sobre o serviço de ${it.title}.`} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-20" aria-label={`Solicitar orçamento para ${it.title}`} />
+              )}
+              
+              <ArrowUpRight className="absolute top-5 right-5 sm:top-6 sm:right-6 h-5 w-5 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all text-accent z-10" />
+            </div>
           ))}
         </div>
       </div>
