@@ -70,10 +70,10 @@ export function Navbar() {
               <button
                 key={l.id}
                 onClick={() => scrollToSection(l.id)}
-                className={`relative px-4 py-2 text-sm font-medium rounded-full transition-all ${
+                className={`relative px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300 ${
                   active === l.id
                     ? "text-accent bg-accent/10"
-                    : "hover:bg-accent/10 hover:text-accent"
+                    : "text-foreground/70 hover:bg-accent/10 hover:text-accent"
                 }`}
               >
                 {l.label}

@@ -46,9 +46,9 @@ export function About() {
                 { n: "+50", l: "Projetos Ativos" },
                 { n: "98%", l: "Satisfação" },
               ].map((s, i) => (
-                <div key={i} className="glass rounded-2xl px-3 py-5 sm:p-6 text-center border-accent/10 hover:border-accent/30 transition-colors group">
-                  <div className="text-3xl sm:text-4xl font-bold text-accent tabular-nums transition-transform group-hover:scale-110 duration-500">{s.n}</div>
-                  <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-bold text-muted-foreground mt-2">{s.l}</div>
+                <div key={i} className="glass rounded-3xl px-3 py-6 sm:p-8 text-center border-accent/10 hover:border-accent/30 transition-all duration-500 group hover:shadow-soft active:scale-95">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-accent tabular-nums transition-transform group-hover:scale-110 duration-500">{s.n}</div>
+                  <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-bold text-muted-foreground mt-3">{s.l}</div>
                 </div>
               ))}
             </div>

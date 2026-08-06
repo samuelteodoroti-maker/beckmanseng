@@ -56,7 +56,7 @@ export function Hero() {
                 variant="accent"
                 size="lg"
                 asChild
-                className="group rounded-full text-base px-6 sm:px-8 h-14 shadow-glow w-full sm:w-auto justify-center"
+                className="group rounded-full text-base px-6 sm:px-10 h-14 shadow-glow w-full sm:w-auto justify-center transition-all duration-300 hover:scale-105 active:scale-95"
               >
                 <a
                   href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Vi%20o%20site%20de%20voc%C3%AAs%20e%20quero%20solicitar%20um%20or%C3%A7amento%20para%20o%20meu%20projeto."

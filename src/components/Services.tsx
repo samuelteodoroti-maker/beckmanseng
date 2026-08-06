@@ -72,7 +72,7 @@ export function Services() {
           {items.map((it, idx) => (
             <article
               key={idx}
-              className={`group relative overflow-hidden rounded-3xl glass card-ring p-5 sm:p-6 md:p-8 hover-lift reveal transition-all duration-500 hover:border-accent/40 aspect-[3/2] flex flex-col ${
+              className={`group relative overflow-hidden rounded-3xl glass card-ring p-6 sm:p-8 md:p-10 hover-lift reveal transition-all duration-500 hover:border-accent/40 aspect-[3/2] flex flex-col ${
                 it.span ?? ""
               }`}
               style={{ transitionDelay: `${idx * 60}ms` }}
