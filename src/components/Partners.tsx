@@ -4,6 +4,7 @@ import leCantonLogo from "@/assets/logo-le-canton.png.asset.json";
 import grupoRBLogo from "@/assets/logo-grupo-rb.png.asset.json";
 import naturaLogo from "@/assets/logo-natura.png.asset.json";
 import fm2cLogo from "@/assets/logo-fm2c.png.asset.json";
+import hortifrutiLogo from "@/assets/logo-hortifruti.png.asset.json";
 
 const PARTNERS = [
   { name: "GERDAU", logo: gerdauLogo.url },
@@ -11,7 +12,7 @@ const PARTNERS = [
   { name: "LE CANTON", logo: leCantonLogo.url },
   { name: "NATURA", logo: naturaLogo.url },
   { name: "FM2C", logo: fm2cLogo.url },
-  { name: "HORTIFRUTI", logo: "https://hortifruti.com.br/static/media/logo.8d277d33.svg" },
+  { name: "HORTIFRUTI", logo: hortifrutiLogo.url },
 ];
 
 export const Partners = () => {
