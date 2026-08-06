@@ -90,9 +90,9 @@ export function Projects() {
                 src={p.img}
                 alt={p.title}
                 loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent transition-opacity duration-500 group-hover:from-primary/80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent transition-all duration-700 group-hover:from-primary/90 group-hover:via-primary/20" />
               <div className="absolute inset-0 p-6 sm:p-8 md:p-10 flex flex-col justify-end text-primary-foreground">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="glass-dark backdrop-blur-md inline-flex self-start rounded-full px-4 py-1.5 text-xs font-bold text-accent border-accent/20">

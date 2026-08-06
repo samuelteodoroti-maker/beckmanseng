@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 210 40% 99%;
+    --background: 210 50% 98%;
     --foreground: 217 60% 12%;
 
     --card: 0 0% 100%;
@@ -43,8 +43,8 @@ All colors MUST be HSL.
     --gradient-mesh: radial-gradient(at 20% 20%, hsl(158 52% 55% / 0.14) 0px, transparent 55%), radial-gradient(at 80% 30%, hsl(217 71% 40% / 0.18) 0px, transparent 55%), radial-gradient(at 60% 85%, hsl(170 60% 55% / 0.10) 0px, transparent 55%);
     --gradient-subtle: linear-gradient(180deg, hsl(210 40% 99%) 0%, hsl(210 30% 95%) 100%);
 
-    --glass-bg: hsla(0, 0%, 100%, 0.72);
-    --glass-border: hsla(217, 71%, 21%, 0.09);
+    --glass-bg: hsla(0, 0%, 100%, 0.6);
+    --glass-border: hsla(217, 71%, 21%, 0.12);
 
     --shadow-elegant: 0 10px 40px -12px hsl(217 71% 21% / 0.18), 0 2px 8px -2px hsl(217 71% 21% / 0.06);
     --shadow-glow: 0 0 48px hsl(158 52% 45% / 0.35);
@@ -190,18 +190,13 @@ All colors MUST be HSL.
   }
 
   .glass {
-    background: hsla(var(--background), 0.75);
-    backdrop-filter: blur(16px) saturate(160%);
-    -webkit-backdrop-filter: blur(16px) saturate(160%);
-    border: 1px solid hsl(var(--foreground) / 0.08);
-    box-shadow: 0 4px 24px -1px hsl(var(--foreground) / 0.04), 0 2px 8px -1px hsl(var(--foreground) / 0.02);
+    @apply bg-background/60 backdrop-blur-xl border-white/20 dark:border-white/10 shadow-soft;
+    -webkit-backdrop-filter: blur(16px);
   }
 
   .glass-dark {
-    background: hsla(217, 71%, 10%, 0.85);
-    backdrop-filter: blur(16px) saturate(160%);
-    -webkit-backdrop-filter: blur(16px) saturate(160%);
-    border: 1px solid hsla(158, 55%, 55%, 0.12);
+    @apply bg-slate-950/80 backdrop-blur-xl border-accent/20 shadow-elegant;
+    -webkit-backdrop-filter: blur(16px);
   }
 
   .mesh-bg {
