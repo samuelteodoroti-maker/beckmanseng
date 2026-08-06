@@ -2,23 +2,48 @@ import { useEffect } from "react";
 
 export function useReveal() {
   useEffect(() => {
-    const items = document.querySelectorAll<HTMLElement>(".reveal");
-    if (!("IntersectionObserver" in window) || items.length === 0) {
-      items.forEach((el) => el.classList.add("in"));
-      return;
-    }
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("in");
-            io.unobserve(e.target);
+    const observerOptions: IntersectionObserverInit = {
+      threshold: 0.12,
+      rootMargin: "0px 0px -60px 0px"
+    };
+
+    const handleIntersect: IntersectionObserverCallback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+    
+    // MutationObserver to handle dynamically added elements with .reveal class
+    const mutationObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node instanceof HTMLElement) {
+            if (node.classList.contains("reveal")) {
+              observer.observe(node);
+            }
+            node.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
           }
         });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
-    );
-    items.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+      });
+    });
+
+    // Initial observation
+    const items = document.querySelectorAll(".reveal");
+    items.forEach((el) => observer.observe(el));
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
   }, []);
 }
