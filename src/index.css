@@ -227,6 +227,14 @@ All colors MUST be HSL.
     transform: none;
   }
 
+  .reveal-fade {
+    opacity: 0;
+    transition: opacity 1s var(--ease-out-quart);
+  }
+  .reveal-fade.in {
+    opacity: 1;
+  }
+
   .section-chip {
     @apply inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium;
     background: hsl(var(--accent) / 0.10);

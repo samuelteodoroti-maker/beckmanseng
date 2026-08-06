@@ -19,7 +19,7 @@ export const Partners = () => {
   useReveal();
 
   return (
-    <section className="py-24 bg-accent relative border-y border-border/10">
+    <section className="py-24 bg-accent relative border-y border-border/10 reveal-fade">
       <div className="container px-4 relative z-10">
         <div className="max-w-3xl mb-14 reveal">
           <div className="flex items-center gap-4 mb-3">
@@ -29,7 +29,7 @@ export const Partners = () => {
             </div>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold font-heading tracking-tight text-white">
-            Empresas que confiam em <span className="text-navy">nosso trabalho.</span>
+            Empresas que confiam em <span className="text-navy font-bold">nosso trabalho.</span>
           </h2>
         </div>
 
