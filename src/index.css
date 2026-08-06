@@ -254,9 +254,18 @@ All colors MUST be HSL.
 
   @keyframes marquee {
     from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    to { transform: translateX(-100%); }
   }
-  .animate-marquee { animation: marquee 40s linear infinite; }
+  @keyframes marquee2 {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+  }
+  .animate-marquee {
+    animation: marquee 50s linear infinite;
+  }
+  .animate-marquee2 {
+    animation: marquee2 50s linear infinite;
+  }
 
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1 !important; transform: none !important; }
