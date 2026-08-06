@@ -49,7 +49,7 @@ export function Services() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mb-14 reveal">
           <div className="flex items-center gap-3 mb-6">
-            <span className="section-index">02 —</span>
+            <span className="section-index">03 —</span>
             <div className="section-chip">
               <HardHat className="h-4 w-4" />
               Áreas de atuação
