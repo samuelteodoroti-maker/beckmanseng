@@ -52,9 +52,9 @@ export function Projects() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 reveal">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
-              <span className="section-index">04 —</span>
-              <div className="section-chip">
-                <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+              <span className="section-index text-sm font-bold">04 —</span>
+              <div className="section-chip text-base px-5 py-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse" />
                 Portfólio
               </div>
             </div>
