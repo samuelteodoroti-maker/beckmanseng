@@ -13,56 +13,37 @@ export const Partners = () => {
   useReveal();
 
   return (
-    <section className="py-20 bg-muted/30 overflow-hidden">
-      <div className="container px-4 mb-10">
-        <div className="flex items-center gap-4 mb-2">
+    <section className="py-20 bg-muted/30 overflow-hidden relative">
+      <div className="container px-4 mb-10 relative z-10">
+        <div className="flex items-center gap-4 mb-2 reveal">
           <span className="section-index">02 —</span>
-          <div className="h-[1px] w-12 bg-primary/30"></div>
-          <span className="text-sm font-semibold tracking-wider text-primary uppercase">
+          <div className="section-chip uppercase tracking-wider">
             Nossos Parceiros
-          </span>
+          </div>
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold font-heading">
-          Empresas que confiam em nosso trabalho
+        <h2 className="text-3xl md:text-5xl font-bold font-heading reveal" style={{ transitionDelay: "100ms" }}>
+          Empresas que confiam em <span className="text-accent">nosso trabalho.</span>
         </h2>
       </div>
 
-      <div className="relative flex overflow-x-hidden">
-        <div className="py-12 animate-marquee whitespace-nowrap flex items-center">
-          {PARTNERS.map((partner) => (
+      <div className="relative flex overflow-x-hidden py-10">
+        <div className="animate-marquee whitespace-nowrap flex items-center min-w-full">
+          {[...PARTNERS, ...PARTNERS, ...PARTNERS].map((partner, idx) => (
             <div
-              key={partner.name}
-              className="mx-12 flex flex-col items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+              key={`${partner.name}-${idx}`}
+              className="mx-12 md:mx-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-40 hover:opacity-100"
             >
               <div className="h-12 md:h-16 flex items-center justify-center">
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="max-h-full max-w-[180px] object-contain"
+                  className="max-h-full max-w-[160px] md:max-w-[200px] object-contain"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
-                    target.parentElement!.innerHTML = `<span class="text-xl font-bold font-heading opacity-50">${partner.name}</span>`;
-                  }}
-                />
-              </div>
-            </div>
-          ))}
-          {/* Duplicate for seamless loop */}
-          {PARTNERS.map((partner) => (
-            <div
-              key={`${partner.name}-clone`}
-              className="mx-12 flex flex-col items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
-            >
-              <div className="h-12 md:h-16 flex items-center justify-center">
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="max-h-full max-w-[180px] object-contain"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    target.parentElement!.innerHTML = `<span class="text-xl font-bold font-heading opacity-50">${partner.name}</span>`;
+                    if (target.parentElement) {
+                      target.parentElement.innerHTML = `<span class="text-2xl font-bold font-heading opacity-50 text-foreground">${partner.name}</span>`;
+                    }
                   }}
                 />
               </div>
@@ -70,41 +51,24 @@ export const Partners = () => {
           ))}
         </div>
         
-        {/* Repeating the marquee content to ensure it fills the width and loops correctly */}
-        <div className="absolute top-0 py-12 animate-marquee2 whitespace-nowrap flex items-center">
-          {PARTNERS.map((partner) => (
+        {/* Repeating for seamless loop */}
+        <div className="absolute top-10 left-0 animate-marquee2 whitespace-nowrap flex items-center min-w-full">
+          {[...PARTNERS, ...PARTNERS, ...PARTNERS].map((partner, idx) => (
             <div
-              key={`${partner.name}-copy`}
-              className="mx-12 flex flex-col items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+              key={`${partner.name}-copy-${idx}`}
+              className="mx-12 md:mx-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-40 hover:opacity-100"
             >
               <div className="h-12 md:h-16 flex items-center justify-center">
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="max-h-full max-w-[180px] object-contain"
+                  className="max-h-full max-w-[160px] md:max-w-[200px] object-contain"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
-                    target.parentElement!.innerHTML = `<span class="text-xl font-bold font-heading opacity-50">${partner.name}</span>`;
-                  }}
-                />
-              </div>
-            </div>
-          ))}
-          {PARTNERS.map((partner) => (
-            <div
-              key={`${partner.name}-copy-clone`}
-              className="mx-12 flex flex-col items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
-            >
-              <div className="h-12 md:h-16 flex items-center justify-center">
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="max-h-full max-w-[180px] object-contain"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    target.parentElement!.innerHTML = `<span class="text-xl font-bold font-heading opacity-50">${partner.name}</span>`;
+                    if (target.parentElement) {
+                      target.parentElement.innerHTML = `<span class="text-2xl font-bold font-heading opacity-50 text-foreground">${partner.name}</span>`;
+                    }
                   }}
                 />
               </div>
@@ -112,6 +76,11 @@ export const Partners = () => {
           ))}
         </div>
       </div>
+      
+      {/* Gradient masks for smooth edges */}
+      <div className="absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-muted/30 to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-muted/30 to-transparent z-10 pointer-events-none" />
     </section>
   );
 };
+
