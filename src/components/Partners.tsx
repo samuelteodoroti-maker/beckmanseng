@@ -19,8 +19,8 @@ export const Partners = () => {
   useReveal();
 
   return (
-    <section className="py-24 bg-muted/20 dark:bg-muted/5 relative border-y border-border/10">
-      <div className="container px-4 relative z-10">
+    <section className="py-24 md:py-32 bg-muted/20 dark:bg-muted/5 relative border-y border-border/10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mb-14 reveal">
           <div className="flex items-center gap-4 mb-3">
             <span className="section-index">02 —</span>
@@ -28,7 +28,7 @@ export const Partners = () => {
               Nossos Parceiros
             </div>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold font-heading tracking-tight">
+          <h2 className="text-h2 font-bold">
             Empresas que confiam em <span className="text-accent">nosso trabalho.</span>
           </h2>
         </div>
