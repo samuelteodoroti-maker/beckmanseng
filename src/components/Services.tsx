@@ -14,7 +14,6 @@ const items: ServiceItem[] = [
     title: "Consultoria em Engenharia",
     desc: "Consultoria estratégica em engenharia civil para viabilizar e otimizar seu projeto.",
     tag: "Estratégia técnica",
-    span: "md:col-span-2",
   },
   {
     icon: ShieldCheck,
