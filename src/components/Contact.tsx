@@ -29,7 +29,7 @@ export function Contact() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center reveal">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center reveal items-stretch">
             {[
               {
                 icon: Phone,
@@ -61,7 +61,7 @@ export function Contact() {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="flex flex-col items-center justify-between gap-6 glass border-white/40 dark:border-white/10 rounded-[2rem] p-8 sm:p-10 lg:p-12 hover-lift group transition-all duration-500 shadow-sm min-h-[300px]"
+                className="flex flex-col items-center justify-between gap-6 glass border-white/40 dark:border-white/10 rounded-[2rem] p-8 sm:p-10 hover-lift group transition-all duration-500 shadow-sm h-full"
               >
                 <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm">
                   <item.icon className="h-7 w-7" />
