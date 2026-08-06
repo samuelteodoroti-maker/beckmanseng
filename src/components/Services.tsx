@@ -69,12 +69,12 @@ export function Services() {
               key={idx}
               className={`group relative overflow-hidden rounded-3xl glass card-ring p-5 sm:p-6 md:p-8 hover-lift reveal transition-all duration-500 hover:border-accent/40 ${
                 it.span ?? ""
-              } ${it.accent ? "bg-primary text-primary-foreground border-transparent hover:shadow-glow" : ""}`}
+              } ${it.accent ? "bg-primary text-primary-foreground border-transparent hover:shadow-glow dark:bg-accent/10 dark:text-foreground dark:border-accent/20" : ""}`}
               style={{ transitionDelay: `${idx * 60}ms` }}
             >
               <div className="flex flex-col h-full justify-between gap-6">
                 <div className="flex items-center justify-between">
-                  <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 ${it.accent ? "bg-accent text-accent-foreground" : "bg-accent/15 text-accent"}`}>
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 ${it.accent ? "bg-accent text-accent-foreground dark:bg-accent dark:text-accent-foreground" : "bg-accent/15 text-accent"}`}>
                     <it.icon className="h-6 w-6 sm:h-7 sm:w-7" />
                   </div>
                   <span className={`font-mono text-xs tracking-widest tabular-nums ${it.accent ? "text-accent-foreground/60" : "text-muted-foreground/60"}`}>
