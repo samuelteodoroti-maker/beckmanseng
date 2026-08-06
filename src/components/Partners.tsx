@@ -29,7 +29,7 @@ export const Partners = () => {
             </div>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold font-heading tracking-tight text-white">
-            Empresas que confiam em <span className="text-navy">nosso trabalho.</span>
+            Empresas que confiam em <span className="text-navy font-bold">nosso trabalho.</span>
           </h2>
         </div>
 
