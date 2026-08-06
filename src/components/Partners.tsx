@@ -37,7 +37,9 @@ export const Partners = () => {
           {PARTNERS.map((partner, idx) => (
             <div
               key={partner.name}
-              className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100 reveal"
+              className={`flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100 reveal ${
+                partner.name === "GRUPO RB" ? "scale-125 md:scale-150" : ""
+              }`}
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
               <div className="h-28 md:h-40 w-full flex items-center justify-center p-1">
