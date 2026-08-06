@@ -11,7 +11,7 @@ export function Contact() {
         <div className="max-w-3xl mx-auto space-y-8 sm:space-y-10 text-center reveal">
           <div>
             <div className="flex items-center justify-center gap-3 mb-6">
-              <span className="section-index">05 —</span>
+              <span className="section-index">06 —</span>
               <div className="section-chip">Entre em contato</div>
             </div>
             <h2 className="text-h2 font-bold mb-4">

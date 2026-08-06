@@ -27,7 +27,7 @@ export function About() {
         <div className="grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-20 items-start">
           <div className="space-y-6 sm:space-y-8 reveal">
             <div className="flex items-center gap-3">
-              <span className="section-index">04 —</span>
+              <span className="section-index">05 —</span>
               <div className="section-chip">Sobre a Beckmans</div>
             </div>
             <h2 className="text-h2 font-bold">

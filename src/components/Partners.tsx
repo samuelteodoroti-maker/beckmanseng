@@ -16,7 +16,7 @@ export const Partners = () => {
     <section className="py-20 bg-muted/30 overflow-hidden">
       <div className="container px-4 mb-10">
         <div className="flex items-center gap-4 mb-2">
-          <span className="section-index">02</span>
+          <span className="section-index">02 —</span>
           <div className="h-[1px] w-12 bg-primary/30"></div>
           <span className="text-sm font-semibold tracking-wider text-primary uppercase">
             Nossos Parceiros
