@@ -11,12 +11,10 @@ const pillars = [
 ];
 
 const checks = [
-  "Fundada em 2024 no Rio de Janeiro, RJ",
-  "Gestão de Andrew Matheus da Silva Beckman",
-  "Engenheiro civil e gestor de projetos/obras",
-  "Atuação no Grande Rio de Janeiro",
-  "ART e responsabilidade técnica em todos os projetos",
+  "ART e responsabilidade técnica em todos os serviços",
   "Atendimento consultivo e personalizado",
+  "Engenheiro civil especializado em gestão de obras",
+  "Compromisso com prazos, normas e resultados",
 ];
 
 export function About() {
