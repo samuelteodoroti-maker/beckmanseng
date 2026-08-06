@@ -69,7 +69,7 @@ export function Services() {
               key={idx}
               className={`group relative overflow-hidden rounded-3xl glass card-ring p-5 sm:p-6 md:p-8 hover-lift reveal transition-all duration-500 hover:border-accent/40 ${
                 it.span ?? ""
-              } ${it.accent ? "bg-gradient-to-br from-primary to-primary/80 text-primary-foreground border-transparent hover:shadow-glow" : ""}`}
+              } ${it.accent ? "bg-primary text-primary-foreground border-transparent hover:shadow-glow" : ""}`},old_content:
               style={{ transitionDelay: `${idx * 60}ms` }}
             >
               <div className="flex flex-col h-full justify-between gap-6">
