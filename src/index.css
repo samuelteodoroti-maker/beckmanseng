@@ -163,17 +163,17 @@ All colors MUST be HSL.
 @layer utilities {
   /* Fluid typography */
   .text-display {
-    font-size: clamp(2.5rem, 5.5vw + 1rem, 5rem);
-    line-height: 1.02;
+    font-size: clamp(2.25rem, 5vw + 1rem, 5rem);
+    line-height: 1.1;
     letter-spacing: -0.035em;
   }
   .text-h2 {
-    font-size: clamp(2rem, 3.5vw + 0.75rem, 3.5rem);
-    line-height: 1.05;
+    font-size: clamp(1.85rem, 3.5vw + 0.75rem, 3.5rem);
+    line-height: 1.1;
     letter-spacing: -0.025em;
   }
   .text-lead {
-    font-size: clamp(1.05rem, 0.6vw + 0.9rem, 1.25rem);
+    font-size: clamp(1rem, 0.6vw + 0.9rem, 1.25rem);
     line-height: 1.6;
   }
 
