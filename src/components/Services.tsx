@@ -90,7 +90,7 @@ export function Services() {
                   <div className="text-xs uppercase tracking-widest mb-2 text-muted-foreground">
                     {it.tag}
                   </div>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 leading-tight">{it.title}</h3>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 leading-tight">{it.title}</h3>
                   <p className="text-sm md:text-base text-muted-foreground">
                     {it.desc}
                   </p>
