@@ -27,8 +27,8 @@ export function About() {
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-start">
           <div className="space-y-8 sm:space-y-12 reveal">
             <div className="flex items-center gap-3">
-              <span className="section-index">05 —</span>
-              <div className="section-chip">Sobre a Beckmans</div>
+              <span className="section-index text-sm font-bold">05 —</span>
+              <div className="section-chip text-base px-5 py-2">Sobre a Beckmans</div>
             </div>
             <h2 className="text-h2 font-bold tracking-tight">
               Empreendedorismo, engenharia e{" "}
