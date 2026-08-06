@@ -46,10 +46,10 @@ export const Hero = memo(function Hero() {
             </div>
 
             <h1 className="text-display font-bold text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.3)] leading-[1.1]">
-              Inovação é o caminho.{" "}
+              Engenharia Civil com <br />
               <span className="relative inline-block mt-2">
                 <span className="bg-gradient-to-r from-accent to-emerald-400 bg-clip-text text-transparent drop-shadow-none">
-                  Qualidade é a certeza.
+                  Inovação e Qualidade.
                 </span>
               </span>
             </h1>
