@@ -22,21 +22,25 @@ export function About() {
     <section id="about" className="py-24 md:py-32 relative">
       <div className="absolute inset-0 -z-10 grid-pattern opacity-30" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-start">
-          <div className="space-y-8 sm:space-y-12 reveal">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-stretch">
+          <div className="flex flex-col space-y-8 sm:space-y-12 reveal">
             <div className="flex items-center gap-3">
               <span className="section-index">05 —</span>
               <div className="section-chip">Sobre a Beckmans</div>
             </div>
-            <h2 className="text-h2 font-bold tracking-tight">
-              Empreendedorismo, engenharia e{" "}
-              <span className="text-accent">segurança</span> em um só lugar.
-            </h2>
-            <p className="text-lead text-muted-foreground">
-              A Beckmans Engenharia foi fundada em 4 de junho de 2024 no Rio de Janeiro, RJ, sob a gestão de
-              Andrew Matheus da Silva Beckman, engenheiro civil e gestor de projetos/obras. Atuamos no Grande Rio
-              com rigor técnico e compromisso por ambientes mais seguros.
-            </p>
+            
+            <div className="space-y-6">
+              <h2 className="text-h2 font-bold tracking-tight">
+                Empreendedorismo, engenharia e{" "}
+                <span className="text-accent">segurança</span> em um só lugar.
+              </h2>
+              <p className="text-lead text-muted-foreground">
+                A Beckmans Engenharia foi fundada em 4 de junho de 2024 no Rio de Janeiro, RJ, sob a gestão de
+                Andrew Matheus da Silva Beckman, engenheiro civil e gestor de projetos/obras. Atuamos no Grande Rio
+                com rigor técnico e compromisso por ambientes mais seguros.
+              </p>
+            </div>
+
             {/* Quick stats */}
             <div className="grid grid-cols-3 gap-3 sm:gap-4">
               {[
@@ -44,14 +48,15 @@ export function About() {
                 { n: "+50", l: "Projetos Ativos" },
                 { n: "98%", l: "Satisfação" },
               ].map((s, i) => (
-                <div key={i} className="glass border-white/40 dark:border-white/10 rounded-[2rem] px-2 py-6 sm:p-8 text-center hover:border-accent/30 transition-all duration-500 group hover:shadow-soft active:scale-95 flex flex-col items-center justify-center min-h-[140px] sm:min-h-[160px]">
+                <div key={i} className="glass border-white/40 dark:border-white/10 rounded-[2rem] px-2 py-6 sm:p-8 text-center hover:border-accent/30 transition-all duration-500 group hover:shadow-soft active:scale-95 flex flex-col items-center justify-center min-h-[140px] sm:min-h-[160px] h-full">
                   <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-accent tabular-nums transition-transform group-hover:scale-110 duration-500">{s.n}</div>
                   <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-bold text-muted-foreground mt-3 leading-tight">{s.l}</div>
                 </div>
               ))}
             </div>
+            
             {/* 🔁 PLACEHOLDER — Imagem de autoridade (troque ABOUT_IMAGE acima) */}
-            <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[4/3] sm:aspect-[16/10]">
+            <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[4/3] sm:aspect-[16/10] flex-grow">
               <img
                 src={ABOUT_IMAGE}
                 alt="Engenheiro Beckmans em canteiro de obras"
@@ -63,7 +68,8 @@ export function About() {
                 Engenharia com assinatura técnica
               </div>
             </div>
-            <div className="grid sm:grid-cols-2 gap-3">
+
+            <div className="grid sm:grid-cols-2 gap-3 pb-4">
               {checks.map((c, i) => (
                 <div key={i} className="flex items-start gap-3 text-foreground/90">
                   <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
@@ -73,11 +79,11 @@ export function About() {
             </div>
           </div>
 
-          <div className="grid gap-4 lg:sticky lg:top-28">
+          <div className="grid grid-cols-1 gap-6 lg:sticky lg:top-28 content-start h-fit">
             {pillars.map((p, i) => (
               <div
                 key={i}
-                className="glass border-white/40 dark:border-white/10 rounded-[2rem] p-6 sm:p-8 md:p-10 hover-lift reveal transition-all duration-500"
+                className="glass border-white/40 dark:border-white/10 rounded-[2rem] p-6 sm:p-8 md:p-10 hover-lift reveal transition-all duration-500 h-full flex flex-col justify-center"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className="flex items-start gap-4 sm:gap-5">
