@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { Instagram, Linkedin, Mail, Phone, ArrowUp } from "lucide-react";
 import logo from "@/assets/beckmans-logo.png.asset.json";
 
-export function Footer() {
+export const Footer = memo(function Footer() {
   return (
     <footer className="relative border-t border-border/50 pt-24 pb-12 bg-muted/5 overflow-hidden">
       <div className="absolute bottom-0 left-0 w-full h-[300px] bg-accent/5 blur-[120px] -z-10" />
@@ -73,4 +74,4 @@ export function Footer() {
       </div>
     </footer>
   );
-}
+});
