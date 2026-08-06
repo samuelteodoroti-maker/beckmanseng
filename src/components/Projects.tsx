@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { ArrowUpRight } from "lucide-react";
-import droneHighAsset from "@/assets/project_drone_high.jpg.asset.json";
+import droneHighAsset from "@/assets/drone_vistoria.jpeg.asset.json";
 import drillAsset from "@/assets/project_drill.jpg.asset.json";
 import torqueAsset from "@/assets/project_torque.jpg.asset.json";
 import cleaningAsset from "@/assets/project_cleaning.jpg.asset.json";
