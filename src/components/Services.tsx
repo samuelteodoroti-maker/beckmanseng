@@ -14,7 +14,6 @@ const items: ServiceItem[] = [
     title: "Consultoria em Engenharia",
     desc: "Consultoria estratégica em engenharia civil para viabilizar e otimizar seu projeto.",
     tag: "Estratégia técnica",
-    span: "md:col-span-2 md:row-span-2",
   },
   {
     icon: ShieldCheck,
@@ -33,7 +32,6 @@ const items: ServiceItem[] = [
     title: "Projetos 2D e 3D",
     desc: "Modelagem, plantas e visualização com padrão BIM.",
     tag: "BIM",
-    span: "md:col-span-2",
   },
   {
     icon: Search,
@@ -70,7 +68,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 auto-rows-[minmax(200px,auto)] gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {items.map((it, idx) => (
             <article
               key={idx}
