@@ -19,7 +19,7 @@ export const Partners = () => {
   useReveal();
 
   return (
-    <section className="py-24 bg-muted/20 relative border-y border-border/30">
+    <section className="py-24 bg-background relative border-y border-border/10">
       <div className="container px-4 relative z-10">
         <div className="max-w-3xl mb-14 reveal">
           <div className="flex items-center gap-4 mb-3">
