@@ -37,29 +37,22 @@ export const Partners = () => {
           {PARTNERS.map((partner, idx) => (
             <div
               key={partner.name}
-              className={`flex items-center justify-center transition-all duration-500 reveal ${
-                partner.name === "GRUPO RB" ? "scale-[2.5] md:scale-[3.2]" : ""
-              }`}
+              className="flex items-center justify-center transition-all duration-500 reveal"
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
-              <div className={`h-28 md:h-40 w-full flex items-center justify-center p-4 rounded-xl transition-colors duration-300 ${
-                (partner.name === "GRUPO RB" || partner.name === "FM2C") 
-                  ? "bg-foreground/5 dark:bg-transparent" 
-                  : ""
-              }`}>
+              <div className={`h-24 md:h-32 w-full flex items-center justify-center p-6 rounded-2xl transition-all duration-300 bg-white shadow-sm border border-slate-100 hover:shadow-md hover:-translate-y-1`}>
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className={`max-h-full max-w-full object-contain transform hover:scale-110 transition-transform duration-300 ${
-                    (partner.name === "GRUPO RB" || partner.name === "FM2C") 
-                      ? "dark:invert-0" 
-                      : ""
+                  className={`max-h-full max-w-full object-contain transform hover:scale-105 transition-transform duration-300 ${
+                    partner.name === "GRUPO RB" ? "scale-[2.8]" : 
+                    partner.name === "FM2C" ? "scale-[1.8]" : ""
                   }`}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                     if (target.parentElement) {
-                      target.parentElement.innerHTML = `<span class="text-xl font-bold font-heading opacity-50 text-foreground">${partner.name}</span>`;
+                      target.parentElement.innerHTML = `<span class="text-lg font-bold font-heading opacity-50 text-slate-400">${partner.name}</span>`;
                     }
                   }}
                 />
