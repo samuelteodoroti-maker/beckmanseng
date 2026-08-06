@@ -81,19 +81,19 @@ export function Hero() {
             </div>
 
             {/* Trust badges */}
-            <div className="flex flex-wrap gap-4 sm:gap-6 pt-4 sm:pt-6">
+            <div className="flex flex-wrap gap-6 sm:gap-10 pt-6 sm:pt-10">
               {[
                 { icon: ShieldCheck, label: "Fundada em 2024", sub: "Rio de Janeiro, RJ" },
                 { icon: Zap, label: "Projetos 2D e 3D", sub: "Tecnologia BIM" },
                 { icon: Sparkles, label: "CREA Ativo", sub: "Responsabilidade técnica" },
               ].map((b, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl glass flex items-center justify-center bg-white/10">
-                    <b.icon className="h-5 w-5 text-accent" />
+                <div key={i} className="flex items-center gap-4 group transition-all duration-300">
+                  <div className="w-14 h-14 rounded-2xl glass flex items-center justify-center bg-white/10 border-white/30 shadow-lg group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
+                    <b.icon className="h-7 w-7 text-accent drop-shadow-[0_0_8px_rgba(77,201,160,0.5)]" />
                   </div>
-                  <div>
-                    <div className="text-sm font-semibold text-white">{b.label}</div>
-                    <div className="text-xs text-white/70">{b.sub}</div>
+                  <div className="flex flex-col gap-0.5">
+                    <div className="text-base sm:text-lg font-bold text-white tracking-tight leading-tight">{b.label}</div>
+                    <div className="text-sm text-white/70 font-medium">{b.sub}</div>
                   </div>
                 </div>
               ))}
