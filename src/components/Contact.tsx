@@ -11,10 +11,10 @@ export const Contact = memo(function Contact() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16 text-center reveal">
           <div>
-            <div className="flex flex-row items-center justify-center gap-4 mb-8">
+            <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-8">
               <span className="section-index text-accent">06</span>
               <span className="text-accent/40 font-bold">—</span>
-              <div className="section-chip border-accent/30 text-accent uppercase tracking-[0.3em] !px-10 py-4 bg-accent/10 backdrop-blur-sm rounded-full border shadow-lg shadow-accent/5">Entre em contato</div>
+              <div className="section-chip border-accent/30 text-accent uppercase bg-accent/10 backdrop-blur-sm rounded-full border shadow-lg shadow-accent/5 truncate max-w-[70vw] sm:max-w-none">Entre em contato</div>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white">
               Vamos tirar seu projeto <span className="text-accent drop-shadow-[0_0_15px_rgba(77,201,160,0.4)]">do papel.</span>
@@ -63,7 +63,7 @@ export const Contact = memo(function Contact() {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="flex flex-col items-center justify-center gap-6 bg-slate-900/40 backdrop-blur-md border border-accent/20 hover:border-accent rounded-3xl p-8 hover-lift group transition-all duration-500 shadow-2xl h-full aspect-square relative overflow-hidden"
+                className="flex flex-col items-center justify-center gap-4 sm:gap-6 bg-slate-900/40 backdrop-blur-md border border-accent/20 hover:border-accent rounded-3xl p-6 sm:p-8 hover-lift group transition-all duration-500 shadow-2xl h-full aspect-square sm:aspect-square relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
@@ -72,8 +72,8 @@ export const Contact = memo(function Contact() {
                 </div>
                 
                 <div className="flex flex-col items-center gap-3 w-full relative z-10">
-                  <div className="text-xs uppercase tracking-[0.25em] text-accent font-bold opacity-80 group-hover:opacity-100">{item.label}</div>
-                  <div className="font-bold text-base md:text-lg text-white group-hover:text-accent transition-colors duration-300 break-words w-full px-2">
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold opacity-80 group-hover:opacity-100">{item.label}</div>
+                  <div className="font-bold text-sm sm:text-base md:text-lg text-white group-hover:text-accent transition-colors duration-300 break-all w-full px-1">
                     {item.value}
                   </div>
                 </div>
