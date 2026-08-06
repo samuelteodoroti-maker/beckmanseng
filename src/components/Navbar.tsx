@@ -34,7 +34,7 @@ export function Navbar() {
           if (e.isIntersecting) setActive(e.target.id);
         });
       },
-      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+      { rootMargin: "-40% 0px -40% 0px", threshold: 0.1 }
     );
     sections.forEach((s) => io.observe(s));
     return () => io.disconnect();
@@ -97,7 +97,13 @@ export function Navbar() {
 
           <div className="flex lg:hidden items-center gap-2">
             <ThemeToggle />
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={isOpen}
+            >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
