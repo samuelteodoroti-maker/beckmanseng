@@ -1,5 +1,6 @@
 import { memo } from "react";
 import { Search, ShieldCheck, Building2, Lightbulb, ArrowUpRight, HardHat, FileCheck2, Ruler } from "lucide-react";
+import droneVistoriaAsset from "@/assets/drone_vistoria.jpeg.asset.json";
 
 interface ServiceItem {
   icon: any;
