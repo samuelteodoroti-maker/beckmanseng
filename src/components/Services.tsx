@@ -72,14 +72,14 @@ export function Services() {
           {items.map((it, idx) => (
             <article
               key={idx}
-              className={`group relative overflow-hidden rounded-3xl glass card-ring p-5 sm:p-6 md:p-8 hover-lift reveal transition-all duration-500 hover:border-accent/40 aspect-[3/2] flex flex-col ${
+              className={`group relative overflow-hidden rounded-3xl glass card-ring p-6 sm:p-8 md:p-10 hover-lift reveal transition-all duration-500 hover:border-accent/40 aspect-[3/2] flex flex-col ${
                 it.span ?? ""
               }`}
               style={{ transitionDelay: `${idx * 60}ms` }}
             >
               <div className="flex flex-col h-full justify-between gap-6">
                 <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 bg-accent/15 text-accent">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-[1.25rem] flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white shadow-sm">
                     <it.icon className="h-6 w-6 sm:h-7 sm:w-7" />
                   </div>
                   <span className="font-mono text-xs tracking-widest tabular-nums text-muted-foreground/60">
@@ -90,7 +90,7 @@ export function Services() {
                   <div className="text-xs uppercase tracking-widest mb-2 text-muted-foreground">
                     {it.tag}
                   </div>
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 leading-tight">{it.title}</h3>
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 leading-tight tracking-tight">{it.title}</h3>
                   <p className="text-sm md:text-base text-muted-foreground">
                     {it.desc}
                   </p>

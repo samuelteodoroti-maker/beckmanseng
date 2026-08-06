@@ -34,9 +34,9 @@ export function Contact() {
                 href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Encontrei%20o%20contato%20de%20voc%C3%AAs%20pelo%20site%20e%20gostaria%20de%20conversar."
                 target="_blank"
                 rel="noreferrer"
-              className="flex flex-col items-start gap-3 glass rounded-2xl p-5 hover-lift group"
+              className="flex flex-col items-start gap-4 glass rounded-[2rem] p-6 sm:p-8 hover-lift group border-transparent hover:border-accent/20 transition-all duration-500"
               >
-                <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition">
+                <div className="w-14 h-14 rounded-[1.25rem] bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm">
                   <Phone className="h-6 w-6" />
                 </div>
                 <div>
@@ -47,9 +47,9 @@ export function Contact() {
 
               <a
                 href="mailto:andrew@beckmanseng.com"
-              className="flex flex-col items-start gap-3 glass rounded-2xl p-5 hover-lift group"
+              className="flex flex-col items-start gap-4 glass rounded-[2rem] p-6 sm:p-8 hover-lift group border-transparent hover:border-accent/20 transition-all duration-500"
               >
-                <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition">
+                <div className="w-14 h-14 rounded-[1.25rem] bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm">
                   <Mail className="h-6 w-6" />
                 </div>
                 <div>
@@ -62,9 +62,9 @@ export function Contact() {
                 href="https://www.instagram.com/beckmans.engenharia/"
                 target="_blank"
                 rel="noreferrer"
-              className="flex flex-col items-start gap-3 glass rounded-2xl p-5 hover-lift group"
+              className="flex flex-col items-start gap-4 glass rounded-[2rem] p-6 sm:p-8 hover-lift group border-transparent hover:border-accent/20 transition-all duration-500"
               >
-                <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition">
+                <div className="w-14 h-14 rounded-[1.25rem] bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm">
                   <Instagram className="h-6 w-6" />
                 </div>
                 <div>
@@ -77,9 +77,9 @@ export function Contact() {
                 href="https://br.linkedin.com/company/beckmans-engenharia"
                 target="_blank"
                 rel="noreferrer"
-              className="flex flex-col items-start gap-3 glass rounded-2xl p-5 hover-lift group"
+              className="flex flex-col items-start gap-4 glass rounded-[2rem] p-6 sm:p-8 hover-lift group border-transparent hover:border-accent/20 transition-all duration-500"
               >
-                <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition">
+                <div className="w-14 h-14 rounded-[1.25rem] bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500 shadow-sm">
                   <Linkedin className="h-6 w-6" />
                 </div>
                 <div>

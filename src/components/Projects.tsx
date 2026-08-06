@@ -93,17 +93,17 @@ export function Projects() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent transition-opacity duration-500 group-hover:from-primary/80" />
-              <div className="absolute inset-0 p-5 sm:p-6 md:p-8 flex flex-col justify-end text-primary-foreground">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="glass inline-flex self-start rounded-full px-3 py-1 text-xs font-medium text-foreground">
+              <div className="absolute inset-0 p-6 sm:p-8 md:p-10 flex flex-col justify-end text-primary-foreground">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="glass-dark backdrop-blur-md inline-flex self-start rounded-full px-4 py-1.5 text-xs font-bold text-accent border-accent/20">
                     {p.tag}
                   </div>
-                  <span className="font-mono text-[10px] tracking-widest text-primary-foreground/70 tabular-nums">
+                  <span className="font-mono text-[11px] tracking-widest text-primary-foreground/60 tabular-nums">
                     0{i + 1} / 06
                   </span>
                 </div>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 leading-tight">{p.title}</h3>
-                <p className="text-sm text-primary-foreground/80">{p.meta}</p>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 leading-tight tracking-tight">{p.title}</h3>
+                <p className="text-sm md:text-base text-primary-foreground/70 line-clamp-2 max-w-sm">{p.meta}</p>
               </div>
               <div className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 sm:w-11 sm:h-11 rounded-full glass flex items-center justify-center opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                 <ArrowUpRight className="h-5 w-5 text-accent" />

@@ -25,7 +25,7 @@ export function About() {
       <div className="absolute inset-0 -z-10 grid-pattern opacity-30" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-start">
-          <div className="space-y-6 sm:space-y-8 reveal">
+          <div className="space-y-8 sm:space-y-12 reveal">
             <div className="flex items-center gap-3">
               <span className="section-index">05 —</span>
               <div className="section-chip">Sobre a Beckmans</div>
@@ -46,9 +46,9 @@ export function About() {
                 { n: "+50", l: "Projetos Ativos" },
                 { n: "98%", l: "Satisfação" },
               ].map((s, i) => (
-                <div key={i} className="glass rounded-2xl px-3 py-5 sm:p-6 text-center border-accent/10 hover:border-accent/30 transition-colors group">
-                  <div className="text-3xl sm:text-4xl font-bold text-accent tabular-nums transition-transform group-hover:scale-110 duration-500">{s.n}</div>
-                  <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-bold text-muted-foreground mt-2">{s.l}</div>
+                <div key={i} className="glass rounded-3xl px-3 py-6 sm:p-8 text-center border-accent/10 hover:border-accent/30 transition-all duration-500 group hover:shadow-soft active:scale-95">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-accent tabular-nums transition-transform group-hover:scale-110 duration-500">{s.n}</div>
+                  <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-bold text-muted-foreground mt-3">{s.l}</div>
                 </div>
               ))}
             </div>
@@ -79,11 +79,11 @@ export function About() {
             {pillars.map((p, i) => (
               <div
                 key={i}
-                className="glass rounded-3xl p-5 sm:p-6 md:p-8 hover-lift reveal"
+                className="glass rounded-[2rem] p-6 sm:p-8 md:p-10 hover-lift reveal border-transparent hover:border-accent/20"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className="flex items-start gap-4 sm:gap-5">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-accent flex items-center justify-center shrink-0">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-[1.25rem] bg-gradient-accent flex items-center justify-center shrink-0 shadow-glow/20">
                     <p.icon className="h-6 w-6 sm:h-7 sm:w-7 text-accent-foreground" />
                   </div>
                   <div className="min-w-0">
