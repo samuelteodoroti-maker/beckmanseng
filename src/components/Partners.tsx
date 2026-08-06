@@ -33,14 +33,14 @@ export const Partners = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 md:gap-16 items-center">
           {PARTNERS.map((partner, idx) => (
             <div
               key={partner.name}
               className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100 reveal"
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
-              <div className="h-12 md:h-16 w-full flex items-center justify-center">
+              <div className="h-16 md:h-24 w-full flex items-center justify-center">
                 <img
                   src={partner.logo}
                   alt={partner.name}
