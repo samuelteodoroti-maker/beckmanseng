@@ -42,15 +42,15 @@ export function About() {
             </div>
 
             {/* Quick stats */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
                 { n: "2024", l: "Fundação" },
                 { n: "+50", l: "Projetos Ativos" },
                 { n: "98%", l: "Satisfação" },
               ].map((s, i) => (
-                <div key={i} className="glass border-white/40 dark:border-white/10 rounded-[2rem] px-2 py-6 sm:p-8 text-center hover:border-accent/30 transition-all duration-500 group hover:shadow-soft active:scale-95 flex flex-col items-center justify-center min-h-[140px] sm:min-h-[160px] h-full">
-                  <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-accent tabular-nums transition-transform group-hover:scale-110 duration-500">{s.n}</div>
-                  <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-bold text-muted-foreground mt-3 leading-tight">{s.l}</div>
+                <div key={i} className="glass border-white/40 dark:border-white/10 rounded-3xl p-6 text-center hover:border-accent/30 transition-all duration-500 group hover:shadow-soft active:scale-95 flex flex-col items-center justify-center min-h-[140px] sm:h-full">
+                  <div className="text-3xl lg:text-4xl font-bold text-accent tabular-nums transition-transform group-hover:scale-110 duration-500">{s.n}</div>
+                  <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground mt-3 leading-tight">{s.l}</div>
                 </div>
               ))}
             </div>
@@ -79,19 +79,19 @@ export function About() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 lg:sticky lg:top-28 content-start h-fit">
+          <div className="grid grid-cols-1 gap-6 lg:sticky lg:top-28 content-start">
             {pillars.map((p, i) => (
               <div
                 key={i}
-                className="glass border-white/40 dark:border-white/10 rounded-[2rem] p-6 sm:p-8 md:p-10 hover-lift reveal transition-all duration-500 h-full flex flex-col justify-center"
+                className="glass border-white/40 dark:border-white/10 rounded-3xl p-8 hover-lift reveal transition-all duration-500 flex flex-col justify-center"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="flex items-start gap-4 sm:gap-5">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-[1.25rem] bg-gradient-accent flex items-center justify-center shrink-0 shadow-glow/20">
-                    <p.icon className="h-6 w-6 sm:h-7 sm:w-7 text-accent-foreground" />
+                <div className="flex items-start gap-5">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-accent flex items-center justify-center shrink-0 shadow-glow/20">
+                    <p.icon className="h-6 w-6 text-accent-foreground" />
                   </div>
                   <div className="min-w-0">
-                    <h3 className="text-lg sm:text-xl font-bold mb-1">{p.title}</h3>
+                    <h3 className="text-xl font-bold mb-2 tracking-tight">{p.title}</h3>
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{p.text}</p>
                   </div>
                 </div>
