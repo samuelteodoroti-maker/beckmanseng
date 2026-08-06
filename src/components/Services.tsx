@@ -7,7 +7,7 @@ const items = [
     desc: "Consultoria estratégica em engenharia civil para viabilizar e otimizar seu projeto.",
     tag: "Estratégia técnica",
     span: "md:col-span-2 md:row-span-2",
-    accent: true,
+    
   },
   {
     icon: ShieldCheck,
