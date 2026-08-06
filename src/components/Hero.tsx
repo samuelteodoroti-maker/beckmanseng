@@ -1,12 +1,12 @@
 import { ArrowRight, Sparkles, ShieldCheck, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroSideAsset from "@/assets/hero_side.jpg.asset.json";
 
 // 🔁 PLACEHOLDER — troque a URL abaixo pela imagem oficial da Beckmans
 // Fonte: Unsplash (tema: modern construction / civil engineering)
 const HERO_BG_IMAGE =
   "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2400&q=80";
-const HERO_SIDE_IMAGE =
-  "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80";
+const HERO_SIDE_IMAGE = heroSideAsset.url;
 
 export function Hero() {
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
