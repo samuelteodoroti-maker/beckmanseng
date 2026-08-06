@@ -63,7 +63,7 @@ export const Contact = memo(function Contact() {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="flex flex-col items-center justify-center gap-4 sm:gap-6 bg-slate-900/40 backdrop-blur-md border border-accent/20 hover:border-accent rounded-3xl p-6 sm:p-8 hover-lift group transition-all duration-500 shadow-2xl h-full aspect-square sm:aspect-square relative overflow-hidden"
+                className="flex flex-col items-center justify-center gap-4 sm:gap-6 bg-slate-900/40 backdrop-blur-md border border-accent/20 hover:border-accent rounded-3xl p-6 sm:p-8 hover-lift group transition-all duration-500 shadow-2xl min-h-[160px] sm:aspect-square relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
