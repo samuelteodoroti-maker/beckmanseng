@@ -110,17 +110,17 @@ export function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="lg:hidden mt-4 glass rounded-2xl p-4 space-y-1 animate-fade-in">
+          <div className="lg:hidden mt-4 glass rounded-3xl p-6 space-y-2 animate-in fade-in slide-in-from-top-4 duration-300">
             {links.map((l) => (
               <button
                 key={l.id}
                 onClick={() => scrollToSection(l.id)}
-                className="block w-full text-left px-4 py-3 rounded-xl hover:bg-accent/10 hover:text-accent transition-colors"
+                className="block w-full text-left px-4 py-4 rounded-2xl hover:bg-accent/10 hover:text-accent transition-colors font-bold text-base"
               >
                 {l.label}
               </button>
             ))}
-            <Button variant="accent" className="w-full mt-2 rounded-full" asChild>
+            <Button variant="accent" className="w-full mt-4 h-14 rounded-full" asChild>
               <a
                 href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Vim%20pelo%20site%20(menu%20mobile)%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
                 target="_blank"
