@@ -22,9 +22,9 @@ export const Partners = () => {
     <section className="py-24 md:py-32 bg-muted/20 dark:bg-muted/5 relative border-y border-border/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mb-20 reveal">
-          <div className="flex items-center gap-4 mb-6">
-            <span className="section-index">02 —</span>
-            <div className="section-chip !px-6">
+          <div className="flex flex-col items-start gap-4 mb-8">
+            <span className="section-index">02</span>
+            <div className="section-chip !px-10 py-4 bg-accent/10 backdrop-blur-sm rounded-full border shadow-lg shadow-accent/5 tracking-[0.3em]">
               Nossos Parceiros
             </div>
           </div>
