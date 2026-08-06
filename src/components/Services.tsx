@@ -1,5 +1,6 @@
 import { memo } from "react";
 import { Search, ShieldCheck, Building2, Lightbulb, ArrowUpRight, HardHat, FileCheck2, Ruler } from "lucide-react";
+import droneVistoriaAsset from "@/assets/drone_vistoria.jpeg.asset.json";
 
 interface ServiceItem {
   icon: any;
@@ -36,9 +37,9 @@ const items: ServiceItem[] = [
   },
   {
     icon: Search,
-    title: "Vistorias",
-    desc: "Análise técnica completa de imóveis, obras e estruturas.",
-    tag: "Precisão técnica",
+    title: "Vistoria com Drone",
+    desc: "Inspeções aéreas de alta precisão para vistorias técnicas e mapeamentos detalhados.",
+    tag: "Precisão aérea",
   },
   {
     icon: FileCheck2,
@@ -79,6 +80,16 @@ export const Services = memo(function Services() {
               }`}
               style={{ transitionDelay: `${idx * 60}ms` }}
             >
+              {it.title === "Vistoria com Drone" && (
+                <div className="absolute inset-0 -z-10 overflow-hidden">
+                  <img 
+                    src={droneVistoriaAsset.url}
+                    alt="Vistoria com Drone"
+                    className="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-transparent to-transparent" />
+                </div>
+              )}
               <div className="flex flex-col h-full gap-8">
                 <div className="flex items-center justify-between">
                   <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-[1.25rem] flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white shadow-sm">
