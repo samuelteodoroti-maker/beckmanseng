@@ -48,6 +48,7 @@ export const Partners = () => {
                     ${partner.name === "GERDAU" ? "scale-[1.5]" : ""}
                     ${partner.name === "GRUPO RB" ? "scale-[2.8]" : ""}
                     ${partner.name === "FM2C" ? "scale-[1.1]" : ""}
+                    ${(partner.name === "GRUPO RB" || partner.name === "FM2C") ? "contrast-[1.1] saturate-[1.1]" : ""}
                   `}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
