@@ -1,7 +1,8 @@
 import { useReveal } from "@/hooks/use-reveal";
+import gerdauLogo from "@/assets/logo-gerdau-2048.png.asset.json";
 
 const PARTNERS = [
-  { name: "GERDAU", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Gerdau_logo.svg/2560px-Gerdau_logo.svg.png" },
+  { name: "GERDAU", logo: gerdauLogo.url },
   { name: "GRUPO RB", logo: "https://gruporb.com.br/wp-content/uploads/2021/05/logo-rb.png" },
   { name: "LE CANTON", logo: "https://lecanton.com.br/wp-content/uploads/2021/11/logo-le-canton.png" },
   { name: "NATURA", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Natura_Logo.svg/1280px-Natura_Logo.svg.png" },
