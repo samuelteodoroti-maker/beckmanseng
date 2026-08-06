@@ -190,18 +190,18 @@ All colors MUST be HSL.
   }
 
   .glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.06), 0 2px 8px -1px rgba(0, 0, 0, 0.02);
+    background: hsla(var(--background), 0.75);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid hsl(var(--foreground) / 0.08);
+    box-shadow: 0 4px 24px -1px hsl(var(--foreground) / 0.04), 0 2px 8px -1px hsl(var(--foreground) / 0.02);
   }
 
   .glass-dark {
-    background: hsla(217, 40%, 8%, 0.8);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid hsla(158, 55%, 55%, 0.15);
+    background: hsla(217, 71%, 10%, 0.85);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid hsla(158, 55%, 55%, 0.12);
   }
 
   .mesh-bg {
