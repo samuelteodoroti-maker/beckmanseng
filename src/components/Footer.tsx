@@ -3,7 +3,8 @@ import logo from "@/assets/beckmans-logo.png.asset.json";
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-border/50 pt-20 pb-10 bg-muted/10">
+    <footer className="relative border-t border-border/50 pt-24 pb-12 bg-muted/5 overflow-hidden">
+      <div className="absolute bottom-0 left-0 w-full h-[300px] bg-accent/5 blur-[120px] -z-10" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-12">
           <div className="sm:col-span-2 md:col-span-2 space-y-4">
@@ -61,11 +62,11 @@ export function Footer() {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="inline-flex items-center gap-1.5 text-accent hover:opacity-80 transition-opacity"
+              className="inline-flex items-center gap-1.5 text-accent hover:opacity-80 transition-all hover:-translate-y-1"
               aria-label="Voltar ao topo"
             >
               <ArrowUp className="h-4 w-4" />
-              Voltar ao topo
+              <span className="font-semibold uppercase tracking-widest text-[10px] sm:text-xs">Voltar ao topo</span>
             </a>
           </div>
         </div>
