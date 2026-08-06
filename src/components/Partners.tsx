@@ -39,7 +39,7 @@ export const Partners = memo(() => {
               className="flex items-center justify-center transition-all duration-500 reveal"
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
-              <div className="group relative flex items-center justify-center w-full aspect-video p-4 transition-all duration-300 bg-[#0f2b5c]/20 hover:bg-[#0f2b5c]/25 dark:bg-[#0f2b5c]/40 dark:hover:bg-[#0f2b5c]/50 rounded-2xl border border-[#0f2b5c]/20 shadow-sm overflow-hidden">
+              <div className="group relative flex items-center justify-center w-full aspect-video p-4 transition-all duration-300 bg-[#0f2b5c]/30 hover:bg-[#0f2b5c]/40 dark:bg-[#0f2b5c]/60 dark:hover:bg-[#0f2b5c]/70 rounded-2xl border border-[#0f2b5c]/30 shadow-sm overflow-hidden">
                 <img
                   src={partner.logo}
                   alt={partner.name}
