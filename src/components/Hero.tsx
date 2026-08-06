@@ -13,7 +13,7 @@ export const Hero = memo(function Hero() {
   const scrollTo = useCallback((id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }), []);
 
   return (
-    <section id="home" className="relative min-h-[90dvh] lg:min-h-dvh flex items-center pt-24 sm:pt-28 pb-16 sm:pb-20 overflow-hidden">
+    <section id="home" className="relative min-h-[90dvh] lg:min-h-dvh flex items-center pt-24 sm:pt-28 pb-16 sm:pb-20 overflow-hidden will-change-transform">
       {/* 🔁 PLACEHOLDER — Imagem de fundo full-width (troque HERO_BG_IMAGE acima) */}
       <div className="absolute inset-0 -z-10">
         <img

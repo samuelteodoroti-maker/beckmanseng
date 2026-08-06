@@ -78,7 +78,7 @@ export const Projects = memo(function Projects() {
           {projects.map((p, i) => (
             <article
               key={p.title}
-              className={`group relative overflow-hidden rounded-3xl reveal ${
+              className={`group relative overflow-hidden rounded-3xl reveal will-change-transform ${
                 i === 0
                   ? "md:col-span-4 md:row-span-2"
                   : i === 3

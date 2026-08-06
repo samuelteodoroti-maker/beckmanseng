@@ -73,7 +73,7 @@ export const Services = memo(function Services() {
           {items.map((it, idx) => (
             <article
               key={idx}
-              className={`group relative overflow-hidden rounded-3xl glass card-ring p-8 sm:p-10 hover-lift reveal transition-all duration-500 hover:border-accent/40 hover:shadow-glow/10 flex flex-col justify-between min-h-[360px] ${
+              className={`group relative overflow-hidden rounded-3xl glass card-ring p-8 sm:p-10 hover-lift reveal transition-all duration-500 hover:border-accent/40 hover:shadow-glow/10 flex flex-col justify-between min-h-[360px] will-change-transform ${
                 it.span ?? ""
               }`}
               style={{ transitionDelay: `${idx * 60}ms` }}
