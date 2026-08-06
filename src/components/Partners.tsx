@@ -44,7 +44,7 @@ export const Partners = () => {
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className={`max-h-full max-w-full object-contain transition-all duration-500 hover:scale-110 
+                  className={`max-h-full max-w-full object-contain transition-all duration-500 
                     ${partner.name === "GRUPO RB" ? "scale-[2.8]" : ""}
                     ${partner.name === "FM2C" ? "scale-[1.1]" : ""}
                   `}
