@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { CheckCircle2, Target, Eye, Shield } from "lucide-react";
 import aboutAuthorityAsset from "@/assets/about_authority.jpg.asset.json";
 
@@ -17,7 +18,7 @@ const checks = [
   "Compromisso com prazos, normas e resultados",
 ];
 
-export function About() {
+export const About = memo(function About() {
   return (
     <section id="about" className="py-24 md:py-32 relative">
       <div className="absolute inset-0 -z-10 grid-pattern opacity-30" />

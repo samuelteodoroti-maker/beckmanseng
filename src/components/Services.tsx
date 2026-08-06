@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Search, ShieldCheck, Building2, Lightbulb, ArrowUpRight, HardHat, FileCheck2, Ruler } from "lucide-react";
 
 interface ServiceItem {
@@ -47,7 +48,7 @@ const items: ServiceItem[] = [
   },
 ];
 
-export function Services() {
+export const Services = memo(function Services() {
   return (
     <section id="services" className="relative py-24 md:py-32">
       <div className="absolute inset-0 -z-10 mesh-bg opacity-60" />

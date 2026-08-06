@@ -1,3 +1,4 @@
+import { memo, useCallback } from "react";
 import { ArrowRight, Sparkles, ShieldCheck, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroSideAsset from "@/assets/hero_side.jpg.asset.json";
@@ -8,8 +9,8 @@ const HERO_BG_IMAGE =
   "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2400&q=80";
 const HERO_SIDE_IMAGE = heroSideAsset.url;
 
-export function Hero() {
-  const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+export const Hero = memo(function Hero() {
+  const scrollTo = useCallback((id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }), []);
 
   return (
     <section id="home" className="relative min-h-[90dvh] lg:min-h-dvh flex items-center pt-24 sm:pt-28 pb-16 sm:pb-20 overflow-hidden">

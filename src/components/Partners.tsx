@@ -15,7 +15,9 @@ const PARTNERS = [
   { name: "HORTIFRUTI", logo: hortifrutiLogo.url },
 ];
 
-export const Partners = () => {
+import { memo } from "react";
+
+export const Partners = memo(() => {
   useReveal();
 
   return (

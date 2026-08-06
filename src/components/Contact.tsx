@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { Mail, Phone, Instagram, Linkedin, MessageCircle, Send, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export function Contact() {
+export const Contact = memo(function Contact() {
   return (
     <section id="contact" className="py-24 md:py-32 relative overflow-hidden bg-gradient-to-b from-slate-950 via-[#0a1a35] to-slate-950">
       <div className="absolute inset-0 -z-10 grid-pattern opacity-10" />

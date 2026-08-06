@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { ArrowUpRight } from "lucide-react";
 import droneHighAsset from "@/assets/project_drone_high.jpg.asset.json";
 import drillAsset from "@/assets/project_drill.jpg.asset.json";
@@ -45,7 +46,7 @@ const projects = [
   },
 ];
 
-export function Projects() {
+export const Projects = memo(function Projects() {
   return (
     <section id="projects" className="py-24 md:py-32 relative">
       <div className="container mx-auto px-4 lg:px-8">
