@@ -47,7 +47,7 @@ export function Contact() {
 
               <a
                 href="mailto:andrew@beckmanseng.com"
-              className="flex flex-col items-start gap-3 glass rounded-2xl p-5 hover-lift group"
+              className="flex flex-col items-start gap-4 glass rounded-[2rem] p-6 sm:p-8 hover-lift group border-transparent hover:border-accent/20 transition-all duration-500"
               >
                 <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition">
                   <Mail className="h-6 w-6" />
@@ -62,7 +62,7 @@ export function Contact() {
                 href="https://www.instagram.com/beckmans.engenharia/"
                 target="_blank"
                 rel="noreferrer"
-              className="flex flex-col items-start gap-3 glass rounded-2xl p-5 hover-lift group"
+              className="flex flex-col items-start gap-4 glass rounded-[2rem] p-6 sm:p-8 hover-lift group border-transparent hover:border-accent/20 transition-all duration-500"
               >
                 <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition">
                   <Instagram className="h-6 w-6" />
@@ -77,7 +77,7 @@ export function Contact() {
                 href="https://br.linkedin.com/company/beckmans-engenharia"
                 target="_blank"
                 rel="noreferrer"
-              className="flex flex-col items-start gap-3 glass rounded-2xl p-5 hover-lift group"
+              className="flex flex-col items-start gap-4 glass rounded-[2rem] p-6 sm:p-8 hover-lift group border-transparent hover:border-accent/20 transition-all duration-500"
               >
                 <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition">
                   <Linkedin className="h-6 w-6" />

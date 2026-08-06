@@ -25,7 +25,7 @@ export function About() {
       <div className="absolute inset-0 -z-10 grid-pattern opacity-30" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-start">
-          <div className="space-y-6 sm:space-y-8 reveal">
+          <div className="space-y-8 sm:space-y-12 reveal">
             <div className="flex items-center gap-3">
               <span className="section-index">05 —</span>
               <div className="section-chip">Sobre a Beckmans</div>
@@ -79,7 +79,7 @@ export function About() {
             {pillars.map((p, i) => (
               <div
                 key={i}
-                className="glass rounded-3xl p-5 sm:p-6 md:p-8 hover-lift reveal"
+                className="glass rounded-[2rem] p-6 sm:p-8 md:p-10 hover-lift reveal border-transparent hover:border-accent/20"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className="flex items-start gap-4 sm:gap-5">
