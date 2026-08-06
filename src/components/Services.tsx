@@ -68,11 +68,11 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 min-h-[500px]">
           {items.map((it, idx) => (
             <article
               key={idx}
-              className={`group relative overflow-hidden rounded-3xl glass card-ring p-5 sm:p-6 md:p-8 hover-lift reveal transition-all duration-500 hover:border-accent/40 ${
+              className={`group relative overflow-hidden rounded-3xl glass card-ring p-5 sm:p-6 md:p-8 hover-lift reveal transition-all duration-500 hover:border-accent/40 aspect-[3/2] flex flex-col ${
                 it.span ?? ""
               }`}
               style={{ transitionDelay: `${idx * 60}ms` }}
@@ -90,7 +90,7 @@ export function Services() {
                   <div className="text-xs uppercase tracking-widest mb-2 text-muted-foreground">
                     {it.tag}
                   </div>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 leading-tight">{it.title}</h3>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 leading-tight">{it.title}</h3>
                   <p className="text-sm md:text-base text-muted-foreground">
                     {it.desc}
                   </p>
