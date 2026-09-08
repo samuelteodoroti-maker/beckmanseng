@@ -56,8 +56,6 @@ export const Services = memo(function Services() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mb-14 reveal">
           <div className="flex flex-row items-center gap-3 sm:gap-4 mb-8">
-            <span className="section-index">03</span>
-            <span className="text-accent/40 font-bold">—</span>
             <div className="section-chip bg-accent/10 backdrop-blur-sm rounded-full border shadow-lg shadow-accent/5">
               <HardHat className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
               Áreas de atuação

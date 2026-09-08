@@ -12,8 +12,6 @@ export const Contact = memo(function Contact() {
         <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16 text-center reveal">
           <div>
             <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-8">
-              <span className="section-index text-accent">06</span>
-              <span className="text-accent/40 font-bold">—</span>
               <div className="section-chip border-accent/30 text-accent uppercase bg-accent/10 backdrop-blur-sm rounded-full border shadow-lg shadow-accent/5 truncate max-w-[70vw] sm:max-w-none">Entre em contato</div>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white">

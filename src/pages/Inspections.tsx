@@ -30,8 +30,6 @@ const Inspections = () => {
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="space-y-6 text-center lg:text-left">
               <div className="flex flex-row items-center gap-3 mb-4 justify-center lg:justify-start">
-                <span className="section-index">02</span>
-                <span className="text-muted-foreground font-bold">—</span>
                 <div className="section-chip">Especialidade</div>
               </div>
               <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-tight">
