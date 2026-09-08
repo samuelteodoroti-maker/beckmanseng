@@ -21,8 +21,6 @@ export const Partners = memo(() => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mb-20 reveal">
           <div className="flex flex-row items-center gap-3 sm:gap-4 mb-8">
-            <span className="section-index">02</span>
-            <span className="text-accent/40 font-bold">—</span>
             <div className="section-chip bg-accent/10 backdrop-blur-sm rounded-full border shadow-lg shadow-accent/5">
               Nossos Parceiros
             </div>
