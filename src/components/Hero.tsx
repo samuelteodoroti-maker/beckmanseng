@@ -77,8 +77,8 @@ export const Hero = memo(function Hero() {
 
           {/* Visual card */}
           <div className="lg:col-span-5 relative animate-scale-in max-w-md mx-auto lg:max-w-none w-full">
-            <div className="relative rounded-3xl overflow-hidden glass p-2 shadow-elegant">
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
+            <div className="relative rounded-2xl overflow-hidden border border-white/20 bg-white/5 p-2 shadow-elegant">
+              <div className="relative rounded-xl overflow-hidden aspect-[4/5]">
                 <img
                   src={HERO_SIDE_IMAGE}
                   alt="Projeto de engenharia civil"
@@ -86,11 +86,14 @@ export const Hero = memo(function Hero() {
                   loading="eager"
                   decoding="async"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 rounded-lg border border-primary-foreground/20 bg-primary/85 p-5 backdrop-blur-md">
+                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--navy-deep))]/85 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/20 bg-[hsl(var(--navy-deep))]/90 p-5 backdrop-blur-md">
                   <div className="text-sm font-bold text-accent">Precisão em cada etapa</div>
-                  <div className="mt-1 text-sm text-primary-foreground/80">Do diagnóstico técnico à execução da obra.</div>
+                  <div className="mt-1 text-sm text-white/85">Do diagnóstico técnico à execução da obra.</div>
                 </div>
+              </div>
+            </div>
+
               </div>
             </div>
           </div>
