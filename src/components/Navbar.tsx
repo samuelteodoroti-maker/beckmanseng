@@ -54,12 +54,12 @@ export function Navbar() {
     setIsOpen(false);
   };
 
-  const links = [
+  const links: { id: string; label: string; to?: string }[] = [
     { id: "home", label: "Início" },
-    { id: "services", label: "Serviços" },
-    { id: "inspecoes", label: "Vistorias", isExternal: true },
-    { id: "projects", label: "Portfólio" },
-    { id: "about", label: "Sobre" },
+    { id: "services", label: "Serviços", to: "/servicos" },
+    { id: "inspecoes", label: "Vistorias", to: "/inspecoes" },
+    { id: "projects", label: "Portfólio", to: "/portfolio" },
+    { id: "about", label: "Sobre", to: "/sobre" },
     { id: "contact", label: "Contato" },
   ];
 
@@ -77,18 +77,18 @@ export function Navbar() {
 
           <div className="hidden lg:flex items-center gap-1">
             {links.map((l) => (
-              l.isExternal ? (
+              l.to ? (
                 <Link
                   key={l.id}
-                  to="/inspecoes"
+                  to={l.to}
                   className={`relative px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 ${
-                    active === l.id
+                    location.pathname === l.to
                       ? "text-accent bg-accent/10"
                       : "text-foreground/70 hover:bg-accent/5 hover:text-accent"
                   }`}
                 >
                   {l.label}
-                  {active === l.id && (
+                  {location.pathname === l.to && (
                     <span className="absolute left-1/2 -bottom-0.5 -translate-x-1/2 h-1 w-1 rounded-full bg-accent" />
                   )}
                 </Link>
@@ -139,10 +139,10 @@ export function Navbar() {
         {isOpen && (
           <div className="lg:hidden mt-4 glass rounded-3xl p-6 space-y-2 animate-in fade-in slide-in-from-top-4 duration-300">
             {links.map((l) => (
-              l.isExternal ? (
+              l.to ? (
                 <Link
                   key={l.id}
-                  to="/inspecoes"
+                  to={l.to}
                   onClick={() => setIsOpen(false)}
                   className="block w-full text-left px-4 py-4 rounded-2xl hover:bg-accent/10 hover:text-accent transition-colors font-bold text-base"
                 >

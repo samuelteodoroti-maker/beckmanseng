@@ -1,5 +1,7 @@
 import { memo } from "react";
-import { CheckCircle2, Target, Eye, Shield } from "lucide-react";
+import { CheckCircle2, Target, Eye, Shield, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import aboutAuthorityAsset from "@/assets/about_authority.jpg.asset.json";
 
 // 🔁 PLACEHOLDER — Substitua pela foto oficial do engenheiro / canteiro de obras.
@@ -37,11 +39,6 @@ export const About = memo(function About() {
                   Andrew Matheus da Silva Beckman, engenheiro civil e gestor de projetos/obras. Atuamos no Grande Rio
                   com rigor técnico e compromisso por ambientes mais seguros.
                 </p>
-                <p className="text-muted-foreground">
-                  Especializados em transformar desafios complexos em soluções eficientes, nossa empresa combina 
-                  conhecimento técnico avançado com o uso de tecnologias modernas, como inspeções por drones e 
-                  modelagem BIM, para garantir que cada projeto seja executado com a máxima precisão e segurança.
-                </p>
               </div>
             </div>
 
@@ -74,13 +71,22 @@ export const About = memo(function About() {
               </div>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-3 pb-4">
-              {checks.map((c, i) => (
+            <div className="grid sm:grid-cols-2 gap-3">
+              {checks.slice(0, 2).map((c, i) => (
                 <div key={i} className="flex items-start gap-3 text-foreground/90">
                   <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                   <span className="text-sm">{c}</span>
                 </div>
               ))}
+            </div>
+
+            <div className="pb-4">
+              <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-14 shadow-glow">
+                <Link to="/sobre">
+                  Conhecer a Beckmans
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
             </div>
           </div>
 
