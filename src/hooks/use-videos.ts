@@ -58,3 +58,10 @@ export function formatDuration(seconds: number | null) {
   const s = seconds % 60;
   return `${m}:${String(s).padStart(2, "0")}`;
 }
+
+// Caminho público do arquivo em /public/videos (sem imports de src/assets e sem blob URLs)
+export function localVideoUrl(video: Pick<VideoRecord, "file_name" | "sort_order">) {
+  const match = video.file_name?.match(/(\d{1,2})/);
+  const n = match ? match[1] : String((video.sort_order ?? 0) + 1);
+  return `/videos/hsbe-video-${n.padStart(2, "0")}.mp4`;
+}
