@@ -6,16 +6,16 @@ import { SITE } from "@/lib/site";
 
 export const Footer = memo(function Footer() {
   return (
-    <footer className="relative border-t border-border/50 pt-24 pb-12 bg-muted/5 overflow-hidden">
-      <div className="absolute bottom-0 left-0 w-full h-[300px] bg-accent/5 blur-[120px] -z-10" />
+    <footer className="relative surface-footer pt-24 pb-12 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-12">
           <div className="sm:col-span-2 md:col-span-2 space-y-6">
-            <img src={logo.url} alt="Beckmans Engenharia" width="210" height="64" loading="lazy" className="h-12 sm:h-16 w-auto" />
-            <p className="text-muted-foreground max-w-md">
+            <img src={logo.url} alt="Beckmans Engenharia" width="230" height="70" loading="lazy" className="h-14 sm:h-[72px] w-auto" />
+            <p className="text-white/80 max-w-md">
               Nossa inovação é o caminho, nossa qualidade é a certeza. Transformamos ideias em projetos com excelência.
             </p>
           </div>
+
 
           <div>
             <h3 className="font-semibold mb-4 text-lg">Serviços</h3>
