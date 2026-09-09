@@ -7,7 +7,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { signedUrl, VIDEO_BUCKET, type VideoRecord } from "@/hooks/use-videos";
+import { localVideoUrl, signedUrl, VIDEO_BUCKET, type VideoRecord } from "@/hooks/use-videos";
 
 type Props = {
   videos: VideoRecord[];
@@ -22,19 +22,26 @@ export function VideoModal({ videos, index, covers, onIndexChange, onClose }: Pr
   const current = open ? videos[index] : undefined;
   const videoRef = useRef<HTMLVideoElement>(null);
   const [src, setSrc] = useState<string | null>(null);
+  const [missing, setMissing] = useState(false);
 
-  // Carrega o arquivo somente quando o vídeo é aberto (nunca no load da página)
+  // Usa o arquivo público em /videos e só busca o arquivo hospedado se ele não existir
   useEffect(() => {
-    let active = true;
+    if (!current) return;
+    setMissing(false);
+    setSrc(localVideoUrl(current));
+  }, [current?.id]);
+
+  const handleError = async () => {
+    if (current?.video_path) {
+      const url = await signedUrl(VIDEO_BUCKET, current.video_path);
+      if (url) {
+        setSrc(url);
+        return;
+      }
+    }
     setSrc(null);
-    if (!current?.video_path) return;
-    void signedUrl(VIDEO_BUCKET, current.video_path).then((url) => {
-      if (active) setSrc(url);
-    });
-    return () => {
-      active = false;
-    };
-  }, [current?.id, current?.video_path]);
+    setMissing(true);
+  };
 
   // Pausa ao trocar de vídeo ou fechar o modal
   useEffect(() => {
@@ -80,15 +87,16 @@ export function VideoModal({ videos, index, covers, onIndexChange, onClose }: Pr
               poster={covers[current.id]}
               controls
               playsInline
-              preload="none"
+              preload="metadata"
+              onError={handleError}
               muted={false}
               className="h-full w-full object-cover"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center px-6 text-center text-sm text-white/70">
-              {current.video_path
-                ? "Carregando vídeo…"
-                : "Arquivo ainda não enviado para este vídeo."}
+              {missing
+                ? "Este vídeo ainda não foi enviado. Adicione o arquivo em /videos para exibi-lo aqui."
+                : "Carregando vídeo…"}
             </div>
           )}
         </div>
