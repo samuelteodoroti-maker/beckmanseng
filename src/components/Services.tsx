@@ -85,13 +85,10 @@ export const Services = memo(function Services() {
                 </div>
               )}
               <div className="flex flex-col h-full gap-8">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center">
                   <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-[1.25rem] flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white shadow-sm">
                     <it.icon className="h-6 w-6 sm:h-7 sm:w-7" />
                   </div>
-                  <span className="font-mono text-xs tracking-widest tabular-nums text-muted-foreground/60">
-                    0{idx + 1}
-                  </span>
                 </div>
                 
                 <div className="flex flex-col flex-grow">
