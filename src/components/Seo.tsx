@@ -5,9 +5,10 @@ interface SeoProps {
   title: string;
   description: string;
   path?: string;
+  noindex?: boolean;
 }
 
-export function Seo({ title, description, path = "" }: SeoProps) {
+export function Seo({ title, description, path = "", noindex = false }: SeoProps) {
   const canonical = `${SITE.url}${path}`;
 
   return (
@@ -15,6 +16,7 @@ export function Seo({ title, description, path = "" }: SeoProps) {
       <html lang="pt-BR" />
       <title>{title}</title>
       <meta name="description" content={description} />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       <link rel="canonical" href={canonical} />
       <meta property="og:locale" content="pt_BR" />
       <meta property="og:type" content="website" />
