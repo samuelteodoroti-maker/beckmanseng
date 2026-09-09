@@ -60,6 +60,7 @@ export function Navbar() {
     { id: "services", label: "Serviços", to: "/servicos" },
     { id: "inspecoes", label: "Vistorias", to: "/inspecoes" },
     { id: "projects", label: "Portfólio", to: "/portfolio" },
+    { id: "videos", label: "Vídeos", to: "/videos" },
     { id: "about", label: "Sobre", to: "/sobre" },
     { id: "contact", label: "Contato" },
   ];
