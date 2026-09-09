@@ -58,7 +58,7 @@ export const Services = memo(function Services() {
         </div>
 
         <div className="flex justify-center mt-12 reveal">
-          <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-14 shadow-glow">
+          <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-14">
             <Link to="/servicos">
               Ver todos os serviços
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

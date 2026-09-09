@@ -71,7 +71,7 @@ export const Projects = memo(function Projects() {
           {projects.slice(0, 3).map((p, i) => (
             <article
               key={p.title}
-              className={`group relative overflow-hidden rounded-3xl reveal will-change-transform ${
+              className={`group relative overflow-hidden rounded-2xl reveal will-change-transform ${
                 i === 0
                   ? "md:col-span-4 md:row-span-2"
                   : i === 3
@@ -105,7 +105,7 @@ export const Projects = memo(function Projects() {
         </div>
 
         <div className="flex justify-center mt-12 reveal">
-          <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-14 shadow-glow">
+          <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-14">
             <Link to="/portfolio">
               Ver portfólio completo
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

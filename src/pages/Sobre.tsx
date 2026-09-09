@@ -94,7 +94,7 @@ const Sobre = () => {
           <div className="text-center space-y-8 pt-20">
             <h2 className="text-3xl font-bold">Vamos conversar sobre o seu projeto?</h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-16 shadow-glow">
+              <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-16">
                 <a
                   href={whatsappUrl("Olá Beckmans! Conheci a empresa pelo site e gostaria de conversar sobre um projeto.")}
                   target="_blank"

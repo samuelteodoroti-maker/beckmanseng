@@ -71,7 +71,7 @@ const Portfolio = () => {
           <div className="text-center space-y-8 pt-20">
             <h2 className="text-3xl font-bold">Quer um projeto assim para a sua obra?</h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-16 shadow-glow">
+              <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-16">
                 <a
                   href={whatsappUrl("Olá Beckmans! Vi o portfólio e gostaria de solicitar um orçamento para meu projeto.")}
                   target="_blank"

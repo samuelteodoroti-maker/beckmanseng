@@ -64,7 +64,7 @@ export const About = memo(function About() {
             </div>
 
             <div className="pb-4">
-              <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-14 shadow-glow">
+              <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-14">
                 <Link to="/sobre">
                   Conhecer a Beckmans
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
