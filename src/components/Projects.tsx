@@ -52,12 +52,6 @@ export const Projects = memo(function Projects() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 reveal">
           <div className="max-w-2xl">
-            <div className="flex flex-row items-center gap-3 sm:gap-4 mb-8">
-              <div className="section-chip bg-accent/10 backdrop-blur-sm rounded-full border shadow-lg shadow-accent/5">
-                <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-accent animate-pulse mr-1 sm:mr-2" />
-                Portfólio
-              </div>
-            </div>
             <h2 className="text-h2 font-bold">
               Projetos que <span className="text-accent">falam por si.</span>
             </h2>

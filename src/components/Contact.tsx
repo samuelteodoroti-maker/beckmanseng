@@ -11,9 +11,6 @@ export const Contact = memo(function Contact() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16 text-center reveal">
           <div>
-            <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-8">
-              <div className="section-chip border-accent/30 text-accent uppercase bg-accent/10 backdrop-blur-sm rounded-full border shadow-lg shadow-accent/5 truncate max-w-[70vw] sm:max-w-none">Entre em contato</div>
-            </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white">
               Vamos tirar seu projeto <span className="text-accent drop-shadow-[0_0_15px_rgba(77,201,160,0.4)]">do papel.</span>
             </h2>
