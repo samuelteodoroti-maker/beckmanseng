@@ -6,20 +6,20 @@ import { SITE } from "@/lib/site";
 
 export const Footer = memo(function Footer() {
   return (
-    <footer className="relative border-t border-border/50 pt-24 pb-12 bg-muted/5 overflow-hidden">
-      <div className="absolute bottom-0 left-0 w-full h-[300px] bg-accent/5 blur-[120px] -z-10" />
+    <footer className="relative surface-footer pt-24 pb-12 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-12">
           <div className="sm:col-span-2 md:col-span-2 space-y-6">
-            <img src={logo.url} alt="Beckmans Engenharia" width="210" height="64" loading="lazy" className="h-12 sm:h-16 w-auto" />
-            <p className="text-muted-foreground max-w-md">
+            <img src={logo.url} alt="Beckmans Engenharia" width="230" height="70" loading="lazy" className="h-14 sm:h-[72px] w-auto" />
+            <p className="text-white/80 max-w-md">
               Nossa inovação é o caminho, nossa qualidade é a certeza. Transformamos ideias em projetos com excelência.
             </p>
           </div>
 
+
           <div>
             <h3 className="font-semibold mb-4 text-lg">Serviços</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <ul className="space-y-2 text-sm text-white/80">
                <li><Link to="/servicos/consultoria-em-engenharia" className="hover:text-accent transition">Consultoria em Engenharia</Link></li>
                <li><Link to="/servicos/seguranca-do-trabalho" className="hover:text-accent transition">Segurança do Trabalho</Link></li>
                <li><Link to="/servicos/reformas-e-construcoes" className="hover:text-accent transition">Reformas e Construções</Link></li>
@@ -30,7 +30,7 @@ export const Footer = memo(function Footer() {
 
           <div>
             <h3 className="font-semibold mb-4 text-lg">Contato</h3>
-            <ul className="space-y-3 text-sm text-muted-foreground">
+            <ul className="space-y-3 text-sm text-white/80">
               <li><a href={`tel:${SITE.phoneInternational}`} className="flex items-center gap-2 hover:text-accent"><Phone className="h-4 w-4 text-accent shrink-0" /> {SITE.phoneDisplay}</a></li>
               <li><a href={`mailto:${SITE.email}`} className="flex items-start gap-2 hover:text-accent"><Mail className="h-4 w-4 text-accent shrink-0 mt-0.5" /> <span className="break-all">{SITE.email}</span></a></li>
               <li>
@@ -55,7 +55,7 @@ export const Footer = memo(function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-muted-foreground text-center md:text-left">
+        <div className="pt-8 border-t border-white/15 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-white/70 text-center md:text-left">
            <p>© {new Date().getFullYear()} Beckmans Engenharia · CNPJ {SITE.cnpj} · Todos os direitos reservados.</p>
           <div className="flex items-center gap-5">
             <a

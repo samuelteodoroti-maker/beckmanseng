@@ -17,10 +17,10 @@ const PARTNERS = [
 
 export const Partners = memo(() => {
   return (
-    <section className="py-24 md:py-32 bg-muted/20 dark:bg-muted/5 relative border-y border-border/10">
+    <section className="py-20 md:py-28 surface-white relative border-y border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-3xl mb-20 reveal">
-          <h2 className="text-h2 font-bold">
+        <div className="max-w-3xl mb-14 reveal">
+          <h2 className="text-h2 font-bold text-primary dark:text-white">
             Empresas que confiam em <span className="text-accent">nosso trabalho.</span>
           </h2>
         </div>
@@ -32,7 +32,8 @@ export const Partners = memo(() => {
               className="flex items-center justify-center transition-all duration-500 reveal"
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
-              <div className="group relative flex items-center justify-center w-full aspect-video p-4 transition-all duration-300 bg-[#0f2b5c]/30 hover:bg-[#0f2b5c]/40 dark:bg-[#0f2b5c]/60 dark:hover:bg-[#0f2b5c]/70 rounded-2xl border border-[#0f2b5c]/30 shadow-sm overflow-hidden">
+              <div className="group relative flex items-center justify-center w-full aspect-video p-4 transition-all duration-300 bg-white dark:bg-white rounded-xl border border-border hover:border-accent shadow-soft overflow-hidden">
+
                 <img
                   src={partner.logo}
                   alt={partner.name}

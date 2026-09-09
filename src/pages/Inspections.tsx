@@ -76,7 +76,7 @@ const Inspections = () => {
                 variant="accent"
                 size="lg"
                 asChild
-                className="group rounded-full text-base px-10 h-16 shadow-glow transition-all duration-300 hover:scale-105"
+                className="group rounded-full text-base px-10 h-16 transition-all duration-300 hover:scale-105"
               >
                 <a
                   href={whatsappUrl("Olá Beckmans! Preciso de um orçamento para vistoria ou inspeção técnica.")}

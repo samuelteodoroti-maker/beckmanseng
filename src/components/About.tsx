@@ -21,17 +21,17 @@ const checks = [
 
 export const About = memo(function About() {
   return (
-    <section id="about" className="py-24 md:py-32 relative">
-      <div className="absolute inset-0 -z-10 grid-pattern opacity-30" />
+    <section id="about" className="py-24 md:py-32 relative surface-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-stretch">
           <div className="flex flex-col space-y-8 sm:space-y-12 reveal">
             
             <div className="space-y-6">
-              <h2 className="text-h2 font-bold tracking-tight">
+              <h2 className="text-h2 font-bold tracking-tight text-primary dark:text-white">
                 Empreendedorismo, engenharia e{" "}
                 <span className="text-accent">segurança</span> em um só lugar.
               </h2>
+
               <div className="space-y-4">
                 <p className="text-lead text-muted-foreground">
                   Sob a gestão de Andrew Matheus da Silva Beckman, a Beckmans Engenharia atende o Grande Rio com
@@ -64,7 +64,7 @@ export const About = memo(function About() {
             </div>
 
             <div className="pb-4">
-              <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-14 shadow-glow">
+              <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-14">
                 <Link to="/sobre">
                   Conhecer a Beckmans
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -77,15 +77,16 @@ export const About = memo(function About() {
             {pillars.map((p, i) => (
               <div
                 key={i}
-                className="glass border-white/40 dark:border-white/10 rounded-3xl p-8 hover-lift reveal transition-all duration-500 flex flex-col justify-center"
+                className="rounded-xl border border-border bg-secondary p-8 hover-lift reveal transition-all duration-300 hover:border-accent flex flex-col justify-center"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-accent flex items-center justify-center shrink-0 shadow-glow/20">
-                    <p.icon className="h-6 w-6 text-accent-foreground" />
+                  <div className="w-14 h-14 rounded-xl bg-accent/12 flex items-center justify-center shrink-0">
+                    <p.icon className="h-6 w-6 text-accent" />
                   </div>
                   <div className="min-w-0">
-                    <h3 className="text-xl font-bold mb-2 tracking-tight">{p.title}</h3>
+                    <h3 className="text-xl font-bold mb-2 tracking-tight text-primary dark:text-white">{p.title}</h3>
+
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{p.text}</p>
                   </div>
                 </div>

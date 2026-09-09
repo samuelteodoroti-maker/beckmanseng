@@ -50,27 +50,28 @@ const projects = [
 
 export const Projects = memo(function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-32 relative">
+    <section id="projects" className="py-24 md:py-32 relative surface-navy">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 reveal">
           <div className="max-w-2xl">
-            <h2 className="text-h2 font-bold">
+            <h2 className="text-h2 font-bold text-white">
               Projetos que <span className="text-accent">falam por si.</span>
             </h2>
           </div>
           <div className="max-w-md">
-            <p className="text-muted-foreground text-base leading-relaxed">
+            <p className="text-white/85 text-base leading-relaxed">
               Uma seleção de obras, inspeções e projetos entregues com o padrão Beckmans de excelência.
             </p>
           </div>
         </div>
+
 
         {/* Bento Grid — 6 placeholders (troque cada `img` acima pela foto oficial) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 sm:gap-6 auto-rows-[250px] sm:auto-rows-[240px]">
           {projects.slice(0, 3).map((p, i) => (
             <article
               key={p.title}
-              className={`group relative overflow-hidden rounded-3xl reveal will-change-transform ${
+              className={`group relative overflow-hidden rounded-2xl reveal will-change-transform ${
                 i === 0
                   ? "md:col-span-4 md:row-span-2"
                   : i === 3
@@ -104,7 +105,7 @@ export const Projects = memo(function Projects() {
         </div>
 
         <div className="flex justify-center mt-12 reveal">
-          <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-14 shadow-glow">
+          <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-14">
             <Link to="/portfolio">
               Ver portfólio completo
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

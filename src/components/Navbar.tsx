@@ -70,15 +70,16 @@ export function Navbar() {
       Pular para o conteúdo
     </a>
     <nav aria-label="Navegação principal"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
-         scrolled ? "glass py-2 shadow-elegant border-b border-border" : "bg-background/90 py-3 sm:py-4 backdrop-blur-md border-b border-border/60"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out border-b ${
+         scrolled ? "bg-background/85 backdrop-blur-xl py-2 shadow-soft border-border" : "bg-background py-3 sm:py-4 border-border/70"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3 group">
-            <img src={logo.url} alt="Beckmans Engenharia" width="210" height="64" className="h-11 sm:h-14 w-auto transition-transform group-hover:scale-[1.02]" />
+            <img src={logo.url} alt="Beckmans Engenharia" width="240" height="72" className="h-14 sm:h-[68px] w-auto transition-transform group-hover:scale-[1.02]" />
           </Link>
+
 
           <div className="hidden lg:flex items-center gap-1">
             {links.map((l) => (
