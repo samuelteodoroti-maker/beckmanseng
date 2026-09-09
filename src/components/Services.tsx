@@ -1,5 +1,7 @@
 import { memo } from "react";
-import { Search, ShieldCheck, Building2, Lightbulb, ArrowUpRight, HardHat, FileCheck2, Ruler } from "lucide-react";
+import { Search, ShieldCheck, Building2, Lightbulb, ArrowUpRight, ArrowRight, FileCheck2, Ruler } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import droneVistoriaAsset from "@/assets/drone_vistoria.jpeg.asset.json";
 
 interface ServiceItem {
@@ -64,7 +66,7 @@ export const Services = memo(function Services() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {items.map((it, idx) => (
+          {items.slice(0, 3).map((it, idx) => (
             <div
               key={idx}
               className={`group relative overflow-hidden rounded-3xl glass card-ring p-8 sm:p-10 hover-lift reveal transition-all duration-500 hover:border-accent/40 hover:shadow-glow/10 flex flex-col justify-between min-h-[360px] will-change-transform ${
@@ -114,6 +116,15 @@ export const Services = memo(function Services() {
               <ArrowUpRight className="absolute top-5 right-5 sm:top-6 sm:right-6 h-5 w-5 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all text-accent z-10" />
             </div>
           ))}
+        </div>
+
+        <div className="flex justify-center mt-12 reveal">
+          <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-14 shadow-glow">
+            <Link to="/servicos">
+              Ver todos os serviços
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
