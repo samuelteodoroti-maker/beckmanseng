@@ -58,13 +58,10 @@ export const Projects = memo(function Projects() {
               Projetos que <span className="text-accent">falam por si.</span>
             </h2>
           </div>
-          <div className="max-w-md space-y-2">
+          <div className="max-w-md">
             <p className="text-muted-foreground text-base leading-relaxed">
               Uma seleção de obras, inspeções e projetos entregues com o padrão Beckmans de excelência.
             </p>
-            <div className="font-mono text-xs tracking-widest text-muted-foreground/70 tabular-nums">
-              06 PROJETOS · SELEÇÃO 2024/25
-            </div>
           </div>
         </div>
 
@@ -95,9 +92,6 @@ export const Projects = memo(function Projects() {
                   <div className="glass-dark backdrop-blur-md inline-flex self-start rounded-full px-4 py-1.5 text-xs font-bold text-accent border-accent/20">
                     {p.tag}
                   </div>
-                  <span className="font-mono text-[11px] tracking-widest text-primary-foreground/60 tabular-nums">
-                    0{i + 1} / 06
-                  </span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 leading-tight tracking-tight">{p.title}</h3>
                 <p className="text-sm md:text-base text-primary-foreground/70 line-clamp-2 max-w-sm">{p.meta}</p>
