@@ -51,20 +51,19 @@ export const Contact = memo(function Contact() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center gap-4 sm:gap-6 bg-primary-foreground/5 border border-primary-foreground/15 hover:border-accent rounded-lg p-6 sm:p-8 hover-lift group transition-all duration-500 min-h-[190px] relative overflow-hidden"
+                className="flex flex-col items-center justify-center gap-4 sm:gap-6 bg-white/[0.07] border border-white/15 hover:border-accent hover:bg-white/[0.11] rounded-xl p-6 sm:p-8 hover-lift group transition-all duration-300 min-h-[190px] relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="w-16 h-16 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-accent group-hover:scale-110 group-hover:bg-accent group-hover:text-primary transition-all duration-500 relative z-10 shadow-[0_0_20px_rgba(77,201,160,0.1)] group-hover:shadow-[0_0_30px_rgba(77,201,160,0.4)]">
+                <div className="w-16 h-16 rounded-full bg-accent/15 border border-accent/30 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300 relative z-10">
                   <item.icon className="h-7 w-7" />
                 </div>
-                
+
                 <div className="flex flex-col items-center gap-3 w-full relative z-10">
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold opacity-80 group-hover:opacity-100">{item.label}</div>
-                  <div className="font-bold text-sm sm:text-base text-primary-foreground group-hover:text-accent transition-colors duration-300 break-words w-full px-1">
+                  <div className="text-xs uppercase tracking-[0.18em] text-accent font-bold">{item.label}</div>
+                  <div className="font-bold text-sm sm:text-base text-white break-words w-full px-1">
                     {item.value}
                   </div>
                 </div>
+
               </a>
             ))}
           </div>
