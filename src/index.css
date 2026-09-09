@@ -189,9 +189,32 @@ All colors MUST be HSL.
     @apply py-20 sm:py-24 lg:py-28;
   }
 
+  /* Ritmo de fundos: branco -> claro -> navy -> branco -> navy profundo */
+  .surface-light {
+    background-color: hsl(var(--secondary));
+  }
+  .surface-white {
+    background-color: hsl(var(--background));
+  }
+  .surface-navy {
+    background-color: hsl(var(--navy));
+    color: #fff;
+  }
+  .dark .surface-navy {
+    background-color: hsl(214 78% 16%);
+  }
+  .surface-navy-deep {
+    background-color: hsl(var(--navy-deep));
+    color: #fff;
+  }
+  .surface-footer {
+    background-color: hsl(var(--navy-footer));
+    color: #fff;
+  }
+
   .page-hero {
-    @apply relative overflow-hidden border-b border-border bg-primary pt-32 pb-20 text-primary-foreground sm:pt-40 sm:pb-24;
-    background-image: linear-gradient(135deg, hsl(217 71% 21%), hsl(217 60% 13%));
+    @apply relative overflow-hidden border-b border-border pt-32 pb-20 text-white sm:pt-40 sm:pb-24;
+    background-image: linear-gradient(135deg, hsl(var(--navy-deep)), hsl(var(--navy)));
   }
 
   .page-title {
@@ -199,7 +222,7 @@ All colors MUST be HSL.
   }
 
   .page-lead {
-    @apply mt-6 max-w-3xl text-lg leading-relaxed text-primary-foreground/80 sm:text-xl;
+    @apply mt-6 max-w-3xl text-lg leading-relaxed text-white/85 sm:text-xl;
   }
 
   .eyebrow {
@@ -212,19 +235,20 @@ All colors MUST be HSL.
   }
   /* Fluid typography */
   .text-display {
-    font-size: clamp(2.25rem, 5vw + 1rem, 5rem);
+    font-size: clamp(2.35rem, 5vw + 1rem, 4.75rem);
     line-height: 1.1;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.03em;
   }
   .text-h2 {
-    font-size: clamp(2.25rem, 4vw + 1rem, 4rem);
-    line-height: 1.1;
-    letter-spacing: -0.025em;
+    font-size: clamp(2.25rem, 4vw + 1rem, 3.75rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
   }
   .text-lead {
-    font-size: clamp(1rem, 0.6vw + 0.9rem, 1.25rem);
-    line-height: 1.6;
+    font-size: clamp(1.0625rem, 0.6vw + 0.95rem, 1.3rem);
+    line-height: 1.65;
   }
+
 
   .hover-lift {
     transition: transform 0.35s var(--ease-out-quart), box-shadow 0.35s var(--ease-out-quart);
