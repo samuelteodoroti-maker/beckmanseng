@@ -19,12 +19,12 @@ export const Hero = memo(function Hero() {
           loading="eager"
           decoding="async"
         />
-        {/* Overlay progressivo para garantir legibilidade absoluta em qualquer tema */}
-        <div className="absolute inset-0 bg-primary/75 dark:bg-background/90" />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-transparent to-primary/40 dark:from-background/20 dark:to-background/30" />
-        <div className="absolute inset-0 grid-pattern opacity-[0.15]" />
-        <div className="absolute inset-0 mesh-bg" />
+        {/* Overlay azul-marinho profundo para leitura garantida */}
+        <div className="absolute inset-0 bg-[hsl(var(--navy-deep))]/88" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--navy-deep))]/95 via-[hsl(var(--navy-deep))]/70 to-[hsl(var(--navy))]/60" />
+        <div className="absolute inset-0 grid-pattern opacity-[0.08]" />
       </div>
+
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
