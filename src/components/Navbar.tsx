@@ -54,12 +54,12 @@ export function Navbar() {
     setIsOpen(false);
   };
 
-  const links = [
+  const links: { id: string; label: string; to?: string }[] = [
     { id: "home", label: "Início" },
-    { id: "services", label: "Serviços" },
-    { id: "inspecoes", label: "Vistorias", isExternal: true },
-    { id: "projects", label: "Portfólio" },
-    { id: "about", label: "Sobre" },
+    { id: "services", label: "Serviços", to: "/servicos" },
+    { id: "inspecoes", label: "Vistorias", to: "/inspecoes" },
+    { id: "projects", label: "Portfólio", to: "/portfolio" },
+    { id: "about", label: "Sobre", to: "/sobre" },
     { id: "contact", label: "Contato" },
   ];
 
