@@ -1,5 +1,7 @@
 import { memo } from "react";
-import { CheckCircle2, Target, Eye, Shield } from "lucide-react";
+import { CheckCircle2, Target, Eye, Shield, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import aboutAuthorityAsset from "@/assets/about_authority.jpg.asset.json";
 
 // 🔁 PLACEHOLDER — Substitua pela foto oficial do engenheiro / canteiro de obras.

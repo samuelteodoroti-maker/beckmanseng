@@ -1,5 +1,7 @@
 import { memo } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import droneHighAsset from "@/assets/drone_vistoria.jpeg.asset.json";
 import drillAsset from "@/assets/project_drill.jpg.asset.json";
 import torqueAsset from "@/assets/project_torque.jpg.asset.json";
@@ -68,7 +70,7 @@ export const Projects = memo(function Projects() {
 
         {/* Bento Grid — 6 placeholders (troque cada `img` acima pela foto oficial) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 sm:gap-6 auto-rows-[250px] sm:auto-rows-[240px]">
-          {projects.map((p, i) => (
+          {projects.slice(0, 3).map((p, i) => (
             <article
               key={p.title}
               className={`group relative overflow-hidden rounded-3xl reveal will-change-transform ${
@@ -105,6 +107,15 @@ export const Projects = memo(function Projects() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="flex justify-center mt-12 reveal">
+          <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-14 shadow-glow">
+            <Link to="/portfolio">
+              Ver portfólio completo
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
