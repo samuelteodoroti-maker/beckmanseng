@@ -1,5 +1,4 @@
 import { memo, useEffect } from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -7,6 +6,8 @@ import { FloatingCTA } from "@/components/FloatingCTA";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Target, Eye, Shield, ArrowRight } from "lucide-react";
 import aboutAuthorityAsset from "@/assets/about_authority.jpg.asset.json";
+import { Seo } from "@/components/Seo";
+import { whatsappUrl } from "@/lib/site";
 
 const pillars = [
   { icon: Target, title: "Missão", text: "Transformar ideias em projetos de engenharia com excelência técnica." },
@@ -15,7 +16,7 @@ const pillars = [
 ];
 
 const checks = [
-  "ART e responsabilidade técnica em todos os serviços",
+  "Responsabilidade técnica conforme o escopo contratado",
   "Atendimento consultivo e personalizado",
   "Engenheiro civil especializado em gestão de obras",
   "Compromisso com prazos, normas e resultados",
@@ -28,19 +29,11 @@ const Sobre = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Sobre a Beckmans Engenharia | Engenharia Civil no Rio de Janeiro</title>
-        <meta
-          name="description"
-          content="Fundada em 2024 no Rio de Janeiro sob gestão de Andrew Beckman, a Beckmans Engenharia une rigor técnico, drones e modelagem BIM em obras e inspeções."
-        />
-        <meta property="og:title" content="Sobre a Beckmans Engenharia" />
-        <meta property="og:description" content="Empreendedorismo, engenharia e segurança em um só lugar." />
-      </Helmet>
+      <Seo title="Sobre a Beckmans Engenharia | Rio de Janeiro" description="Conheça a Beckmans Engenharia, sua atuação no Grande Rio e o compromisso com soluções técnicas, segurança e qualidade." path="/sobre" />
 
       <Navbar />
 
-      <main className="pt-32 pb-20">
+      <main id="main-content" className="pt-32 pb-20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl space-y-6 mb-16">
             <div className="section-chip inline-flex">Sobre nós</div>
@@ -52,8 +45,7 @@ const Sobre = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <div className="space-y-8">
               <p className="text-xl text-muted-foreground leading-relaxed">
-                A Beckmans Engenharia foi fundada em 4 de junho de 2024 no Rio de Janeiro, RJ, sob a gestão de
-                Andrew Matheus da Silva Beckman, engenheiro civil e gestor de projetos e obras. Atuamos no Grande Rio
+                 A Beckmans Engenharia atua no Rio de Janeiro sob a gestão de Andrew Matheus da Silva Beckman. Atendemos o Grande Rio
                 com rigor técnico e compromisso por ambientes mais seguros.
               </p>
               <p className="text-muted-foreground leading-relaxed">
@@ -61,19 +53,6 @@ const Sobre = () => {
                 técnico avançado com tecnologias modernas, como inspeções por drones e modelagem BIM, para garantir
                 que cada projeto seja executado com máxima precisão e segurança.
               </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {[
-                  { n: "2024", l: "Fundação" },
-                  { n: "+50", l: "Projetos Ativos" },
-                  { n: "98%", l: "Satisfação" },
-                ].map((s) => (
-                  <div key={s.l} className="glass border-white/40 dark:border-white/10 rounded-3xl p-6 text-center min-h-[140px] flex flex-col items-center justify-center">
-                    <div className="text-3xl lg:text-4xl font-bold text-accent tabular-nums">{s.n}</div>
-                    <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground mt-3">{s.l}</div>
-                  </div>
-                ))}
-              </div>
 
               <div className="grid sm:grid-cols-2 gap-3">
                 {checks.map((c) => (
@@ -117,11 +96,11 @@ const Sobre = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-16 shadow-glow">
                 <a
-                  href="https://wa.me/5521982234712?text=Olá Beckmans! Conheci a empresa pelo site e gostaria de conversar."
+                  href={whatsappUrl("Olá Beckmans! Conheci a empresa pelo site e gostaria de conversar sobre um projeto.")}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Falar no WhatsApp
+                  Solicitar Orçamento
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>

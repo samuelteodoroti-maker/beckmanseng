@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { MessageCircle } from "lucide-react";
+import { whatsappUrl } from "@/lib/site";
 
 export function FloatingCTA() {
   const [visible, setVisible] = useState(false);
@@ -32,16 +33,16 @@ export function FloatingCTA() {
 
   return (
     <a
-      href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Estou%20navegando%20no%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20r%C3%A1pida."
+      href={whatsappUrl("Olá Beckmans! Estou navegando no site e gostaria de solicitar um orçamento.")}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
       className={`fixed bottom-5 right-5 md:bottom-8 md:right-8 z-40 group inline-flex items-center gap-2 h-14 pl-4 pr-5 rounded-full bg-accent text-accent-foreground shadow-glow border border-accent/40 transition-all duration-500 hover:scale-105 ${
         show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6 pointer-events-none"
       }`}
     >
       <span className="relative flex items-center justify-center w-10 h-10 rounded-full bg-accent-foreground/15">
-        <span className="absolute inset-0 rounded-full bg-accent-foreground/20 animate-ping group-hover:animate-none" />
+        <span className="absolute inset-0 rounded-full bg-accent-foreground/20 motion-safe:animate-ping group-hover:animate-none" />
         <MessageCircle className="h-5 w-5 relative transition-transform group-hover:scale-110" />
       </span>
       <span className="hidden sm:inline text-sm font-bold tracking-tight">Fale conosco</span>

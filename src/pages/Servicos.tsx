@@ -1,81 +1,21 @@
 import { memo, useEffect } from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { Button } from "@/components/ui/button";
-import { Search, ShieldCheck, Building2, Lightbulb, ArrowRight, FileCheck2, Ruler } from "lucide-react";
+import { Search, ShieldCheck, Building2, Lightbulb, ArrowRight, FileCheck2, Ruler, Wrench } from "lucide-react";
+import { Seo } from "@/components/Seo";
+import { SERVICES, whatsappUrl } from "@/lib/site";
 
-const services = [
-  {
-    icon: Lightbulb,
-    title: "Consultoria em Engenharia",
-    tag: "Estratégia técnica",
-    desc: "Consultoria estratégica em engenharia civil para viabilizar e otimizar seu projeto.",
-    details: [
-      "Análise de viabilidade técnica e orçamentária",
-      "Apoio na tomada de decisão em obras e reformas",
-      "Revisão de projetos e compatibilização",
-    ],
-  },
-  {
-    icon: ShieldCheck,
-    title: "Consultoria em Segurança do Trabalho",
-    tag: "NRs & SST",
-    desc: "Programas, laudos e assessoria em SST conforme as Normas Regulamentadoras.",
-    details: [
-      "Adequação às Normas Regulamentadoras",
-      "Treinamentos e orientação de equipes",
-      "Documentação técnica de segurança",
-    ],
-  },
-  {
-    icon: Building2,
-    title: "Reforma e Construções",
-    tag: "Obra pronta",
-    desc: "Execução completa de obras residenciais, comerciais e industriais.",
-    details: [
-      "Planejamento, cronograma e orçamento",
-      "Gestão de equipes e fornecedores",
-      "Acompanhamento técnico até a entrega",
-    ],
-  },
-  {
-    icon: Ruler,
-    title: "Projetos 2D e 3D",
-    tag: "BIM",
-    desc: "Modelagem, plantas e visualização com padrão BIM.",
-    details: [
-      "Plantas técnicas e detalhamentos",
-      "Modelagem 3D e visualização realista",
-      "Compatibilização entre disciplinas",
-    ],
-  },
-  {
-    icon: Search,
-    title: "Vistoria com Drone",
-    tag: "Precisão aérea",
-    desc: "Inspeções aéreas de alta precisão para vistorias técnicas e mapeamentos detalhados.",
-    details: [
-      "Fachadas, telhados e áreas de difícil acesso",
-      "Registro fotográfico em alta resolução",
-      "Relatórios com diagnóstico técnico",
-    ],
-  },
-  {
-    icon: FileCheck2,
-    title: "Laudos Técnicos",
-    tag: "ART inclusa",
-    desc: "Documentação técnica assinada por responsável habilitado.",
-    details: [
-      "Laudos de vistoria e inspeção predial",
-      "Pareceres técnicos com ART",
-      "Suporte para processos e negociações",
-    ],
-  },
-];
-
+const serviceIcons = [Lightbulb, ShieldCheck, Building2, Ruler, FileCheck2, Search, Wrench];
+const services = SERVICES.map((service, index) => ({
+  ...service,
+  icon: serviceIcons[index],
+  tag: ["Estratégia técnica", "Segurança", "Execução", "Projetos", "Diagnóstico", "Precisão aérea", "Operação"][index],
+  desc: service.summary,
+  details: service.deliverables,
+}));
 const Servicos = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -83,33 +23,25 @@ const Servicos = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Serviços de Engenharia Civil | Beckmans Engenharia</title>
-        <meta
-          name="description"
-          content="Consultoria, segurança do trabalho, projetos 2D/3D em BIM, reformas, construções, vistorias com drone e laudos técnicos no Rio de Janeiro."
-        />
-        <meta property="og:title" content="Serviços de Engenharia Civil | Beckmans Engenharia" />
-        <meta property="og:description" content="Seis frentes de atuação em engenharia civil e segurança do trabalho no Rio de Janeiro." />
-      </Helmet>
+      <Seo title="Serviços de Engenharia Civil no RJ | Beckmans" description="Consultoria, projetos, obras, segurança do trabalho, vistorias, laudos e manutenção industrial no Rio de Janeiro." path="/servicos" />
 
       <Navbar />
 
-      <main className="pt-32 pb-20">
+       <main id="main-content" className="pt-32 pb-20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl space-y-6 mb-16">
             <div className="section-chip inline-flex">Áreas de atuação</div>
             <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-tight">
-              Seis frentes. <span className="text-accent">Uma engenharia inteira.</span>
+               Sete soluções. <span className="text-accent">Uma engenharia completa.</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Da primeira vistoria à entrega da obra, cobrimos cada etapa com metodologia própria e tecnologia de ponta.
+               Da análise inicial à execução, encontre o suporte técnico adequado para cada etapa.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((s) => (
-              <div
+               <article
                 key={s.title}
                 className="glass card-ring rounded-3xl p-8 flex flex-col gap-6 hover-lift transition-all duration-500 hover:border-accent/40"
               >
@@ -128,8 +60,11 @@ const Servicos = () => {
                       {d}
                     </li>
                   ))}
-                </ul>
-              </div>
+                 </ul>
+                 <Link to={`/servicos/${s.slug}`} className="inline-flex items-center gap-2 font-bold text-accent hover:underline" aria-label={`Conhecer ${s.title}`}>
+                   Ver detalhes <ArrowRight className="h-4 w-4" />
+                 </Link>
+               </article>
             ))}
           </div>
 
@@ -138,7 +73,7 @@ const Servicos = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-16 shadow-glow">
                 <a
-                  href="https://wa.me/5521982234712?text=Olá Beckmans! Vi a página de serviços e gostaria de um orçamento."
+                  href={whatsappUrl("Olá Beckmans! Vi a página de serviços e gostaria de um orçamento.")}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

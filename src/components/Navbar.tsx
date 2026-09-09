@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
 import logo from "@/assets/beckmans-logo.png.asset.json";
+import { whatsappUrl } from "@/lib/site";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +23,7 @@ export function Navbar() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [location.pathname]);
 
   useEffect(() => {
     const ids = ["home", "services", "projects", "about", "contact"];
@@ -64,15 +65,19 @@ export function Navbar() {
   ];
 
   return (
-    <nav
+    <>
+    <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-accent focus:px-4 focus:py-3 focus:font-bold focus:text-accent-foreground">
+      Pular para o conteúdo
+    </a>
+    <nav aria-label="Navegação principal"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
-        scrolled ? "glass py-2 shadow-elegant border-b border-white/20 dark:border-white/10" : "bg-transparent py-4 sm:py-6"
+         scrolled ? "glass py-2 shadow-elegant border-b border-border" : "bg-background/90 py-3 sm:py-4 backdrop-blur-md border-b border-border/60"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3 group">
-            <img src={logo.url} alt="Beckmans Engenharia" className="h-8 sm:h-10 w-auto transition-transform group-hover:scale-105" />
+            <img src={logo.url} alt="Beckmans Engenharia" width="210" height="64" className="h-11 sm:h-14 w-auto transition-transform group-hover:scale-[1.02]" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
@@ -81,7 +86,8 @@ export function Navbar() {
                 <Link
                   key={l.id}
                   to={l.to}
-                  className={`relative px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 ${
+                  aria-current={location.pathname === l.to ? "page" : undefined}
+                  className={`relative px-3 py-2 text-sm font-bold transition-all duration-300 ${
                     location.pathname === l.to
                       ? "text-accent bg-accent/10"
                       : "text-foreground/70 hover:bg-accent/5 hover:text-accent"
@@ -93,10 +99,11 @@ export function Navbar() {
                   )}
                 </Link>
               ) : (
-                <button
+                 <Button variant="ghost"
                   key={l.id}
                   onClick={() => scrollToSection(l.id)}
-                  className={`relative px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 ${
+                   aria-current={active === l.id ? "location" : undefined}
+                   className={`relative px-3 py-2 text-sm font-bold transition-all duration-300 ${
                     active === l.id
                       ? "text-accent bg-accent/10"
                       : "text-foreground/70 hover:bg-accent/5 hover:text-accent"
@@ -106,14 +113,14 @@ export function Navbar() {
                   {active === l.id && (
                     <span className="absolute left-1/2 -bottom-0.5 -translate-x-1/2 h-1 w-1 rounded-full bg-accent" />
                   )}
-                </button>
+                 </Button>
               )
             ))}
             <div className="mx-2 h-6 w-px bg-border" />
             <ThemeToggle />
             <Button variant="accent" asChild className="ml-2 rounded-full">
               <a
-                href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                href={whatsappUrl("Olá Beckmans! Vim pelo site e gostaria de solicitar um orçamento.")}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -137,7 +144,7 @@ export function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="lg:hidden mt-4 glass rounded-3xl p-6 space-y-2 animate-in fade-in slide-in-from-top-4 duration-300">
+          <div className="lg:hidden mt-3 glass rounded-lg border border-border p-3 space-y-1 animate-in fade-in slide-in-from-top-4 duration-300">
             {links.map((l) => (
               l.to ? (
                 <Link
@@ -149,18 +156,18 @@ export function Navbar() {
                   {l.label}
                 </Link>
               ) : (
-                <button
+                 <Button variant="ghost"
                   key={l.id}
                   onClick={() => scrollToSection(l.id)}
-                  className="block w-full text-left px-4 py-4 rounded-2xl hover:bg-accent/10 hover:text-accent transition-colors font-bold text-base"
+                   className="flex w-full justify-start px-4 py-5 hover:bg-accent/10 hover:text-accent transition-colors font-bold text-base"
                 >
                   {l.label}
-                </button>
+                 </Button>
               )
             ))}
             <Button variant="accent" className="w-full mt-4 h-14 rounded-full" asChild>
               <a
-                href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Vim%20pelo%20site%20(menu%20mobile)%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                href={whatsappUrl("Olá Beckmans! Vim pelo site e gostaria de solicitar um orçamento.")}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -177,5 +184,6 @@ export function Navbar() {
         aria-hidden="true"
       />
     </nav>
+    </>
   );
 }

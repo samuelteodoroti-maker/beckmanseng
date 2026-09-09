@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://beckmans-engenharia.lovable.app/sitemap.xml
+Sitemap: https://beckmansengenharia.com/sitemap.xml
