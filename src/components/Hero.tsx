@@ -31,9 +31,10 @@ export const Hero = memo(function Hero() {
           <div className="lg:col-span-7 space-y-8 sm:space-y-10 animate-fade-in">
 
             <p className="eyebrow text-accent">Engenharia civil no Rio de Janeiro</p>
-            <h1 className="text-display font-bold text-primary-foreground leading-[1.08]">
+            <h1 className="text-display font-bold text-white leading-[1.08]">
               Segurança técnica para construir, inspecionar e transformar.
             </h1>
+
 
             <p className="text-lead text-white/85 max-w-2xl">
               Projetos, construções, consultoria e vistorias com atendimento próximo e decisões orientadas por engenharia.
@@ -44,7 +45,7 @@ export const Hero = memo(function Hero() {
                 variant="accent"
                 size="lg"
                 asChild
-                className="group rounded-full text-base px-6 sm:px-10 h-14 shadow-glow w-full sm:w-auto justify-center transition-all duration-300 hover:scale-105 active:scale-95"
+                className="group rounded-full text-base px-6 sm:px-10 h-14 w-full sm:w-auto justify-center transition-all duration-300 active:scale-95"
               >
                 <a
                   href={whatsappUrl("Olá Beckmans! Vi o site e quero solicitar um orçamento para o meu projeto.")}
@@ -56,22 +57,22 @@ export const Hero = memo(function Hero() {
                 </a>
               </Button>
               <Button
-                variant="outline"
                 size="lg"
                 onClick={() => scrollTo("services")}
-                className="rounded-full text-base px-6 sm:px-8 h-14 glass border-primary/20 w-full sm:w-auto justify-center"
+                className="btn-on-dark-outline rounded-full text-base px-6 sm:px-8 h-14 w-full sm:w-auto justify-center font-semibold"
               >
                  Conhecer nossos serviços
               </Button>
             </div>
 
-            <div className="flex flex-wrap gap-x-7 gap-y-3 pt-3 text-sm font-semibold text-primary-foreground/85">
+            <div className="flex flex-wrap gap-x-7 gap-y-3 pt-3 text-base font-semibold text-white/90">
               {["Atendimento no Grande Rio", "Projetos 2D, 3D e BIM", "Vistorias com drone"].map((item) => (
                 <span key={item} className="inline-flex items-center gap-2">
                   <CheckCircle2 className="h-5 w-5 text-accent" /> {item}
                 </span>
               ))}
             </div>
+
           </div>
 
           {/* Visual card */}
