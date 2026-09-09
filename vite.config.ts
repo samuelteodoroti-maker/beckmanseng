@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 // https://vitejs.dev/config/
-export default defineConfig(() => ({
+export default defineConfig({
   server: {
     host: "::",
     port: 8080,
@@ -16,7 +16,7 @@ export default defineConfig(() => ({
   },
   build: {
     target: "esnext",
-    minify: "esbuild",
+    minify: true,
     cssMinify: true,
     rollupOptions: {
       output: {
@@ -38,4 +38,4 @@ export default defineConfig(() => ({
   optimizeDeps: {
     include: ["lucide-react", "clsx", "tailwind-merge"],
   },
-}));
+});

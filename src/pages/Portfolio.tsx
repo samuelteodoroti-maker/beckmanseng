@@ -1,5 +1,4 @@
 import { memo, useEffect } from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -12,6 +11,8 @@ import torqueAsset from "@/assets/project_torque.jpg.asset.json";
 import cleaningAsset from "@/assets/project_cleaning.jpg.asset.json";
 import structureAsset from "@/assets/project_structure.jpg.asset.json";
 import aboutAuthorityAsset from "@/assets/about_authority.jpg.asset.json";
+import { Seo } from "@/components/Seo";
+import { whatsappUrl } from "@/lib/site";
 
 const projects = [
   { img: droneHighAsset.url, title: "Vistoria com Drone", tag: "Vistoria", meta: "Inspeção técnica de alta precisão em fachadas e coberturas." },
@@ -29,19 +30,11 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Portfólio de Obras e Inspeções | Beckmans Engenharia</title>
-        <meta
-          name="description"
-          content="Conheça obras, inspeções e projetos entregues pela Beckmans Engenharia no Rio de Janeiro: vistorias com drone, segurança em altura e manutenção industrial."
-        />
-        <meta property="og:title" content="Portfólio de Obras e Inspeções | Beckmans Engenharia" />
-        <meta property="og:description" content="Uma seleção de obras, inspeções e projetos entregues com o padrão Beckmans de excelência." />
-      </Helmet>
+      <Seo title="Portfólio de Engenharia no RJ | Beckmans" description="Conheça registros de obras, vistorias, inspeções e serviços técnicos realizados pela Beckmans Engenharia." path="/portfolio" />
 
       <Navbar />
 
-      <main className="pt-32 pb-20">
+       <main id="main-content" className="pt-32 pb-20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl space-y-6 mb-16">
             <div className="section-chip inline-flex">Portfólio</div>
@@ -49,7 +42,7 @@ const Portfolio = () => {
               Projetos que <span className="text-accent">falam por si.</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Uma seleção de obras, inspeções e projetos entregues com o padrão Beckmans de excelência.
+               Registros de campo que apresentam áreas de atuação e soluções executadas pela equipe Beckmans.
             </p>
           </div>
 
@@ -80,11 +73,11 @@ const Portfolio = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-16 shadow-glow">
                 <a
-                  href="https://wa.me/5521982234712?text=Olá Beckmans! Vi o portfólio de vocês e gostaria de conversar sobre um projeto."
+                  href={whatsappUrl("Olá Beckmans! Vi o portfólio e gostaria de solicitar um orçamento para meu projeto.")}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Falar com a Beckmans
+                  Solicitar Orçamento
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>

@@ -30,4 +30,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url><loc>https://beckmansengenharia.com/servicos/consultoria-em-engenharia</loc></url>
+  <url><loc>https://beckmansengenharia.com/servicos/seguranca-do-trabalho</loc></url>
+  <url><loc>https://beckmansengenharia.com/servicos/reformas-e-construcoes</loc></url>
+  <url><loc>https://beckmansengenharia.com/servicos/projetos-2d-3d-bim</loc></url>
+  <url><loc>https://beckmansengenharia.com/servicos/vistorias-e-laudos</loc></url>
+  <url><loc>https://beckmansengenharia.com/servicos/inspecoes-com-drone</loc></url>
+  <url><loc>https://beckmansengenharia.com/servicos/manutencao-industrial</loc></url>
 </urlset>

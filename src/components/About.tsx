@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import aboutAuthorityAsset from "@/assets/about_authority.jpg.asset.json";
 
-// 🔁 PLACEHOLDER — Substitua pela foto oficial do engenheiro / canteiro de obras.
 const ABOUT_IMAGE = aboutAuthorityAsset.url;
 
 const pillars = [
@@ -14,7 +13,7 @@ const pillars = [
 ];
 
 const checks = [
-               "Responsabilidade técnica conforme o escopo contratado",
+  "Responsabilidade técnica conforme o escopo contratado",
   "Atendimento consultivo e personalizado",
   "Engenheiro civil especializado em gestão de obras",
   "Compromisso com prazos, normas e resultados",
@@ -41,8 +40,7 @@ export const About = memo(function About() {
               </div>
             </div>
 
-            {/* 🔁 PLACEHOLDER — Imagem de autoridade (troque ABOUT_IMAGE acima) */}
-            <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[4/3] sm:aspect-[16/10] flex-grow">
+            <div className="relative rounded-lg overflow-hidden shadow-elegant aspect-[4/3] sm:aspect-[16/10] flex-grow">
               <img
                 src={ABOUT_IMAGE}
                 alt="Engenheiro Beckmans em canteiro de obras"

@@ -26,8 +26,7 @@ export const Services = memo(function Services() {
           {items.slice(0, 3).map((it, idx) => (
             <div
               key={idx}
-              className={`group relative overflow-hidden rounded-3xl glass card-ring p-8 sm:p-10 hover-lift reveal transition-all duration-500 hover:border-accent/40 hover:shadow-glow/10 flex flex-col justify-between min-h-[360px] will-change-transform ${
-               }`}
+              className="group relative overflow-hidden rounded-lg glass card-ring p-8 sm:p-10 hover-lift reveal transition-all duration-500 hover:border-accent/40 hover:shadow-glow/10 flex flex-col justify-between min-h-[360px] will-change-transform"
               style={{ transitionDelay: `${idx * 60}ms` }}
             >
               <div className="flex flex-col h-full gap-8">

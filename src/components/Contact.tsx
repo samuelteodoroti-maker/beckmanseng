@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Mail, Phone, Instagram, Linkedin } from "lucide-react";
-import { SITE } from "@/lib/site";
+import { SITE, whatsappUrl } from "@/lib/site";
 
 export const Contact = memo(function Contact() {
   return (
@@ -10,10 +10,10 @@ export const Contact = memo(function Contact() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16 text-center reveal">
           <div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white">
+            <h2 className="text-h2 font-bold mb-6 text-primary-foreground">
               Vamos tirar seu projeto <span className="text-accent drop-shadow-[0_0_15px_rgba(77,201,160,0.4)]">do papel.</span>
             </h2>
-            <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-primary-foreground/75 max-w-2xl mx-auto">
               Fale diretamente com nossa equipe pelo canal que preferir e conte brevemente o que você precisa.
             </p>
           </div>
@@ -24,7 +24,7 @@ export const Contact = memo(function Contact() {
                 icon: Phone,
                 label: "WhatsApp",
                  value: SITE.phoneDisplay,
-                href: "https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Encontrei%20o%20contato%20de%20voc%C3%AAs%20pelo%20site%20e%20gostaria%20de%20conversar."
+                 href: whatsappUrl("Olá Beckmans! Encontrei o contato pelo site e gostaria de conversar.")
               },
               {
                 icon: Mail,

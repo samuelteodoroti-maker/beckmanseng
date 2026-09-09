@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { MessageCircle } from "lucide-react";
+import { whatsappUrl } from "@/lib/site";
 
 export function FloatingCTA() {
   const [visible, setVisible] = useState(false);
@@ -32,7 +33,7 @@ export function FloatingCTA() {
 
   return (
     <a
-      href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Estou%20navegando%20no%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20r%C3%A1pida."
+      href={whatsappUrl("Olá Beckmans! Estou navegando no site e gostaria de solicitar um orçamento.")}
       target="_blank"
       rel="noreferrer"
       aria-label="Falar no WhatsApp"

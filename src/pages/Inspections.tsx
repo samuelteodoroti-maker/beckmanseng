@@ -2,9 +2,10 @@ import { memo, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/FloatingCTA";
-import { Helmet } from "react-helmet";
 import { ShieldCheck, CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Seo } from "@/components/Seo";
+import { whatsappUrl } from "@/lib/site";
 
 const Inspections = () => {
   useEffect(() => {
@@ -13,19 +14,11 @@ const Inspections = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Vistorias e Inspeções Técnicas | Beckmans Engenharia</title>
-        <meta 
-          name="description" 
-          content="Serviços especializados de vistorias, inspeções prediais e perícias técnicas em engenharia civil no Rio de Janeiro. Segurança e conformidade para seu imóvel." 
-        />
-        <meta property="og:title" content="Vistorias e Inspeções Técnicas | Beckmans Engenharia" />
-        <meta property="og:description" content="Segurança e conformidade técnica para seu imóvel com vistorias e inspeções especializadas." />
-      </Helmet>
+      <Seo title="Vistorias e Inspeções Técnicas no RJ | Beckmans" description="Vistorias prediais e inspeções com drone no Rio de Janeiro para identificar anomalias e orientar decisões técnicas." path="/inspecoes" />
 
       <Navbar />
       
-      <main className="pt-32 pb-20">
+       <main id="main-content" className="pt-32 pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="space-y-6 text-center lg:text-left">
@@ -44,14 +37,14 @@ const Inspections = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="glass p-8 rounded-3xl space-y-4 border-accent/20">
                 <ShieldCheck className="w-12 h-12 text-accent" />
-                <h3 className="text-2xl font-bold">Inspeção Predial</h3>
+                 <h2 className="text-2xl font-bold">Inspeção Predial</h2>
                 <p className="text-muted-foreground">
                   Análise sistêmica das condições de conservação, manutenção e segurança da edificação, conforme as normas vigentes.
                 </p>
               </div>
               <div className="glass p-8 rounded-3xl space-y-4 border-accent/20">
                 <CheckCircle2 className="w-12 h-12 text-accent" />
-                <h3 className="text-2xl font-bold">Vistoria de Drone</h3>
+                 <h2 className="text-2xl font-bold">Vistoria com Drone</h2>
                 <p className="text-muted-foreground">
                   Inspeções de fachadas e telhados com alta tecnologia, alcançando locais de difícil acesso com total segurança e precisão.
                 </p>
@@ -86,11 +79,11 @@ const Inspections = () => {
                 className="group rounded-full text-base px-10 h-16 shadow-glow transition-all duration-300 hover:scale-105"
               >
                 <a
-                  href="https://wa.me/5521982234712?text=Olá Beckmans! Preciso de uma cotação para vistoria/inspeção técnica."
+                  href={whatsappUrl("Olá Beckmans! Preciso de um orçamento para vistoria ou inspeção técnica.")}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Falar com Especialista
+                  Solicitar Orçamento
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>

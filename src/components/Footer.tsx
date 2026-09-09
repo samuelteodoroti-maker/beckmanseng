@@ -35,7 +35,7 @@ export const Footer = memo(function Footer() {
               <li><a href={`mailto:${SITE.email}`} className="flex items-start gap-2 hover:text-accent"><Mail className="h-4 w-4 text-accent shrink-0 mt-0.5" /> <span className="break-all">{SITE.email}</span></a></li>
               <li>
                 <a
-                  href="https://www.instagram.com/beckmans.engenharia/"
+                  href={SITE.instagram}
                   target="_blank" rel="noreferrer"
                   className="flex items-center gap-2 hover:text-accent transition"
                 >
@@ -44,7 +44,7 @@ export const Footer = memo(function Footer() {
               </li>
               <li>
                 <a
-                  href="https://br.linkedin.com/company/beckmans-engenharia"
+                  href={SITE.linkedin}
                   target="_blank" rel="noreferrer"
                   className="flex items-center gap-2 hover:text-accent transition"
                 >
