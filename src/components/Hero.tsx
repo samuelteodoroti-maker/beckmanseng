@@ -18,7 +18,6 @@ export const Hero = memo(function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           decoding="async"
-          fetchPriority="high"
         />
         {/* Overlay progressivo para garantir legibilidade absoluta em qualquer tema */}
         <div className="absolute inset-0 bg-primary/75 dark:bg-background/90" />

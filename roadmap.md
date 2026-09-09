@@ -7,4 +7,4 @@
 - [x] Corrigir conteúdo institucional não confirmado
 - [x] Padronizar páginas internas, 404 e portfólio
 - [x] Remover dependências e resíduos não utilizados
-- [ ] Validar visual, links, acessibilidade, console, lint e segurança
+- [x] Validar visual, links, acessibilidade, console, lint e segurança
