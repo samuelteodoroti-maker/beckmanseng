@@ -14,6 +14,7 @@ const Services = lazy(() => import("@/components/Services").then(m => ({ default
 const Projects = lazy(() => import("@/components/Projects").then(m => ({ default: m.Projects })));
 const About = lazy(() => import("@/components/About").then(m => ({ default: m.About })));
 const Contact = lazy(() => import("@/components/Contact").then(m => ({ default: m.Contact })));
+const VideosStrip = lazy(() => import("@/components/VideosStrip").then(m => ({ default: m.VideosStrip })));
 
 const Index = () => {
   useReveal();
@@ -41,6 +42,10 @@ const Index = () => {
             <Projects />
           </Suspense>
           
+          <Suspense fallback={<SectionLoading />}>
+            <VideosStrip />
+          </Suspense>
+
           <Suspense fallback={<SectionLoading />}>
             <About />
           </Suspense>
