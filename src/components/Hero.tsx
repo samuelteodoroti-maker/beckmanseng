@@ -36,12 +36,6 @@ export const Hero = memo(function Hero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-7 space-y-8 sm:space-y-10 animate-fade-in">
-            <div className="flex flex-row items-center gap-3 sm:gap-4 mb-8">
-              <div className="section-chip !bg-white/10 !backdrop-blur-md !border-white/20 !text-white shadow-xl">
-                <Sparkles className="h-4 w-4 mr-1 sm:mr-2" />
-                Beckmans Engenharia
-              </div>
-            </div>
 
             <h1 className="text-display font-bold text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.3)] leading-[1.1]">
               Engenharia Civil com <br />
