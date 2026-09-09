@@ -1,5 +1,4 @@
 import { Suspense, lazy } from "react";
-import { ThemeProvider } from "next-themes";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
@@ -20,7 +19,6 @@ const Index = () => {
   useReveal();
   
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <div className="min-h-screen flex flex-col">
         <Seo
           title="Engenharia Civil no Rio de Janeiro | Beckmans"
@@ -54,7 +52,6 @@ const Index = () => {
         <Footer />
         <FloatingCTA />
       </div>
-    </ThemeProvider>
   );
 };
 
