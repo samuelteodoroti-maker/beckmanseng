@@ -10,6 +10,7 @@ export const ThemeToggle = memo(function ThemeToggle() {
       variant="ghost"
       size="icon"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      aria-label="Alternar entre tema claro e escuro"
       className="rounded-full relative"
     >
       <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

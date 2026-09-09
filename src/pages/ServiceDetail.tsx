@@ -23,7 +23,7 @@ export default function ServiceDetail() {
         path={`/servicos/${service.slug}`}
       />
       <Navbar />
-      <main>
+      <main id="main-content">
         <section className="page-hero">
           <div className="site-container max-w-5xl">
             <Link to="/servicos" className="inline-flex items-center gap-2 text-sm font-bold text-accent mb-8 hover:underline">

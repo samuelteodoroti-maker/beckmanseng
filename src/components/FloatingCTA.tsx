@@ -35,14 +35,14 @@ export function FloatingCTA() {
     <a
       href={whatsappUrl("Olá Beckmans! Estou navegando no site e gostaria de solicitar um orçamento.")}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
       className={`fixed bottom-5 right-5 md:bottom-8 md:right-8 z-40 group inline-flex items-center gap-2 h-14 pl-4 pr-5 rounded-full bg-accent text-accent-foreground shadow-glow border border-accent/40 transition-all duration-500 hover:scale-105 ${
         show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6 pointer-events-none"
       }`}
     >
       <span className="relative flex items-center justify-center w-10 h-10 rounded-full bg-accent-foreground/15">
-        <span className="absolute inset-0 rounded-full bg-accent-foreground/20 animate-ping group-hover:animate-none" />
+        <span className="absolute inset-0 rounded-full bg-accent-foreground/20 motion-safe:animate-ping group-hover:animate-none" />
         <MessageCircle className="h-5 w-5 relative transition-transform group-hover:scale-110" />
       </span>
       <span className="hidden sm:inline text-sm font-bold tracking-tight">Fale conosco</span>
