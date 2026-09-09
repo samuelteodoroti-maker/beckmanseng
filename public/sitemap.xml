@@ -30,6 +30,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://beckmansengenharia.com/videos</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url><loc>https://beckmansengenharia.com/servicos/consultoria-em-engenharia</loc></url>
   <url><loc>https://beckmansengenharia.com/servicos/seguranca-do-trabalho</loc></url>
   <url><loc>https://beckmansengenharia.com/servicos/reformas-e-construcoes</loc></url>

@@ -68,8 +68,8 @@ const AdminVideos = () => {
     const path = `${video.id}/${kind}.${ext}`;
     const { error } = await supabase.storage.from(bucket).upload(path, file, { upsert: true });
     if (error) return toast.error("Falha no envio: " + error.message);
-    const field = kind === "video" ? "video_path" : "cover_path";
-    const { error: dbError } = await supabase.from("videos").update({ [field]: path }).eq("id", video.id);
+    const patch = kind === "video" ? { video_path: path } : { cover_path: path };
+    const { error: dbError } = await supabase.from("videos").update(patch).eq("id", video.id);
     if (dbError) return toast.error("Falha ao registrar arquivo: " + dbError.message);
     toast.success(kind === "video" ? "Vídeo enviado." : "Capa enviada.");
     void reload();
