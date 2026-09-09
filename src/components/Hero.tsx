@@ -93,10 +93,8 @@ export const Hero = memo(function Hero() {
                 </div>
               </div>
             </div>
-
-              </div>
-            </div>
           </div>
+
         </div>
       </div>
     </section>
