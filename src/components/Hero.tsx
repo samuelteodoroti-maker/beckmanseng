@@ -1,12 +1,8 @@
 import { memo, useCallback } from "react";
-import { ArrowRight, Sparkles, ShieldCheck, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroSideAsset from "@/assets/hero_side.jpg.asset.json";
 
-// 🔁 PLACEHOLDER — troque a URL abaixo pela imagem oficial da Beckmans
-// Fonte: Unsplash (tema: modern construction / civil engineering)
-const HERO_BG_IMAGE =
-  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2400&q=80";
 const HERO_SIDE_IMAGE = heroSideAsset.url;
 
 export const Hero = memo(function Hero() {
@@ -17,8 +13,8 @@ export const Hero = memo(function Hero() {
       {/* 🔁 PLACEHOLDER — Imagem de fundo full-width (troque HERO_BG_IMAGE acima) */}
       <div className="absolute inset-0 -z-10">
         <img
-          src={HERO_BG_IMAGE}
-          alt="Construção civil moderna"
+          src={HERO_SIDE_IMAGE}
+          alt="Profissional da Beckmans Engenharia em atividade técnica"
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           decoding="async"
@@ -29,26 +25,19 @@ export const Hero = memo(function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-transparent to-primary/40 dark:from-background/20 dark:to-background/30" />
         <div className="absolute inset-0 grid-pattern opacity-[0.15]" />
         <div className="absolute inset-0 mesh-bg" />
-        <div className="absolute top-1/2 right-0 w-[600px] h-[600px] rounded-full bg-accent/20 blur-[120px] -translate-y-1/2" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px]" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-7 space-y-8 sm:space-y-10 animate-fade-in">
 
-            <h1 className="text-display font-bold text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.3)] leading-[1.1]">
-              Engenharia Civil com <br />
-              <span className="relative inline-block mt-2">
-                <span className="bg-gradient-to-r from-accent to-emerald-400 bg-clip-text text-transparent drop-shadow-none">
-                  Inovação e Qualidade.
-                </span>
-              </span>
+            <p className="eyebrow text-accent">Engenharia civil no Rio de Janeiro</p>
+            <h1 className="text-display font-bold text-primary-foreground leading-[1.08]">
+              Segurança técnica para construir, inspecionar e transformar.
             </h1>
 
             <p className="text-lead text-white/85 max-w-2xl">
-              Transformamos ideias em projetos com excelência. Vistorias, inspeções, construções e consultoria
-              — tudo com o rigor técnico que sua obra merece.
+              Projetos, construções, consultoria e vistorias com atendimento próximo e decisões orientadas por engenharia.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -73,26 +62,15 @@ export const Hero = memo(function Hero() {
                 onClick={() => scrollTo("services")}
                 className="rounded-full text-base px-6 sm:px-8 h-14 glass border-primary/20 w-full sm:w-auto justify-center"
               >
-                Nossos Serviços
+                 Conhecer nossos serviços
               </Button>
             </div>
 
-            {/* Trust badges */}
-            <div className="flex flex-wrap gap-4 sm:gap-10 pt-6 sm:pt-10">
-              {[
-                { icon: ShieldCheck, label: "Fundada em 2024", sub: "Rio de Janeiro, RJ" },
-                { icon: Zap, label: "Projetos 2D e 3D", sub: "Tecnologia BIM" },
-                { icon: Sparkles, label: "CREA Ativo", sub: "Responsabilidade técnica" },
-              ].map((b, i) => (
-                <div key={i} className="flex items-center gap-4 group transition-all duration-300">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl glass flex items-center justify-center bg-white/10 border-white/30 shadow-lg group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
-                    <b.icon className="h-7 w-7 text-accent drop-shadow-[0_0_8px_rgba(77,201,160,0.5)]" />
-                  </div>
-                  <div className="flex flex-col gap-0.5">
-                    <div className="text-base sm:text-lg font-bold text-white tracking-tight leading-tight">{b.label}</div>
-                    <div className="text-sm text-white/70 font-medium">{b.sub}</div>
-                  </div>
-                </div>
+            <div className="flex flex-wrap gap-x-7 gap-y-3 pt-3 text-sm font-semibold text-primary-foreground/85">
+              {["Atendimento no Grande Rio", "Projetos 2D, 3D e BIM", "Vistorias com drone"].map((item) => (
+                <span key={item} className="inline-flex items-center gap-2">
+                  <CheckCircle2 className="h-5 w-5 text-accent" /> {item}
+                </span>
               ))}
             </div>
           </div>
@@ -110,19 +88,12 @@ export const Hero = memo(function Hero() {
                   decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
-                {/* Floating stats */}
-                <div className="absolute top-3 left-3 sm:top-4 sm:left-4 glass border-white/40 rounded-2xl px-4 py-3 animate-float">
-                  <div className="text-[10px] sm:text-xs font-bold text-muted-foreground uppercase tracking-wider">Projetos ativos</div>
-                  <div className="text-xl sm:text-2xl font-black text-accent">+50</div>
-                </div>
-                <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 glass border-white/40 rounded-2xl px-4 py-3 animate-float" style={{ animationDelay: "1s" }}>
-                  <div className="text-[10px] sm:text-xs font-bold text-muted-foreground uppercase tracking-wider">Satisfação</div>
-                  <div className="text-xl sm:text-2xl font-black text-accent">98%</div>
+                <div className="absolute bottom-4 left-4 right-4 rounded-lg border border-primary-foreground/20 bg-primary/85 p-5 backdrop-blur-md">
+                  <div className="text-sm font-bold text-accent">Precisão em cada etapa</div>
+                  <div className="mt-1 text-sm text-primary-foreground/80">Do diagnóstico técnico à execução da obra.</div>
                 </div>
               </div>
             </div>
-            {/* Decorative chevrons echoing logo */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 rounded-2xl bg-accent/20 blur-2xl" />
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import { memo } from "react";
 import { Instagram, Linkedin, Mail, Phone, ArrowUp } from "lucide-react";
 import logo from "@/assets/beckmans-logo.png.asset.json";
+import { Link } from "react-router-dom";
+import { SITE } from "@/lib/site";
 
 export const Footer = memo(function Footer() {
   return (
@@ -9,7 +11,7 @@ export const Footer = memo(function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-12">
           <div className="sm:col-span-2 md:col-span-2 space-y-6">
-            <img src={logo.url} alt="Beckmans Engenharia" className="h-10 sm:h-14 w-auto" />
+            <img src={logo.url} alt="Beckmans Engenharia" width="210" height="64" loading="lazy" className="h-12 sm:h-16 w-auto" />
             <p className="text-muted-foreground max-w-md">
               Nossa inovação é o caminho, nossa qualidade é a certeza. Transformamos ideias em projetos com excelência.
             </p>
@@ -18,19 +20,19 @@ export const Footer = memo(function Footer() {
           <div>
             <h3 className="font-semibold mb-4 text-lg">Serviços</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#services" className="hover:text-accent transition">Consultoria em Engenharia</a></li>
-              <li><a href="#services" className="hover:text-accent transition">Segurança do Trabalho</a></li>
-              <li><a href="#services" className="hover:text-accent transition">Reforma e Construções</a></li>
-              <li><a href="#services" className="hover:text-accent transition">Projetos 2D e 3D</a></li>
-              <li><a href="/inspecoes" className="hover:text-accent transition">Vistorias e Laudos</a></li>
+               <li><Link to="/servicos/consultoria-em-engenharia" className="hover:text-accent transition">Consultoria em Engenharia</Link></li>
+               <li><Link to="/servicos/seguranca-do-trabalho" className="hover:text-accent transition">Segurança do Trabalho</Link></li>
+               <li><Link to="/servicos/reformas-e-construcoes" className="hover:text-accent transition">Reformas e Construções</Link></li>
+               <li><Link to="/servicos/projetos-2d-3d-bim" className="hover:text-accent transition">Projetos 2D, 3D e BIM</Link></li>
+               <li><Link to="/inspecoes" className="hover:text-accent transition">Vistorias e Inspeções</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-semibold mb-4 text-lg">Contato</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent shrink-0" /> (21) 98223-4712</li>
-              <li className="flex items-start gap-2"><Mail className="h-4 w-4 text-accent shrink-0 mt-0.5" /> <span className="break-all">andrew@beckmanseng.com</span></li>
+              <li><a href={`tel:${SITE.phoneInternational}`} className="flex items-center gap-2 hover:text-accent"><Phone className="h-4 w-4 text-accent shrink-0" /> {SITE.phoneDisplay}</a></li>
+              <li><a href={`mailto:${SITE.email}`} className="flex items-start gap-2 hover:text-accent"><Mail className="h-4 w-4 text-accent shrink-0 mt-0.5" /> <span className="break-all">{SITE.email}</span></a></li>
               <li>
                 <a
                   href="https://www.instagram.com/beckmans.engenharia/"
@@ -54,9 +56,8 @@ export const Footer = memo(function Footer() {
         </div>
 
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-muted-foreground text-center md:text-left">
-          <p>© {new Date().getFullYear()} Beckmans Engenharia · CNPJ 55.391.051/0001-83 · Todos os direitos reservados.</p>
+           <p>© {new Date().getFullYear()} Beckmans Engenharia · CNPJ {SITE.cnpj} · Todos os direitos reservados.</p>
           <div className="flex items-center gap-5">
-            <p>CREA · Responsabilidade Técnica</p>
             <a
               href="#home"
               onClick={(e) => {

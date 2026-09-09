@@ -12,6 +12,7 @@ const Inspections = lazy(() => import("./pages/Inspections"));
 const Servicos = lazy(() => import("./pages/Servicos"));
 const Portfolio = lazy(() => import("./pages/Portfolio"));
 const Sobre = lazy(() => import("./pages/Sobre"));
+const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/inspecoes" element={<Inspections />} />
             <Route path="/servicos" element={<Servicos />} />
+            <Route path="/servicos/:slug" element={<ServiceDetail />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/sobre" element={<Sobre />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

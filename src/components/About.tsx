@@ -14,7 +14,7 @@ const pillars = [
 ];
 
 const checks = [
-  "ART e responsabilidade técnica em todos os serviços",
+               "Responsabilidade técnica conforme o escopo contratado",
   "Atendimento consultivo e personalizado",
   "Engenheiro civil especializado em gestão de obras",
   "Compromisso com prazos, normas e resultados",
@@ -35,27 +35,12 @@ export const About = memo(function About() {
               </h2>
               <div className="space-y-4">
                 <p className="text-lead text-muted-foreground">
-                  A Beckmans Engenharia foi fundada em 4 de junho de 2024 no Rio de Janeiro, RJ, sob a gestão de
-                  Andrew Matheus da Silva Beckman, engenheiro civil e gestor de projetos/obras. Atuamos no Grande Rio
-                  com rigor técnico e compromisso por ambientes mais seguros.
+                  Sob a gestão de Andrew Matheus da Silva Beckman, a Beckmans Engenharia atende o Grande Rio com
+                  soluções para obras, projetos, inspeções e segurança, sempre com acompanhamento técnico próximo.
                 </p>
               </div>
             </div>
 
-            {/* Quick stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {[
-                { n: "2024", l: "Fundação" },
-                { n: "+50", l: "Projetos Ativos" },
-                { n: "98%", l: "Satisfação" },
-              ].map((s, i) => (
-                <div key={i} className="glass border-white/40 dark:border-white/10 rounded-3xl p-6 text-center hover:border-accent/30 transition-all duration-500 group hover:shadow-soft active:scale-95 flex flex-col items-center justify-center min-h-[140px] sm:h-full">
-                  <div className="text-3xl lg:text-4xl font-bold text-accent tabular-nums transition-transform group-hover:scale-110 duration-500">{s.n}</div>
-                  <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground mt-3 leading-tight">{s.l}</div>
-                </div>
-              ))}
-            </div>
-            
             {/* 🔁 PLACEHOLDER — Imagem de autoridade (troque ABOUT_IMAGE acima) */}
             <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[4/3] sm:aspect-[16/10] flex-grow">
               <img
