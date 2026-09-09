@@ -19,7 +19,7 @@ export const Footer = memo(function Footer() {
 
           <div>
             <h3 className="font-semibold mb-4 text-lg">Serviços</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <ul className="space-y-2 text-sm text-white/80">
                <li><Link to="/servicos/consultoria-em-engenharia" className="hover:text-accent transition">Consultoria em Engenharia</Link></li>
                <li><Link to="/servicos/seguranca-do-trabalho" className="hover:text-accent transition">Segurança do Trabalho</Link></li>
                <li><Link to="/servicos/reformas-e-construcoes" className="hover:text-accent transition">Reformas e Construções</Link></li>
@@ -30,7 +30,7 @@ export const Footer = memo(function Footer() {
 
           <div>
             <h3 className="font-semibold mb-4 text-lg">Contato</h3>
-            <ul className="space-y-3 text-sm text-muted-foreground">
+            <ul className="space-y-3 text-sm text-white/80">
               <li><a href={`tel:${SITE.phoneInternational}`} className="flex items-center gap-2 hover:text-accent"><Phone className="h-4 w-4 text-accent shrink-0" /> {SITE.phoneDisplay}</a></li>
               <li><a href={`mailto:${SITE.email}`} className="flex items-start gap-2 hover:text-accent"><Mail className="h-4 w-4 text-accent shrink-0 mt-0.5" /> <span className="break-all">{SITE.email}</span></a></li>
               <li>
@@ -55,7 +55,7 @@ export const Footer = memo(function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-muted-foreground text-center md:text-left">
+        <div className="pt-8 border-t border-white/15 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-white/70 text-center md:text-left">
            <p>© {new Date().getFullYear()} Beckmans Engenharia · CNPJ {SITE.cnpj} · Todos os direitos reservados.</p>
           <div className="flex items-center gap-5">
             <a
