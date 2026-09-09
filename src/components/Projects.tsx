@@ -50,20 +50,21 @@ const projects = [
 
 export const Projects = memo(function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-32 relative">
+    <section id="projects" className="py-24 md:py-32 relative surface-navy">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 reveal">
           <div className="max-w-2xl">
-            <h2 className="text-h2 font-bold">
+            <h2 className="text-h2 font-bold text-white">
               Projetos que <span className="text-accent">falam por si.</span>
             </h2>
           </div>
           <div className="max-w-md">
-            <p className="text-muted-foreground text-base leading-relaxed">
+            <p className="text-white/85 text-base leading-relaxed">
               Uma seleção de obras, inspeções e projetos entregues com o padrão Beckmans de excelência.
             </p>
           </div>
         </div>
+
 
         {/* Bento Grid — 6 placeholders (troque cada `img` acima pela foto oficial) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 sm:gap-6 auto-rows-[250px] sm:auto-rows-[240px]">

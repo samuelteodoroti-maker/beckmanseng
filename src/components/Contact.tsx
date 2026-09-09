@@ -4,19 +4,20 @@ import { SITE, whatsappUrl } from "@/lib/site";
 
 export const Contact = memo(function Contact() {
   return (
-    <section id="contact" className="py-24 md:py-32 relative overflow-hidden bg-primary text-primary-foreground">
+    <section id="contact" className="py-24 md:py-32 relative overflow-hidden surface-navy-deep">
       <div className="absolute inset-0 -z-10 grid-pattern opacity-10" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16 text-center reveal">
           <div>
-            <h2 className="text-h2 font-bold mb-6 text-primary-foreground">
-              Vamos tirar seu projeto <span className="text-accent drop-shadow-[0_0_15px_rgba(77,201,160,0.4)]">do papel.</span>
+            <h2 className="text-h2 font-bold mb-6 text-white">
+              Vamos tirar seu projeto <span className="text-accent">do papel.</span>
             </h2>
-            <p className="text-lg md:text-xl text-primary-foreground/75 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-white/85 max-w-2xl mx-auto">
               Fale diretamente com nossa equipe pelo canal que preferir e conte brevemente o que você precisa.
             </p>
           </div>
+
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch pt-12">
             {[
