@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
 import logo from "@/assets/beckmans-logo.png.asset.json";
+import { whatsappUrl } from "@/lib/site";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,6 +65,10 @@ export function Navbar() {
   ];
 
   return (
+    <>
+    <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-accent focus:px-4 focus:py-3 focus:font-bold focus:text-accent-foreground">
+      Pular para o conteúdo
+    </a>
     <nav aria-label="Navegação principal"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
          scrolled ? "glass py-2 shadow-elegant border-b border-border" : "bg-background/90 py-3 sm:py-4 backdrop-blur-md border-b border-border/60"
@@ -81,6 +86,7 @@ export function Navbar() {
                 <Link
                   key={l.id}
                   to={l.to}
+                  aria-current={location.pathname === l.to ? "page" : undefined}
                   className={`relative px-3 py-2 text-sm font-bold transition-all duration-300 ${
                     location.pathname === l.to
                       ? "text-accent bg-accent/10"
@@ -96,6 +102,7 @@ export function Navbar() {
                  <Button variant="ghost"
                   key={l.id}
                   onClick={() => scrollToSection(l.id)}
+                   aria-current={active === l.id ? "location" : undefined}
                    className={`relative px-3 py-2 text-sm font-bold transition-all duration-300 ${
                     active === l.id
                       ? "text-accent bg-accent/10"
@@ -113,7 +120,7 @@ export function Navbar() {
             <ThemeToggle />
             <Button variant="accent" asChild className="ml-2 rounded-full">
               <a
-                href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                href={whatsappUrl("Olá Beckmans! Vim pelo site e gostaria de solicitar um orçamento.")}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -160,7 +167,7 @@ export function Navbar() {
             ))}
             <Button variant="accent" className="w-full mt-4 h-14 rounded-full" asChild>
               <a
-                href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Vim%20pelo%20site%20(menu%20mobile)%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                href={whatsappUrl("Olá Beckmans! Vim pelo site e gostaria de solicitar um orçamento.")}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -177,5 +184,6 @@ export function Navbar() {
         aria-hidden="true"
       />
     </nav>
+    </>
   );
 }

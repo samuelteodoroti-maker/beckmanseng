@@ -12,7 +12,6 @@ export const StructuredData = () => {
             "name": "${SITE.name}",
             "url": "${SITE.url}",
             "logo": "${SITE.url}/favicon.png",
-            "image": "${SITE.url}/assets/image.png",
             "taxID": "${SITE.cnpj}",
             "email": "${SITE.email}",
             "areaServed": "${SITE.areaServed}",

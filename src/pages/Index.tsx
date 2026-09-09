@@ -28,7 +28,7 @@ const Index = () => {
         />
         <StructuredData />
         <Navbar />
-        <main className="flex-grow">
+        <main id="main-content" className="flex-grow">
           <Hero />
           
           <Suspense fallback={<SectionLoading />}>

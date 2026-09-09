@@ -2,6 +2,7 @@ import { memo, useCallback } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroSideAsset from "@/assets/hero_side.jpg.asset.json";
+import { whatsappUrl } from "@/lib/site";
 
 const HERO_SIDE_IMAGE = heroSideAsset.url;
 
@@ -10,7 +11,6 @@ export const Hero = memo(function Hero() {
 
   return (
     <section id="home" className="relative min-h-[90dvh] lg:min-h-dvh flex items-center pt-24 sm:pt-28 pb-16 sm:pb-20 overflow-hidden will-change-transform">
-      {/* 🔁 PLACEHOLDER — Imagem de fundo full-width (troque HERO_BG_IMAGE acima) */}
       <div className="absolute inset-0 -z-10">
         <img
           src={HERO_SIDE_IMAGE}
@@ -48,7 +48,7 @@ export const Hero = memo(function Hero() {
                 className="group rounded-full text-base px-6 sm:px-10 h-14 shadow-glow w-full sm:w-auto justify-center transition-all duration-300 hover:scale-105 active:scale-95"
               >
                 <a
-                  href="https://wa.me/5521982234712?text=Ol%C3%A1%20Beckmans!%20Vi%20o%20site%20de%20voc%C3%AAs%20e%20quero%20solicitar%20um%20or%C3%A7amento%20para%20o%20meu%20projeto."
+                  href={whatsappUrl("Olá Beckmans! Vi o site e quero solicitar um orçamento para o meu projeto.")}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -79,7 +79,6 @@ export const Hero = memo(function Hero() {
           <div className="lg:col-span-5 relative animate-scale-in max-w-md mx-auto lg:max-w-none w-full">
             <div className="relative rounded-3xl overflow-hidden glass p-2 shadow-elegant">
               <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
-                {/* 🔁 PLACEHOLDER — Imagem lateral do Hero (troque HERO_SIDE_IMAGE acima) */}
                 <img
                   src={HERO_SIDE_IMAGE}
                   alt="Projeto de engenharia civil"

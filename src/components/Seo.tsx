@@ -9,7 +9,6 @@ interface SeoProps {
 
 export function Seo({ title, description, path = "" }: SeoProps) {
   const canonical = `${SITE.url}${path}`;
-  const image = `${SITE.url}/assets/image.png`;
 
   return (
     <Helmet>
@@ -23,11 +22,9 @@ export function Seo({ title, description, path = "" }: SeoProps) {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
-      <meta property="og:image" content={image} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
       <meta name="geo.region" content="BR-RJ" />
       <meta name="geo.placename" content="Rio de Janeiro" />
     </Helmet>
