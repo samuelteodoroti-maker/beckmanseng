@@ -78,39 +78,21 @@ export function Navbar() {
 
           <div className="hidden lg:flex items-center gap-1">
             {links.map((l) => (
-              l.to ? (
-                <Link
-                  key={l.id}
-                  to={l.to}
-                  aria-current={location.pathname === l.to ? "page" : undefined}
-                  className={`relative px-3 py-2 text-sm font-bold transition-all duration-300 ${
-                    location.pathname === l.to
-                      ? "text-accent bg-accent/10"
-                      : "text-foreground/70 hover:bg-accent/5 hover:text-accent"
-                  }`}
-                >
-                  {l.label}
-                  {location.pathname === l.to && (
-                    <span className="absolute left-1/2 -bottom-0.5 -translate-x-1/2 h-1 w-1 rounded-full bg-accent" />
-                  )}
-                </Link>
-              ) : (
-                 <Button variant="ghost"
-                  key={l.id}
-                  onClick={() => scrollToSection(l.id)}
-                   aria-current={active === l.id ? "location" : undefined}
-                   className={`relative px-3 py-2 text-sm font-bold transition-all duration-300 ${
-                    active === l.id
-                      ? "text-accent bg-accent/10"
-                      : "text-foreground/70 hover:bg-accent/5 hover:text-accent"
-                  }`}
-                >
-                  {l.label}
-                  {active === l.id && (
-                    <span className="absolute left-1/2 -bottom-0.5 -translate-x-1/2 h-1 w-1 rounded-full bg-accent" />
-                  )}
-                 </Button>
-              )
+              <Link
+                key={l.id}
+                to={l.to}
+                aria-current={location.pathname === l.to ? "page" : undefined}
+                className={`relative px-3 py-2 text-sm font-bold transition-all duration-300 ${
+                  location.pathname === l.to
+                    ? "text-accent bg-accent/10"
+                    : "text-foreground/70 hover:bg-accent/5 hover:text-accent"
+                }`}
+              >
+                {l.label}
+                {location.pathname === l.to && (
+                  <span className="absolute left-1/2 -bottom-0.5 -translate-x-1/2 h-1 w-1 rounded-full bg-accent" />
+                )}
+              </Link>
             ))}
             <div className="mx-2 h-6 w-px bg-border" />
             <ThemeToggle />
