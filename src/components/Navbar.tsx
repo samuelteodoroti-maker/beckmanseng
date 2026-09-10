@@ -3,7 +3,6 @@ import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
-import logo from "@/assets/beckmans-logo.png.asset.json";
 import { whatsappUrl } from "@/lib/site";
 
 export function Navbar() {
@@ -78,7 +77,11 @@ export function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3 group">
-            <img src={logo.url} alt="Beckmans Engenharia" width="240" height="72" className="h-14 sm:h-[68px] w-auto transition-transform group-hover:scale-[1.02]" />
+            <img src="/favicon.png" alt="" width="64" height="64" className="h-10 w-10 sm:h-12 sm:w-12 transition-transform group-hover:scale-[1.02]" />
+            <span className="leading-none" aria-label="Beckmans Engenharia">
+              <span className="block font-heading text-lg font-black tracking-tight text-foreground sm:text-xl">BECKMANS</span>
+              <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.24em] text-accent sm:text-[10px]">Engenharia</span>
+            </span>
           </Link>
 
 

@@ -1,10 +1,9 @@
 import { memo, useCallback } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroSideAsset from "@/assets/hero_side.jpg.asset.json";
 import { whatsappUrl } from "@/lib/site";
 
-const HERO_SIDE_IMAGE = heroSideAsset.url;
+const HERO_SIDE_IMAGE = "/images/projetos/projeto-02.jpg";
 
 export const Hero = memo(function Hero() {
   const scrollTo = useCallback((id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }), []);

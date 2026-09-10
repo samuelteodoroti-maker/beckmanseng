@@ -11,3 +11,5 @@
 - [x] Preparar os seis caminhos públicos de vídeos e o estado visual para arquivos pendentes
 - [x] Receber os seis vídeos e as dez fotos reais sincronizados pelo GitHub
 - [x] Aplicar vídeos locais, carrossel de projetos e portfólio com galeria ampliada
+- [x] Receber os seis vídeos e as dez fotos reais sincronizados pelo GitHub
+- [x] Aplicar vídeos locais, carrossel de projetos e portfólio com galeria ampliada
