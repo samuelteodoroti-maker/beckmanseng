@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Dialog,
@@ -21,20 +21,6 @@ export function VideoModal({ videos, index, covers, onIndexChange, onClose }: Pr
   const open = index !== null;
   const current = open ? videos[index] : undefined;
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [src, setSrc] = useState<string | null>(null);
-  const [missing, setMissing] = useState(false);
-
-  // Usa exclusivamente o arquivo público em /videos e só o carrega ao abrir o modal.
-  useEffect(() => {
-    if (!current) return;
-    setMissing(false);
-    setSrc(localVideoUrl(current));
-  }, [current]);
-
-  const handleError = () => {
-    setSrc(null);
-    setMissing(true);
-  };
 
   // Pausa ao trocar de vídeo ou fechar o modal
   useEffect(() => {
@@ -48,6 +34,7 @@ export function VideoModal({ videos, index, covers, onIndexChange, onClose }: Pr
   }, [current?.id, open]);
 
   if (!open || !current) return null;
+  const src = localVideoUrl(current);
 
   const go = (delta: number) => {
     const next = (index + delta + videos.length) % videos.length;
@@ -72,26 +59,18 @@ export function VideoModal({ videos, index, covers, onIndexChange, onClose }: Pr
         </DialogDescription>
 
         <div className="relative mx-auto aspect-[9/16] w-full max-h-[70vh] overflow-hidden rounded-xl bg-black">
-          {src ? (
-            <video
-              ref={videoRef}
-              key={current.id}
-              src={src}
-              poster={covers[current.id]}
-              controls
-              playsInline
-              preload="metadata"
-              onError={handleError}
-              muted={false}
-              className="h-full w-full object-cover"
-            />
-          ) : (
-            <div className="flex h-full w-full items-center justify-center px-6 text-center text-sm text-white/70">
-              {missing
-                ? "Este vídeo ainda não foi enviado. Adicione o arquivo em /videos para exibi-lo aqui."
-                : "Carregando vídeo…"}
-            </div>
-          )}
+          <video
+            ref={videoRef}
+            key={current.id}
+            src={src}
+            poster={covers[current.id]}
+            controls
+            playsInline
+            preload="metadata"
+            className="h-full w-full object-cover"
+          >
+            Seu navegador não suporta a reprodução deste vídeo.
+          </video>
         </div>
 
         <div className="flex items-center justify-between gap-3 pt-2">
