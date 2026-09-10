@@ -37,7 +37,7 @@ const AdminVideos = () => {
     const patch = drafts[video.id];
     if (!patch) return;
     const { error } = await supabase.from("videos").update(patch).eq("id", video.id);
-    if (error) return toast.error("Não foi possível salvar: " + error.message);
+    if (error) return toast.error("Não foi possível salvar as alterações.");
     setDrafts((d) => {
       const next = { ...d };
       delete next[video.id];
