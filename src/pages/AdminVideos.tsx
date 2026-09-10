@@ -48,40 +48,28 @@ const AdminVideos = () => {
   };
 
   const upload = async (video: VideoRecord, file: File, kind: "video" | "cover") => {
+    if (kind === "video") {
+      if (file.type !== "video/mp4") return toast.error("Envie um arquivo MP4.");
+      if (file.size > MAX_VIDEO_BYTES) return toast.error("O vídeo deve ter no máximo 60 MB.");
+    } else {
+      if (!COVER_TYPES.includes(file.type)) return toast.error("A capa deve ser JPEG, PNG, WebP ou AVIF.");
+      if (file.size > MAX_COVER_BYTES) return toast.error("A capa deve ter no máximo 3 MB.");
+    }
+
     const bucket = kind === "video" ? VIDEO_BUCKET : COVER_BUCKET;
-    const ext = file.name.split(".").pop() ?? (kind === "video" ? "mp4" : "jpg");
-    const path = `${video.id}/${kind}.${ext}`;
-    const { error } = await supabase.storage.from(bucket).upload(path, file, { upsert: true });
-    if (error) return toast.error("Falha no envio: " + error.message);
+    const ext = kind === "video" ? "mp4" : (file.type.split("/")[1] || "jpg");
+    const path = `${video.id}/${kind}-${Date.now()}.${ext}`;
+    const { error } = await supabase.storage.from(bucket).upload(path, file, { upsert: false, contentType: file.type });
+    if (error) return toast.error("Não foi possível enviar o arquivo.");
     const patch = kind === "video" ? { video_path: path } : { cover_path: path };
     const { error: dbError } = await supabase.from("videos").update(patch).eq("id", video.id);
-    if (dbError) return toast.error("Falha ao registrar arquivo: " + dbError.message);
+    if (dbError) return toast.error("Não foi possível registrar o arquivo.");
     toast.success(kind === "video" ? "Vídeo enviado." : "Capa enviada.");
     void reload();
   };
 
-  if (isAdmin === null) {
-    return <main className="min-h-screen grid place-items-center text-muted-foreground">Verificando acesso…</main>;
-  }
-
-  if (!isAdmin) {
-    return (
-      <main className="min-h-screen grid place-items-center px-4 text-center">
-        <div className="max-w-md space-y-4">
-          <h1 className="text-2xl font-bold text-primary dark:text-white">Acesso restrito</h1>
-          <p className="text-muted-foreground">
-            Sua conta ainda não tem permissão de administrador para gerenciar os vídeos.
-          </p>
-          <Button variant="outline" onClick={() => supabase.auth.signOut().then(() => navigate("/auth"))}>
-            Sair
-          </Button>
-        </div>
-      </main>
-    );
-  }
-
   return (
-    <main className="min-h-screen surface-light py-16">
+    <main id="main-content" className="min-h-screen surface-light py-16">
       <Seo title="Gerenciar vídeos | Beckmans Engenharia" description="Área administrativa de vídeos." noindex />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="flex flex-wrap items-center justify-between gap-4">
