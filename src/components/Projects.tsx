@@ -1,54 +1,32 @@
-import { memo } from "react";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { memo, useCallback, useEffect, useRef } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import droneHighAsset from "@/assets/drone_vistoria.jpeg.asset.json";
-import drillAsset from "@/assets/project_drill.jpg.asset.json";
-import torqueAsset from "@/assets/project_torque.jpg.asset.json";
-import cleaningAsset from "@/assets/project_cleaning.jpg.asset.json";
-import structureAsset from "@/assets/project_structure.jpg.asset.json";
-import aboutAuthorityAsset from "@/assets/about_authority.jpg.asset.json";
-
-const projects = [
-  {
-    img: droneHighAsset.url,
-    title: "Vistoria com Drone",
-    tag: "Vistoria",
-    meta: "Inspeção técnica de alta precisão",
-  },
-  {
-    img: drillAsset.url,
-    title: "Manutenção Industrial",
-    tag: "Obra",
-    meta: "Execução com ferramentas de ponta",
-  },
-  {
-    img: torqueAsset.url,
-    title: "Segurança em Altura",
-    tag: "Segurança",
-    meta: "Consultoria em SST e NR-35",
-  },
-  {
-    img: cleaningAsset.url,
-    title: "Limpeza Técnica",
-    tag: "Manutenção",
-    meta: "Serviços especializados em altura",
-  },
-  {
-    img: structureAsset.url,
-    title: "Inspeção de Estrutura",
-    tag: "Inspeção",
-    meta: "Análise de integridade estrutural",
-  },
-  {
-    img: aboutAuthorityAsset.url,
-    title: "Controle de Voo",
-    tag: "Tecnologia",
-    meta: "Mapeamento e monitoramento aéreo",
-  },
-];
+import { PROJECTS } from "@/lib/projects";
 
 export const Projects = memo(function Projects() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const pausedRef = useRef(false);
+
+  const move = useCallback((direction: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const card = track.querySelector<HTMLElement>("[data-project-card]");
+    track.scrollBy({ left: direction * ((card?.offsetWidth ?? 320) + 24), behavior: "smooth" });
+  }, []);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const interval = window.setInterval(() => {
+      const track = trackRef.current;
+      if (!track || pausedRef.current) return;
+      const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
+      if (atEnd) track.scrollTo({ left: 0, behavior: "smooth" });
+      else move(1);
+    }, 4200);
+    return () => window.clearInterval(interval);
+  }, [move]);
+
   return (
     <section id="projects" className="py-24 md:py-32 relative surface-navy">
       <div className="container mx-auto px-4 lg:px-8">
@@ -66,45 +44,48 @@ export const Projects = memo(function Projects() {
         </div>
 
 
-        {/* Bento Grid — 6 placeholders (troque cada `img` acima pela foto oficial) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 sm:gap-6 auto-rows-[250px] sm:auto-rows-[240px]">
-          {projects.slice(0, 3).map((p, i) => (
+        <div
+          ref={trackRef}
+          onMouseEnter={() => { pausedRef.current = true; }}
+          onMouseLeave={() => { pausedRef.current = false; }}
+          className="-mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-5 sm:mx-0 sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          aria-label="Projetos realizados"
+        >
+          {PROJECTS.map((project) => (
             <article
-              key={p.title}
-              className={`group relative overflow-hidden rounded-2xl reveal will-change-transform ${
-                i === 0
-                  ? "md:col-span-4 md:row-span-2"
-                  : i === 3
-                  ? "md:col-span-4"
-                  : "md:col-span-2"
-              }`}
-              style={{ transitionDelay: `${i * 80}ms` }}
+              key={project.id}
+              data-project-card
+              className="group relative aspect-[4/5] w-[84%] shrink-0 snap-center overflow-hidden rounded-2xl sm:w-[48%] lg:w-[31.5%]"
             >
               <img
-                src={p.img}
-                alt={p.title}
+                src={project.image}
+                alt={`${project.title} realizada pela Beckmans Engenharia`}
                 loading="lazy"
                 decoding="async"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                style={{ objectPosition: project.objectPosition }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent transition-all duration-700 group-hover:from-primary/90 group-hover:via-primary/20" />
-              <div className="absolute inset-0 p-6 sm:p-8 md:p-10 flex flex-col justify-end text-primary-foreground">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="glass-dark backdrop-blur-md inline-flex self-start rounded-full px-4 py-1.5 text-xs font-bold text-accent border-accent/20">
-                    {p.tag}
-                  </div>
-                </div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 leading-tight tracking-tight">{p.title}</h3>
-                <p className="text-sm md:text-base text-primary-foreground/70 line-clamp-2 max-w-sm">{p.meta}</p>
-              </div>
-              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 sm:w-11 sm:h-11 rounded-full glass flex items-center justify-center opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                <ArrowUpRight className="h-5 w-5 text-accent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/35 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-end p-6 text-primary-foreground sm:p-8">
+                <span className="mb-4 inline-flex self-start rounded-full border border-accent/30 bg-primary/80 px-4 py-1.5 text-xs font-bold text-accent backdrop-blur-md">
+                  {project.category}
+                </span>
+                <h3 className="text-2xl font-bold leading-tight sm:text-3xl">{project.title}</h3>
+                <p className="mt-2 line-clamp-2 text-sm text-primary-foreground/80 sm:text-base">{project.description}</p>
               </div>
             </article>
           ))}
         </div>
 
-        <div className="flex justify-center mt-12 reveal">
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 reveal">
+          <div className="flex gap-2">
+            <Button variant="outline" size="icon" onClick={() => move(-1)} aria-label="Projeto anterior" className="btn-on-dark-outline rounded-full">
+              <ArrowLeft className="h-5 w-5" aria-hidden="true" />
+            </Button>
+            <Button variant="outline" size="icon" onClick={() => move(1)} aria-label="Próximo projeto" className="btn-on-dark-outline rounded-full">
+              <ArrowRight className="h-5 w-5" aria-hidden="true" />
+            </Button>
+          </div>
           <Button variant="accent" size="lg" asChild className="group rounded-full text-base px-10 h-14">
             <Link to="/portfolio">
               Ver portfólio completo

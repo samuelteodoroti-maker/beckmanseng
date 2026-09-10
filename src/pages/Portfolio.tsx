@@ -1,29 +1,17 @@
-import { memo, useEffect } from "react";
+import { memo, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import droneHighAsset from "@/assets/drone_vistoria.jpeg.asset.json";
-import drillAsset from "@/assets/project_drill.jpg.asset.json";
-import torqueAsset from "@/assets/project_torque.jpg.asset.json";
-import cleaningAsset from "@/assets/project_cleaning.jpg.asset.json";
-import structureAsset from "@/assets/project_structure.jpg.asset.json";
-import aboutAuthorityAsset from "@/assets/about_authority.jpg.asset.json";
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Seo } from "@/components/Seo";
 import { whatsappUrl } from "@/lib/site";
-
-const projects = [
-  { img: droneHighAsset.url, title: "Vistoria com Drone", tag: "Vistoria", meta: "Inspeção técnica de alta precisão em fachadas e coberturas." },
-  { img: drillAsset.url, title: "Manutenção Industrial", tag: "Obra", meta: "Execução com ferramentas de ponta e equipe especializada." },
-  { img: torqueAsset.url, title: "Segurança em Altura", tag: "Segurança", meta: "Consultoria em SST e adequação à NR-35." },
-  { img: cleaningAsset.url, title: "Limpeza Técnica", tag: "Manutenção", meta: "Serviços especializados em trabalho em altura." },
-  { img: structureAsset.url, title: "Inspeção de Estrutura", tag: "Inspeção", meta: "Análise de integridade estrutural com relatório técnico." },
-  { img: aboutAuthorityAsset.url, title: "Controle de Voo", tag: "Tecnologia", meta: "Mapeamento e monitoramento aéreo de canteiros." },
-];
+import { PROJECTS } from "@/lib/projects";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 
 const Portfolio = () => {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -47,24 +35,31 @@ const Portfolio = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((p) => (
-              <article key={p.title} className="group relative overflow-hidden rounded-3xl h-[340px]">
+            {PROJECTS.map((project, index) => (
+              <button
+                type="button"
+                key={project.id}
+                onClick={() => setSelectedIndex(index)}
+                aria-label={`Ampliar ${project.title}`}
+                className="group relative h-[340px] overflow-hidden rounded-2xl text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              >
                 <img
-                  src={p.img}
-                  alt={p.title}
+                  src={project.image}
+                  alt={`${project.title} realizada pela Beckmans Engenharia`}
                   loading="lazy"
                   decoding="async"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  style={{ objectPosition: project.objectPosition }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent" />
                 <div className="absolute inset-0 p-8 flex flex-col justify-end text-primary-foreground">
                   <div className="glass-dark backdrop-blur-md inline-flex self-start rounded-full px-4 py-1.5 text-xs font-bold text-accent border-accent/20 mb-4">
-                    {p.tag}
+                    {project.category}
                   </div>
-                  <h2 className="text-2xl font-bold mb-2 leading-tight tracking-tight">{p.title}</h2>
-                  <p className="text-sm text-primary-foreground/75">{p.meta}</p>
+                  <h2 className="text-2xl font-bold mb-2 leading-tight">{project.title}</h2>
+                  <p className="text-sm text-primary-foreground/75">{project.description}</p>
                 </div>
-              </article>
+              </button>
             ))}
           </div>
 
@@ -88,6 +83,33 @@ const Portfolio = () => {
           </div>
         </div>
       </main>
+
+      <Dialog open={selectedIndex !== null} onOpenChange={(open) => { if (!open) setSelectedIndex(null); }}>
+        {selectedIndex !== null && (
+          <DialogContent className="max-h-[94dvh] w-[calc(100%-1.5rem)] max-w-6xl border-border bg-primary p-3 sm:p-5">
+            <DialogTitle className="pr-10 text-primary-foreground">{PROJECTS[selectedIndex].title}</DialogTitle>
+            <DialogDescription className="text-primary-foreground/75">{PROJECTS[selectedIndex].description}</DialogDescription>
+            <div className="relative flex min-h-0 items-center justify-center overflow-hidden rounded-xl bg-primary">
+              <img
+                src={PROJECTS[selectedIndex].image}
+                alt={`${PROJECTS[selectedIndex].title} realizada pela Beckmans Engenharia`}
+                className="max-h-[70dvh] w-full object-contain"
+              />
+              <Button variant="accent" size="icon" onClick={() => setSelectedIndex((selectedIndex - 1 + PROJECTS.length) % PROJECTS.length)} aria-label="Foto anterior" className="absolute left-3 rounded-full">
+                <ChevronLeft className="h-5 w-5" aria-hidden="true" />
+              </Button>
+              <Button variant="accent" size="icon" onClick={() => setSelectedIndex((selectedIndex + 1) % PROJECTS.length)} aria-label="Próxima foto" className="absolute right-3 rounded-full">
+                <ChevronRight className="h-5 w-5" aria-hidden="true" />
+              </Button>
+            </div>
+            <div className="flex items-center justify-center gap-2 text-sm font-bold text-primary-foreground" aria-live="polite">
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+              {selectedIndex + 1} de {PROJECTS.length}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </div>
+          </DialogContent>
+        )}
+      </Dialog>
 
       <Footer />
       <FloatingCTA />
