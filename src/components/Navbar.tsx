@@ -25,7 +25,7 @@ export function Navbar() {
   }, [location.pathname]);
 
   useEffect(() => {
-    const ids = ["home", "services", "projects", "about", "contact"];
+    const ids = ["home", "services", "projects", "about"];
     const sections = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => !!el);
@@ -43,25 +43,16 @@ export function Navbar() {
     );
     sections.forEach((s) => io.observe(s));
     return () => io.disconnect();
-  }, []);
+  }, [location.pathname]);
 
-  const scrollToSection = (id: string) => {
-    if (location.pathname !== "/") {
-      window.location.href = `/#${id}`;
-      return;
-    }
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setIsOpen(false);
-  };
-
-  const links: { id: string; label: string; to?: string }[] = [
-    { id: "home", label: "Início" },
+  const links: { id: string; label: string; to: string }[] = [
+    { id: "home", label: "Início", to: "/" },
     { id: "services", label: "Serviços", to: "/servicos" },
     { id: "inspecoes", label: "Vistorias", to: "/inspecoes" },
     { id: "projects", label: "Portfólio", to: "/portfolio" },
     { id: "videos", label: "Vídeos", to: "/videos" },
     { id: "about", label: "Sobre", to: "/sobre" },
-    { id: "contact", label: "Contato" },
+    { id: "contact", label: "Contato", to: "/contato" },
   ];
 
   return (
