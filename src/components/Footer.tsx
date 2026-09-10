@@ -58,18 +58,15 @@ export const Footer = memo(function Footer() {
         <div className="pt-8 border-t border-white/15 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-white/70 text-center md:text-left">
            <p>© {new Date().getFullYear()} Beckmans Engenharia · CNPJ {SITE.cnpj} · Todos os direitos reservados.</p>
           <div className="flex items-center gap-5">
-            <a
-              href="#home"
-              onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-              className="inline-flex items-center gap-1.5 text-accent hover:opacity-80 transition-all hover:-translate-y-1"
+            <button
+              type="button"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="inline-flex items-center gap-1.5 text-accent transition-all hover:-translate-y-1 hover:opacity-80"
               aria-label="Voltar ao topo"
             >
               <ArrowUp className="h-4 w-4" />
               <span className="font-semibold uppercase tracking-widest text-[10px] sm:text-xs">Voltar ao topo</span>
-            </a>
+            </button>
           </div>
         </div>
       </div>

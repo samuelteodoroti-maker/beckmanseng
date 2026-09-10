@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SectionLoading from "./components/SectionLoading";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "@/components/ui/sonner";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { ScrollToTop } from "@/components/ScrollToTop";
+import { RequireAdmin } from "@/components/RequireAdmin";
 
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -12,12 +15,15 @@ const Portfolio = lazy(() => import("./pages/Portfolio"));
 const Sobre = lazy(() => import("./pages/Sobre"));
 const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
 const Videos = lazy(() => import("./pages/Videos"));
+const Contato = lazy(() => import("./pages/Contato"));
 const Auth = lazy(() => import("./pages/Auth"));
 const AdminVideos = lazy(() => import("./pages/AdminVideos"));
 
 const App = () => (
   <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+    <ErrorBoundary>
       <BrowserRouter>
+        <ScrollToTop />
         <Suspense fallback={<SectionLoading />}>
           <Routes>
             <Route path="/" element={<Index />} />
@@ -27,14 +33,23 @@ const App = () => (
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/videos" element={<Videos />} />
+            <Route path="/contato" element={<Contato />} />
             <Route path="/auth" element={<Auth />} />
-            <Route path="/admin/videos" element={<AdminVideos />} />
+            <Route
+              path="/admin/videos"
+              element={
+                <RequireAdmin>
+                  <AdminVideos />
+                </RequireAdmin>
+              }
+            />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </BrowserRouter>
-      <Toaster />
+    </ErrorBoundary>
+    <Toaster />
   </ThemeProvider>
 );
 

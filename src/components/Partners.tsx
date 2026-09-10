@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import gerdauLogo from "@/assets/logo-gerdau-2048.png.asset.json";
 import leCantonLogo from "@/assets/logo-le-canton-v2.png.asset.json";
 import grupoRBLogo from "@/assets/grupo-rb-logo-new.png.asset.json";
@@ -16,6 +16,8 @@ const PARTNERS = [
 ];
 
 export const Partners = memo(() => {
+  const [failed, setFailed] = useState<Record<string, boolean>>({});
+
   return (
     <section className="py-20 md:py-28 surface-white relative border-y border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -34,25 +36,25 @@ export const Partners = memo(() => {
             >
               <div className="group relative flex items-center justify-center w-full aspect-video p-4 transition-all duration-300 bg-white dark:bg-white rounded-xl border border-border hover:border-accent shadow-soft overflow-hidden">
 
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  loading="lazy"
-                  decoding="async"
-                  className={`max-h-[85%] max-w-[90%] object-contain transition-all duration-500
-                    ${partner.name === "GERDAU" ? "scale-[1.35]" : ""}
-                    ${partner.name === "GRUPO RB" ? "scale-[1.8]" : ""}
-                    ${partner.name === "FM2C" ? "scale-[1.1]" : ""}
-                    ${partner.name === "LE CANTON" ? "scale-[1.15]" : ""}
-                  `}
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    if (target.parentElement) {
-                      target.parentElement.innerHTML = `<span class="text-sm font-bold font-heading opacity-50 text-foreground text-center px-2">${partner.name}</span>`;
-                    }
-                  }}
-                />
+                {failed[partner.name] ? (
+                  <span className="px-2 text-center font-heading text-sm font-bold text-foreground opacity-60">
+                    {partner.name}
+                  </span>
+                ) : (
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    loading="lazy"
+                    decoding="async"
+                    className={`max-h-[85%] max-w-[90%] object-contain transition-all duration-500
+                      ${partner.name === "GERDAU" ? "scale-[1.35]" : ""}
+                      ${partner.name === "GRUPO RB" ? "scale-[1.8]" : ""}
+                      ${partner.name === "FM2C" ? "scale-[1.1]" : ""}
+                      ${partner.name === "LE CANTON" ? "scale-[1.15]" : ""}
+                    `}
+                    onError={() => setFailed((f) => ({ ...f, [partner.name]: true }))}
+                  />
+                )}
               </div>
             </div>
           ))}

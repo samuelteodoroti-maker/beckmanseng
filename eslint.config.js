@@ -23,4 +23,11 @@ export default tseslint.config(
       "@typescript-eslint/no-unused-vars": "off",
     },
   },
+  {
+    // Arquivos gerados automaticamente pela plataforma: não devem ser editados manualmente.
+    files: ["src/integrations/supabase/previewAuthStorage.ts", "src/integrations/supabase/types.ts"],
+    rules: {
+      "prefer-const": "off",
+    },
+  },
 );

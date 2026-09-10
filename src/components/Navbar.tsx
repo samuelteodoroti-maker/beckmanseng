@@ -8,7 +8,7 @@ import { whatsappUrl } from "@/lib/site";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState<string>("home");
+  
   const [progress, setProgress] = useState(0);
   const location = useLocation();
 
@@ -24,44 +24,15 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [location.pathname]);
 
-  useEffect(() => {
-    const ids = ["home", "services", "projects", "about", "contact"];
-    const sections = ids
-      .map((id) => document.getElementById(id))
-      .filter((el): el is HTMLElement => !!el);
-    if (sections.length === 0) {
-      if (location.pathname === "/inspecoes") setActive("inspecoes");
-      return;
-    }
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActive(e.target.id);
-        });
-      },
-      { rootMargin: "-40% 0px -40% 0px", threshold: 0.1 }
-    );
-    sections.forEach((s) => io.observe(s));
-    return () => io.disconnect();
-  }, []);
 
-  const scrollToSection = (id: string) => {
-    if (location.pathname !== "/") {
-      window.location.href = `/#${id}`;
-      return;
-    }
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setIsOpen(false);
-  };
-
-  const links: { id: string; label: string; to?: string }[] = [
-    { id: "home", label: "Início" },
+  const links: { id: string; label: string; to: string }[] = [
+    { id: "home", label: "Início", to: "/" },
     { id: "services", label: "Serviços", to: "/servicos" },
     { id: "inspecoes", label: "Vistorias", to: "/inspecoes" },
     { id: "projects", label: "Portfólio", to: "/portfolio" },
     { id: "videos", label: "Vídeos", to: "/videos" },
     { id: "about", label: "Sobre", to: "/sobre" },
-    { id: "contact", label: "Contato" },
+    { id: "contact", label: "Contato", to: "/contato" },
   ];
 
   return (
@@ -87,39 +58,21 @@ export function Navbar() {
 
           <div className="hidden lg:flex items-center gap-1">
             {links.map((l) => (
-              l.to ? (
-                <Link
-                  key={l.id}
-                  to={l.to}
-                  aria-current={location.pathname === l.to ? "page" : undefined}
-                  className={`relative px-3 py-2 text-sm font-bold transition-all duration-300 ${
-                    location.pathname === l.to
-                      ? "text-accent bg-accent/10"
-                      : "text-foreground/70 hover:bg-accent/5 hover:text-accent"
-                  }`}
-                >
-                  {l.label}
-                  {location.pathname === l.to && (
-                    <span className="absolute left-1/2 -bottom-0.5 -translate-x-1/2 h-1 w-1 rounded-full bg-accent" />
-                  )}
-                </Link>
-              ) : (
-                 <Button variant="ghost"
-                  key={l.id}
-                  onClick={() => scrollToSection(l.id)}
-                   aria-current={active === l.id ? "location" : undefined}
-                   className={`relative px-3 py-2 text-sm font-bold transition-all duration-300 ${
-                    active === l.id
-                      ? "text-accent bg-accent/10"
-                      : "text-foreground/70 hover:bg-accent/5 hover:text-accent"
-                  }`}
-                >
-                  {l.label}
-                  {active === l.id && (
-                    <span className="absolute left-1/2 -bottom-0.5 -translate-x-1/2 h-1 w-1 rounded-full bg-accent" />
-                  )}
-                 </Button>
-              )
+              <Link
+                key={l.id}
+                to={l.to}
+                aria-current={location.pathname === l.to ? "page" : undefined}
+                className={`relative px-3 py-2 text-sm font-bold transition-all duration-300 ${
+                  location.pathname === l.to
+                    ? "text-accent bg-accent/10"
+                    : "text-foreground/70 hover:bg-accent/5 hover:text-accent"
+                }`}
+              >
+                {l.label}
+                {location.pathname === l.to && (
+                  <span className="absolute left-1/2 -bottom-0.5 -translate-x-1/2 h-1 w-1 rounded-full bg-accent" />
+                )}
+              </Link>
             ))}
             <div className="mx-2 h-6 w-px bg-border" />
             <ThemeToggle />
@@ -151,24 +104,15 @@ export function Navbar() {
         {isOpen && (
           <div className="lg:hidden mt-3 glass rounded-lg border border-border p-3 space-y-1 animate-in fade-in slide-in-from-top-4 duration-300">
             {links.map((l) => (
-              l.to ? (
-                <Link
-                  key={l.id}
-                  to={l.to}
-                  onClick={() => setIsOpen(false)}
-                  className="block w-full text-left px-4 py-4 rounded-2xl hover:bg-accent/10 hover:text-accent transition-colors font-bold text-base"
-                >
-                  {l.label}
-                </Link>
-              ) : (
-                 <Button variant="ghost"
-                  key={l.id}
-                  onClick={() => scrollToSection(l.id)}
-                   className="flex w-full justify-start px-4 py-5 hover:bg-accent/10 hover:text-accent transition-colors font-bold text-base"
-                >
-                  {l.label}
-                 </Button>
-              )
+              <Link
+                key={l.id}
+                to={l.to}
+                onClick={() => setIsOpen(false)}
+                aria-current={location.pathname === l.to ? "page" : undefined}
+                className="block w-full text-left px-4 py-4 rounded-2xl hover:bg-accent/10 hover:text-accent transition-colors font-bold text-base"
+              >
+                {l.label}
+              </Link>
             ))}
             <Button variant="accent" className="w-full mt-4 h-14 rounded-full" asChild>
               <a
