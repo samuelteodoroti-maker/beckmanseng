@@ -7,7 +7,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { localVideoUrl, signedUrl, VIDEO_BUCKET, type VideoRecord } from "@/hooks/use-videos";
+import { localVideoUrl, type VideoRecord } from "@/hooks/use-videos";
 
 type Props = {
   videos: VideoRecord[];
@@ -24,21 +24,14 @@ export function VideoModal({ videos, index, covers, onIndexChange, onClose }: Pr
   const [src, setSrc] = useState<string | null>(null);
   const [missing, setMissing] = useState(false);
 
-  // Usa o arquivo público em /videos e só busca o arquivo hospedado se ele não existir
+  // Usa exclusivamente o arquivo público em /videos e só o carrega ao abrir o modal.
   useEffect(() => {
     if (!current) return;
     setMissing(false);
     setSrc(localVideoUrl(current));
   }, [current?.id]);
 
-  const handleError = async () => {
-    if (current?.video_path) {
-      const url = await signedUrl(VIDEO_BUCKET, current.video_path);
-      if (url) {
-        setSrc(url);
-        return;
-      }
-    }
+  const handleError = () => {
     setSrc(null);
     setMissing(true);
   };
@@ -57,7 +50,7 @@ export function VideoModal({ videos, index, covers, onIndexChange, onClose }: Pr
   if (!open || !current) return null;
 
   const go = (delta: number) => {
-    const next = (index! + delta + videos.length) % videos.length;
+    const next = (index + delta + videos.length) % videos.length;
     videoRef.current?.pause();
     onIndexChange(next);
   };
@@ -113,7 +106,7 @@ export function VideoModal({ videos, index, covers, onIndexChange, onClose }: Pr
             Anterior
           </Button>
           <span className="text-sm font-bold text-white" aria-live="polite">
-            {index! + 1} de {videos.length}
+            {index + 1} de {videos.length}
           </span>
           <Button
             variant="outline"

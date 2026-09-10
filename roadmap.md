@@ -8,3 +8,5 @@
 - [x] Padronizar páginas internas, 404 e portfólio
 - [x] Remover dependências e resíduos não utilizados
 - [x] Validar visual, links, acessibilidade, console, lint e segurança
+- [x] Preparar os seis caminhos públicos de vídeos e o estado visual para arquivos pendentes
+- [ ] Autorizar o Git Sync com a conta Teodoro-Sam e sincronizar a branch main (aguardando autorização no Lovable)
