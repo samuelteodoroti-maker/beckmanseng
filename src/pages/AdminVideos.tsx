@@ -20,29 +20,14 @@ const GUIDE = [
   "Tamanho recomendado: abaixo de 25 MB por vídeo",
 ];
 
+const MAX_VIDEO_BYTES = 60 * 1024 * 1024;
+const MAX_COVER_BYTES = 3 * 1024 * 1024;
+const COVER_TYPES = ["image/jpeg", "image/png", "image/webp", "image/avif"];
+
 const AdminVideos = () => {
   const navigate = useNavigate();
-  const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
   const { videos, loading, reload } = useVideos({ onlyPublished: false });
   const [drafts, setDrafts] = useState<Record<string, Partial<VideoRecord>>>({});
-
-  useEffect(() => {
-    const check = async () => {
-      const { data: sessionData } = await supabase.auth.getSession();
-      if (!sessionData.session) {
-        navigate("/auth", { replace: true });
-        return;
-      }
-      const { data } = await supabase
-        .from("user_roles")
-        .select("role")
-        .eq("user_id", sessionData.session.user.id)
-        .eq("role", "admin")
-        .maybeSingle();
-      setIsAdmin(!!data);
-    };
-    void check();
-  }, [navigate]);
 
   const setField = useCallback((id: string, field: keyof VideoRecord, value: unknown) => {
     setDrafts((d) => ({ ...d, [id]: { ...d[id], [field]: value } }));
