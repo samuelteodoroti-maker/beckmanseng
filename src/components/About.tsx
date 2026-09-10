@@ -2,9 +2,9 @@ import { memo } from "react";
 import { CheckCircle2, Target, Eye, Shield, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import aboutAuthorityAsset from "@/assets/about_authority.jpg.asset.json";
 
-const ABOUT_IMAGE = aboutAuthorityAsset.url;
+
+const ABOUT_IMAGE = "/images/projetos/projeto-06.jpg";
 
 const pillars = [
   { icon: Target, title: "Missão", text: "Transformar ideias em projetos de engenharia com excelência técnica." },
