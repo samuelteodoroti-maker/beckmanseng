@@ -42,7 +42,7 @@ export const PageBanner = memo(function PageBanner({
       />
 
       {/* Degradê para contraste do texto */}
-      <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/55 to-primary/10" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" aria-hidden="true" />
 
       {/* Linhas técnicas discretas */}
       <div
