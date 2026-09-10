@@ -1,5 +1,6 @@
 import { Play, Film } from "lucide-react";
 import { formatDuration, type VideoRecord } from "@/hooks/use-videos";
+import { Button } from "@/components/ui/button";
 
 type Props = {
   video: VideoRecord;
@@ -11,11 +12,12 @@ export function VideoCard({ video, coverUrl, onOpen }: Props) {
   const duration = formatDuration(video.duration_seconds);
 
   return (
-    <button
+    <Button
       type="button"
+      variant="ghost"
       onClick={onOpen}
       aria-label={`Assistir ${video.title}`}
-      className="group relative block w-full overflow-hidden rounded-2xl border border-border bg-card text-left shadow-soft transition-all duration-300 hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      className="group relative block h-auto w-full overflow-hidden rounded-2xl border border-border bg-card p-0 text-left shadow-soft transition-all duration-300 hover:border-accent hover:bg-card focus-visible:ring-2 focus-visible:ring-ring"
     >
       <div className="relative aspect-[9/16] w-full overflow-hidden bg-[hsl(var(--navy-deep))]">
         {coverUrl ? (
@@ -58,6 +60,6 @@ export function VideoCard({ video, coverUrl, onOpen }: Props) {
           )}
         </span>
       </div>
-    </button>
+    </Button>
   );
 }
