@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Target, Eye, Shield, ArrowRight } from "lucide-react";
-import aboutAuthorityAsset from "@/assets/about_authority.jpg.asset.json";
+import { PageBanner } from "@/components/PageBanner";
 import { Seo } from "@/components/Seo";
 import { whatsappUrl } from "@/lib/site";
 
@@ -65,16 +65,15 @@ const Sobre = () => {
             </div>
 
             <div className="space-y-6">
-              <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[16/10]">
-                <img
-                  src={aboutAuthorityAsset.url}
-                  alt="Engenheiro da Beckmans em canteiro de obras"
-                  loading="lazy"
-                  decoding="async"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
-              </div>
+              <PageBanner
+                image="/images/projetos/projeto-03.jpg"
+                alt="Equipe da Beckmans Engenharia executando trabalho técnico em altura"
+                objectPosition="center 35%"
+                variant="side"
+                eyebrow="Equipe em campo"
+                caption="Trabalho técnico em altura com procedimentos de segurança."
+                className="aspect-[4/5] sm:aspect-[16/11]"
+              />
               {pillars.map((p) => (
                 <div key={p.title} className="glass border-white/40 dark:border-white/10 rounded-3xl p-8">
                   <div className="flex items-start gap-5">

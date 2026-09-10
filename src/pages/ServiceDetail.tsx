@@ -7,6 +7,17 @@ import { FloatingCTA } from "@/components/FloatingCTA";
 import { Seo } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { SERVICES, whatsappUrl } from "@/lib/site";
+import { PageBanner } from "@/components/PageBanner";
+
+const SERVICE_IMAGES: Record<string, { image: string; alt: string; position: string; caption: string }> = {
+  "consultoria-em-engenharia": { image: "/images/projetos/projeto-06.jpg", alt: "Avaliação técnica de estrutura pela Beckmans Engenharia", position: "center 40%", caption: "Análise técnica em campo para orientar decisões seguras." },
+  "seguranca-do-trabalho": { image: "/images/projetos/projeto-03.jpg", alt: "Trabalho em altura com procedimentos de segurança", position: "center 35%", caption: "Segurança em altura com procedimentos e supervisão técnica." },
+  "reformas-e-construcoes": { image: "/images/projetos/projeto-09.jpg", alt: "Obra acompanhada pela Beckmans Engenharia", position: "center", caption: "Execução acompanhada do início ao fim da obra." },
+  "projetos-2d-3d-bim": { image: "/images/projetos/projeto-10.jpg", alt: "Levantamento em campo para projetos técnicos", position: "center", caption: "Levantamento preciso em campo para projetos fiéis à realidade." },
+  "vistorias-e-laudos": { image: "/images/projetos/projeto-04.jpg", alt: "Vistoria de cobertura para elaboração de laudo", position: "center 40%", caption: "Vistoria detalhada que sustenta laudos técnicos." },
+  "inspecoes-com-drone": { image: "/images/projetos/projeto-01.jpg", alt: "Inspeção aérea com drone", position: "center", caption: "Registro aéreo de áreas de difícil acesso." },
+  "manutencao-industrial": { image: "/images/projetos/projeto-05.jpg", alt: "Manutenção industrial em instalação fabril", position: "center 45%", caption: "Manutenção planejada para manter a operação segura." },
+};
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -37,6 +48,19 @@ export default function ServiceDetail() {
                 Solicitar orçamento <ArrowRight className="h-5 w-5" />
               </a>
             </Button>
+          </div>
+        </section>
+        <section className="pb-4">
+          <div className="site-container max-w-5xl">
+            {SERVICE_IMAGES[service.slug] && (
+              <PageBanner
+                image={SERVICE_IMAGES[service.slug].image}
+                alt={SERVICE_IMAGES[service.slug].alt}
+                objectPosition={SERVICE_IMAGES[service.slug].position}
+                eyebrow={service.title}
+                caption={SERVICE_IMAGES[service.slug].caption}
+              />
+            )}
           </div>
         </section>
         <section className="section-space">

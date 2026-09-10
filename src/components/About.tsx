@@ -2,9 +2,9 @@ import { memo } from "react";
 import { CheckCircle2, Target, Eye, Shield, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import aboutAuthorityAsset from "@/assets/about_authority.jpg.asset.json";
 
-const ABOUT_IMAGE = aboutAuthorityAsset.url;
+
+const ABOUT_IMAGE = "/images/projetos/projeto-06.jpg";
 
 const pillars = [
   { icon: Target, title: "Missão", text: "Transformar ideias em projetos de engenharia com excelência técnica." },
@@ -43,7 +43,7 @@ export const About = memo(function About() {
             <div className="relative rounded-lg overflow-hidden shadow-elegant aspect-[4/3] sm:aspect-[16/10] flex-grow">
               <img
                 src={ABOUT_IMAGE}
-                alt="Engenheiro Beckmans em canteiro de obras"
+                alt="Engenheiro da Beckmans avaliando estrutura em campo"
                 loading="lazy"
                 decoding="async"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"

@@ -6,6 +6,7 @@ import { FloatingCTA } from "@/components/FloatingCTA";
 import { Button } from "@/components/ui/button";
 import { Search, ShieldCheck, Building2, Lightbulb, ArrowRight, FileCheck2, Ruler, Wrench } from "lucide-react";
 import { Seo } from "@/components/Seo";
+import { PageBanner } from "@/components/PageBanner";
 import { SERVICES, whatsappUrl } from "@/lib/site";
 
 const serviceIcons = [Lightbulb, ShieldCheck, Building2, Ruler, FileCheck2, Search, Wrench];
@@ -38,6 +39,15 @@ const Servicos = () => {
                Da análise inicial à execução, encontre o suporte técnico adequado para cada etapa.
             </p>
           </div>
+
+          <PageBanner
+            image="/images/projetos/projeto-05.jpg"
+            alt="Serviço de manutenção industrial executado pela Beckmans Engenharia"
+            objectPosition="center 45%"
+            eyebrow="Manutenção e execução"
+            caption="Acompanhamento técnico do diagnóstico à execução em campo."
+            className="mb-14"
+          />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((s) => (

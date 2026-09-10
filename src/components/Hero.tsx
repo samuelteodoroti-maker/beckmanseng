@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { whatsappUrl } from "@/lib/site";
 
 const HERO_SIDE_IMAGE = "/images/projetos/projeto-02.jpg";
+const HERO_CARD_IMAGE = "/images/projetos/projeto-01.jpg";
 
 export const Hero = memo(function Hero() {
   const scrollTo = useCallback((id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }), []);
@@ -79,8 +80,8 @@ export const Hero = memo(function Hero() {
             <div className="relative rounded-2xl overflow-hidden border border-white/20 bg-white/5 p-2 shadow-elegant">
               <div className="relative rounded-xl overflow-hidden aspect-[4/5]">
                 <img
-                  src={HERO_SIDE_IMAGE}
-                  alt="Projeto de engenharia civil"
+                  src={HERO_CARD_IMAGE}
+                  alt="Vistoria com drone realizada pela Beckmans Engenharia"
                   className="w-full h-full object-cover"
                   loading="eager"
                   decoding="async"
