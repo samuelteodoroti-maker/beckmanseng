@@ -6,7 +6,7 @@ import { Seo } from "@/components/Seo";
 const NotFound = () => {
   return (
     <main className="flex min-h-screen items-center justify-center bg-background px-4">
-      <Seo title="Página não encontrada | Beckmans Engenharia" description="Esta página não está disponível. Volte ao início do site da Beckmans Engenharia." path="/404" />
+      <Seo title="Página não encontrada | Beckmans Engenharia" description="Esta página não está disponível. Volte ao início do site da Beckmans Engenharia." noindex />
       <div className="max-w-xl text-center">
         <p className="eyebrow">Erro 404</p>
         <h1 className="text-h1 font-bold">Esta página não foi encontrada.</h1>
