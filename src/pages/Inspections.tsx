@@ -6,6 +6,7 @@ import { ShieldCheck, CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Seo } from "@/components/Seo";
 import { whatsappUrl } from "@/lib/site";
+import { PageBanner } from "@/components/PageBanner";
 
 const Inspections = () => {
   useEffect(() => {
@@ -33,6 +34,14 @@ const Inspections = () => {
                 Garantimos a segurança, conservação e conformidade legal da sua edificação através de diagnósticos precisos e relatórios detalhados.
               </p>
             </div>
+
+            <PageBanner
+              image="/images/projetos/projeto-04.jpg"
+              alt="Inspeção de cobertura realizada pela Beckmans Engenharia"
+              objectPosition="center 40%"
+              eyebrow="Inspeção de coberturas"
+              caption="Diagnóstico em locais de difícil acesso com registro técnico detalhado."
+            />
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="glass p-8 rounded-3xl space-y-4 border-accent/20">

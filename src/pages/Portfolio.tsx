@@ -6,6 +6,7 @@ import { FloatingCTA } from "@/components/FloatingCTA";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Seo } from "@/components/Seo";
+import { PageBanner } from "@/components/PageBanner";
 import { whatsappUrl } from "@/lib/site";
 import { PROJECTS } from "@/lib/projects";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
@@ -33,6 +34,15 @@ const Portfolio = () => {
                Registros de campo que apresentam áreas de atuação e soluções executadas pela equipe Beckmans.
             </p>
           </div>
+
+          <PageBanner
+            image="/images/projetos/projeto-08.jpg"
+            alt="Registro de obra e inspeção técnica realizada pela Beckmans Engenharia"
+            objectPosition="center 40%"
+            eyebrow="Registros reais"
+            caption="Dez registros de campo em vistorias, coberturas, estruturas e manutenção."
+            className="mb-14"
+          />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {PROJECTS.map((project, index) => (

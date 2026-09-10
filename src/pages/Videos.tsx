@@ -7,6 +7,7 @@ import { VideoCard } from "@/components/VideoCard";
 import { VideoModal } from "@/components/VideoModal";
 import { useVideos } from "@/hooks/use-videos";
 import { useReveal } from "@/hooks/use-reveal";
+import { PageBanner } from "@/components/PageBanner";
 
 const Videos = () => {
   useReveal();
@@ -31,6 +32,15 @@ const Videos = () => {
                 Toque em um vídeo para assistir. Você pode avançar e voltar entre eles.
               </p>
             </div>
+
+            <PageBanner
+              image="/images/projetos/projeto-07.jpg"
+              alt="Serviço de engenharia registrado em vídeo pela Beckmans Engenharia"
+              objectPosition="center 40%"
+              eyebrow="Beckmans em ação"
+              caption="Bastidores reais de vistorias, inspeções e serviços executados."
+              className="mb-12"
+            />
 
             {loading ? (
               <p className="text-muted-foreground">Carregando vídeos…</p>
