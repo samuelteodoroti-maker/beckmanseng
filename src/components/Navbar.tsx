@@ -124,24 +124,15 @@ export function Navbar() {
         {isOpen && (
           <div className="lg:hidden mt-3 glass rounded-lg border border-border p-3 space-y-1 animate-in fade-in slide-in-from-top-4 duration-300">
             {links.map((l) => (
-              l.to ? (
-                <Link
-                  key={l.id}
-                  to={l.to}
-                  onClick={() => setIsOpen(false)}
-                  className="block w-full text-left px-4 py-4 rounded-2xl hover:bg-accent/10 hover:text-accent transition-colors font-bold text-base"
-                >
-                  {l.label}
-                </Link>
-              ) : (
-                 <Button variant="ghost"
-                  key={l.id}
-                  onClick={() => scrollToSection(l.id)}
-                   className="flex w-full justify-start px-4 py-5 hover:bg-accent/10 hover:text-accent transition-colors font-bold text-base"
-                >
-                  {l.label}
-                 </Button>
-              )
+              <Link
+                key={l.id}
+                to={l.to}
+                onClick={() => setIsOpen(false)}
+                aria-current={location.pathname === l.to ? "page" : undefined}
+                className="block w-full text-left px-4 py-4 rounded-2xl hover:bg-accent/10 hover:text-accent transition-colors font-bold text-base"
+              >
+                {l.label}
+              </Link>
             ))}
             <Button variant="accent" className="w-full mt-4 h-14 rounded-full" asChild>
               <a
