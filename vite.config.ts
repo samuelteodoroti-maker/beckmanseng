@@ -15,7 +15,7 @@ export default defineConfig({
     },
   },
   build: {
-    target: "esnext",
+    target: "es2020",
     minify: true,
     cssMinify: true,
     rollupOptions: {
@@ -32,7 +32,7 @@ export default defineConfig({
         },
       },
     },
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 600,
     reportCompressedSize: false,
   },
   optimizeDeps: {
