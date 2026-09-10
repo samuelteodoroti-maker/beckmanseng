@@ -8,7 +8,7 @@ import { whatsappUrl } from "@/lib/site";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState<string>("home");
+  
   const [progress, setProgress] = useState(0);
   const location = useLocation();
 
@@ -24,26 +24,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [location.pathname]);
 
-  useEffect(() => {
-    const ids = ["home", "services", "projects", "about"];
-    const sections = ids
-      .map((id) => document.getElementById(id))
-      .filter((el): el is HTMLElement => !!el);
-    if (sections.length === 0) {
-      if (location.pathname === "/inspecoes") setActive("inspecoes");
-      return;
-    }
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActive(e.target.id);
-        });
-      },
-      { rootMargin: "-40% 0px -40% 0px", threshold: 0.1 }
-    );
-    sections.forEach((s) => io.observe(s));
-    return () => io.disconnect();
-  }, [location.pathname]);
 
   const links: { id: string; label: string; to: string }[] = [
     { id: "home", label: "Início", to: "/" },
