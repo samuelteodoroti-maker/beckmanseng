@@ -43,7 +43,7 @@ export const About = memo(function About() {
             <div className="relative rounded-lg overflow-hidden shadow-elegant aspect-[4/3] sm:aspect-[16/10] flex-grow">
               <img
                 src={ABOUT_IMAGE}
-                alt="Engenheiro Beckmans em canteiro de obras"
+                alt="Engenheiro da Beckmans avaliando estrutura em campo"
                 loading="lazy"
                 decoding="async"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
