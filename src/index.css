@@ -384,3 +384,7 @@ All colors MUST be HSL.
     .animate-float, .animate-marquee, .animate-marquee2 { animation: none !important; }
   }
 }
+
+#lovable-badge {
+  display: none !important;
+}
