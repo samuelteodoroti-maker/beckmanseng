@@ -47,7 +47,15 @@ export function useVideos(options?: { onlyPublished?: boolean }) {
     const databaseRows = (data ?? []) as VideoRecord[];
     const rows = LOCAL_VIDEOS.map((fallback, index) => {
       const saved = databaseRows.find((video) => video.sort_order === index);
-      return saved ? { ...fallback, ...saved, file_name: fallback.file_name } : fallback;
+      return saved
+        ? {
+            ...fallback,
+            ...saved,
+            file_name: fallback.file_name,
+            cover_path: saved.cover_path || fallback.cover_path,
+            duration_seconds: saved.duration_seconds || fallback.duration_seconds,
+          }
+        : fallback;
     }).filter((video) => !onlyPublished || video.published);
     setVideos(rows);
 

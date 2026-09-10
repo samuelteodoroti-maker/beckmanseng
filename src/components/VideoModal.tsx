@@ -29,7 +29,7 @@ export function VideoModal({ videos, index, covers, onIndexChange, onClose }: Pr
     if (!current) return;
     setMissing(false);
     setSrc(localVideoUrl(current));
-  }, [current?.id]);
+  }, [current]);
 
   const handleError = () => {
     setSrc(null);
